@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
-    internal class UserDB:BaseDB 
+    public class UserDB:BaseDB 
     {
         protected override BaseEntity CreateModel(BaseEntity entity)
         {
@@ -18,6 +18,18 @@ namespace ViewModel
             return user;
 
              
+        }
+
+        protected override void LoadParameters(BaseEntity entity)
+        {
+            User user = entity as User;
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@UserName",user.Id);
+            command.Parameters.AddWithValue("@ID", user.Id);
+            command.Parameters.AddWithValue("@FIRSTNAME", user.Firstname);
+            command.Parameters.AddWithValue("@LastName", user.Lastname) ;
+            command.Parameters.AddWithValue("@PASSWORD", user.Password);
+            command.Parameters.AddWithValue("@ISADMIN", user.PermissionLevel);
         }
         protected override BaseEntity NewEntity()
         {
@@ -41,7 +53,43 @@ namespace ViewModel
             UserList userList = new UserList(ExecuteCommand());
             return userList;
         }
+        public int Insert(User user)
+        {
+            command.CommandText = "INSERT INTO TblUser (UserName) VALUES (@UserName)";
+            LoadParameters(user);
+            return ExecuteCRUD();
+        }
+        public int UpdateFirstName(User Firstname)
+        {
+            command.CommandText = "UPDATE TblUser SET FirstName = @FirstName WHERE ID = @FirstName";
+            LoadParameters(Firstname);
+            return ExecuteCRUD();
+        }
+        public int UpdateLastName(User LastName)
+        {
+            command.CommandText = "UPDATE TblUser SET LastName = @LastName WHERE ID = @LastName";
+            LoadParameters(LastName);
+            return ExecuteCRUD();
+        }
+        public int UpdatePassword(User Password)
+        {
+            command.CommandText = "UPDATE TblUser SET Password = @Password WHERE ID = @Password";
+            LoadParameters(Password);
+            return ExecuteCRUD();
+        }
+        public int UpdateAdmin(User IsAdmin)
+        {
+            command.CommandText = "UPDATE TblUser SET IsAdmin = @IsAdmin WHERE ID = @IsAdmin";
+            LoadParameters(IsAdmin);
+            return ExecuteCRUD();
+        }
+        public int Delete(User PersonID)
+        {
+            command.CommandText = "DELETE FROM TblUser WHERE ID =@ID";
+            LoadParameters(PersonID);
+            return ExecuteCRUD();
+        }
     }
-
+        
 
 }

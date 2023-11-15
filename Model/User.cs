@@ -59,9 +59,11 @@ namespace Model
         }
         public string password
         {
-            get { return PhoneNumber; }
-            set { PhoneNumber = value; }
+            get { return Password; }
+            set { Password = value; }
         }
+        
+
     }
 
     public class UserList : List<User>
@@ -72,4 +74,5 @@ namespace Model
 
         public UserList(IEnumerable<BaseEntity> list) : base(list.Cast<User>().ToList()) { } // from base class to user list
     }
+
 }
