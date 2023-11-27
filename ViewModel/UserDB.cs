@@ -13,23 +13,24 @@ namespace ViewModel
         {
            User user = entity as User;
             user.Id = int.Parse(reader["id"].ToString());
-            user.Firstname = reader["name"].ToString();
-            user.Birthday = DateTime.Parse(reader["date"].ToString());
-            return user;
-
-             
+            user.Firstname = reader["FirstName"].ToString();
+            user.Lastname = reader["LastName"].ToString();
+            user.UserName = reader["UserName"].ToString();
+            user.Password = reader["Password"].ToString();
+            user.PermissionLevel = bool.Parse(reader["isadmin"].ToString());
+            return user;             
         }
 
         protected override void LoadParameters(BaseEntity entity)
         {
             User user = entity as User;
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@UserName",user.Id);
-            command.Parameters.AddWithValue("@ID", user.Id);
-            command.Parameters.AddWithValue("@FIRSTNAME", user.Firstname);
+            command.Parameters.AddWithValue("@Id", user.Id);
+            command.Parameters.AddWithValue("@FirstName", user.Firstname);
             command.Parameters.AddWithValue("@LastName", user.Lastname) ;
-            command.Parameters.AddWithValue("@PASSWORD", user.Password);
-            command.Parameters.AddWithValue("@ISADMIN", user.PermissionLevel);
+            command.Parameters.AddWithValue("@UserName", user.UserName) ;
+            command.Parameters.AddWithValue("@Password", user.Password);
+            command.Parameters.AddWithValue("@isAdmin", user.PermissionLevel);
         }
         protected override BaseEntity NewEntity()
         {
@@ -89,7 +90,7 @@ namespace ViewModel
             LoadParameters(PersonID);
             return ExecuteCRUD();
         }
-    }
-        
+   
+        }
 
 }

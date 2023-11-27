@@ -1,71 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Model
 {
+    [DataContract]   
 
     public class User : BaseEntity
     {
-        protected string FirstName;
+        protected string firstName;
+        protected string lastName
+        protected string userName;
+        protected string password;
+        protected bool permissionLevel;
+
+        [DataMember]
         public string Firstname
         {
-            get { return FirstName; }
-            set { FirstName = value; }
+            get { return firstName; }
+            set { firstName = value; }
         }
-
-        protected string LastName;
+        
+        [DataMember]
         public string Lastname
         {
-            get { return LastName; }
-            set { LastName = value; }
+            get { return lastName; }
+            set { lastName = value; }
         }
-
-        protected string Email;
-        public string EMAIL
+        [DataMember]
+        public string UserName
         {
-            get { return Email; }
-            set { Email = value; }
+            get { return userName; }
+            set { userName = value; }
         }
-
-        protected DateTime Birthdate;
-        public DateTime Birthday
+        [DataMember]
+        public string Password
         {
-            get { return Birthdate; }
-            set { Birthdate = value; }
+            get { return password; }
+            set { password = value; }
         }
-
-        protected string Gender;
-        public string GEnder
-        {
-            get { return Gender; }
-            set { Gender = value; }
-        }
-
-        protected string PhoneNumber;
-        public string Phonenumber
-        {
-            get { return PhoneNumber; }
-            set { PhoneNumber = value; }
-        }
-
-        protected bool permissionLevel;
+        [DataMember]
         public bool PermissionLevel
         {
             get { return permissionLevel; }
             set { permissionLevel = value; }
         }
-        public string password
-        {
-            get { return Password; }
-            set { Password = value; }
-        }
-        
-
     }
-
+    [CollectionDataContract]
     public class UserList : List<User>
     {
         public UserList() { } // default c'tor with empty list

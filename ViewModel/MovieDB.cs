@@ -16,35 +16,31 @@ namespace ViewModel
             movie.MovieName = reader["id"].ToString();
             movie.MovieLength = int.Parse(reader["Length"].ToString());
             movie.About = reader["About"].ToString();
-
             
+            CategoryDB categoryDB = new CategoryDB();
+            movie.MovieCategory = categoryDB.SelectById(int.Parse(reader["MovieCategory"].ToString()));
             return movie;
-
-
         }
         protected override void LoadParameters(BaseEntity entity)
         {
             Movie movie = entity as Movie;
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@MovieId",movie.Id );
+            command.Parameters.AddWithValue("@Id",movie.Id );
+            command.Parameters.AddWithValue("@MovieName", movie.MovieName);
             command.Parameters.AddWithValue("@About", movie.About);
             command.Parameters.AddWithValue("@MovieLength",movie.MovieLength);
-            command.Parameters.AddWithValue("@UserName", movie.MovieType);
-         
+            command.Parameters.AddWithValue("@MovieCategory", movie.MovieCategory.Id);         
         }
         protected override BaseEntity NewEntity()
         {
             return new User();
         }
-        public User SelectById(int Id)
+        public Movie SelectById(int Id)
         {
             command.CommandText = "SELECT * FROM TblMovies WHERE Id=" + Id;
             MovieList movieList = new MovieList(ExecuteCommand());
-
             if (movieList.Count == 0)
-            {
                 return null;
-            }
 
             return movieList[0];
         }
@@ -56,7 +52,19 @@ namespace ViewModel
         }
         public int Insert(Movie movie)
         {
-            command.CommandText = "INSERT INTO TblMovies (MovieName) VALUES (@MovieName)";
+            command.CommandText = "INSERT INTO TblMovies (MovieName,MovieLength,About,MovieCategory) VALUES (@MovieName,@MovieLength,@About,@MovieCategory)";
+            LoadParameters(movie);
+            return ExecuteCRUD();
+        }
+        public int Delete(Movie movie)
+        {
+            command.CommandText = "DELETE FROM TblMovies WHERE ID =@ID";
+            LoadParameters(movie);
+            return ExecuteCRUD();
+        }
+        public int Update(Movie movie)
+        {
+            command.CommandText = "UPDATE TblMovies SET MovieName=@MovieName, MovieLength = @MovieLength, MovieCategory = @MovieCategory, About = @About WHERE Id = @Id";
             LoadParameters(movie);
             return ExecuteCRUD();
         }
