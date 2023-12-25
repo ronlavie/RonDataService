@@ -1,0 +1,60 @@
+﻿<Window x:Class="WPF_RON.WindowSignin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WPF_RON"
+        mc:Ignorable="d"
+        Title="WindowSignin"
+        Height="450"
+        Width="600">
+    <Window.Resources>
+        <Style TargetType="Button"
+               BasedOn="{StaticResource MaterialDesignFlatButton}">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Height" Value="50"  />            
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/back.png" />
+        </Grid.Background>
+        <Grid Margin="15 0">        
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Source="/Images/smallLogoNoBack.png"
+               Width="350" />
+            <TextBox Grid.Row="1"
+                     Height="50"
+                     x:Name="UserName"
+                     TextChanged="tbxUserName_TextChanged"
+                     FontSize="30"
+                     Background="Snow" 
+                     Foreground="Snow" 
+                     materialDesign:HintAssist.Hint="User name"
+                     materialDesign:HintAssist.HelperText="Insert your username here" />
+            <PasswordBox Grid.Row="2"
+                     Height="50"
+                     x:Name="pbPassword"
+                     FontSize="30"
+                         Background="Snow"
+                         Foreground="Snow"
+                         materialDesign:HintAssist.Hint="Password"
+                     materialDesign:TextFieldAssist.HasClearButton="True"
+                     materialDesign:HintAssist.HelperText="At least 8 characters"
+                     PasswordChanged="pbPassword_PasswordChanged"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button  Width="100" Margin="10 0"
+                         Click="Signin_Click">Sign in</Button>
+            <Button Width="100"
+                        Click="Close_Click">x</Button>
+        </StackPanel>
+    </Grid>
+    </Grid>
+</Window>

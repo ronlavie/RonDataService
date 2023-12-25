@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="731e46f2-c254-4eab-b741-5fd55c62ed50" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="1881f944-1403-4f49-8271-19dde3ca2531" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="54050626-51a1-4617-9e76-1e349334e6e4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/?xsd=xsd0" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="e9f753f5-6bdf-4e95-9956-d9b5b77c70d4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="8c1d4332-beaf-4e85-a5ca-a4b9d773fcd6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/?xsd=xsd2" />
+    <MetadataFile FileName="ServiceMovieAndShow.wsdl" MetadataType="Wsdl" ID="351eafcc-a5ae-4ed3-9604-d2db13dfb266" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,138 @@
+﻿<Window
+    x:Class="WPF_RON.WindowSignup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:local="clr-namespace:WPF_RON"
+    mc:Ignorable="d"
+    Title="WindowSignup"
+    Height="600"
+    Width="600">
+    <Window.Resources>
+        <Style
+            TargetType="Button"
+            BasedOn="{StaticResource MaterialDesignRaisedButton}">
+            <Setter
+                Property="FontSize"
+                Value="20" />
+            <Setter
+                Property="Height"
+                Value="50" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush
+                ImageSource="/Images/back.png" />
+        </Grid.Background>
+        <Grid
+            Margin="15 0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition
+                    Height="1.2*" />
+            </Grid.RowDefinitions>
+            <Image
+                Source="/Images/smallLogoNoBack.png"
+                Width="350" />
+            <TextBox
+                Grid.Row="1"
+                Height="50"
+                x:Name="tbUserName"
+                FontSize="30"
+                Foreground="Snow"
+                materialDesign:HintAssist.Hint="User name"
+                materialDesign:HintAssist.HelperText="Insert your username here">
+                <Binding
+                    Path="UserName"
+                    ValidatesOnDataErrors="True"
+                    UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ValidationUserName />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+            <TextBox
+                Grid.Row="2"
+                Height="50"
+                x:Name="tbFirstName"
+                FontSize="30"
+                Foreground="Snow"
+                materialDesign:HintAssist.Hint="First name"
+                materialDesign:HintAssist.HelperText="Insert your FirstName here">
+                <Binding
+                    Path="Firstname"
+                    ValidatesOnDataErrors="True"
+                    UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ValidationUserName />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+            <TextBox
+                Grid.Row="3"
+                Height="50"
+                x:Name="tbLastName"
+                FontSize="30"
+                Foreground="Snow"
+                materialDesign:HintAssist.Hint="LastName"
+                materialDesign:HintAssist.HelperText="Insert your username here">
+                <Binding
+                    Path="LastName"
+                    ValidatesOnDataErrors="True"
+                    UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ValidationUserName />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+            <PasswordBox
+                Grid.Row="4"
+                Height="50"
+                x:Name="pbPassword"
+                FontSize="30"
+                Foreground="Snow"
+                materialDesign:HintAssist.Hint="Password"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                materialDesign:HintAssist.HelperText="At least 8 characters"
+                PasswordChanged="pbPassword_PasswordChanged" />
+            <PasswordBox
+                Grid.Row="5"
+                Height="50"
+                x:Name="pbRePassword"
+                FontSize="30"
+                Foreground="Snow"
+                materialDesign:HintAssist.Hint="Confirm Password"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                materialDesign:HintAssist.HelperText="At least 8 characters"
+                PasswordChanged="pbRePassword_PasswordChanged" />
+            <StackPanel
+                Grid.Row="6"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <Button
+                    Width="100"
+                    Click="Signup_Click">Sign up</Button>
+                <Button
+                    Width="100"
+                    Margin="10 0"
+                    Click="Clear_Click">
+                    <materialDesign:PackIcon
+                        Kind="Delete"
+                        Width="25"
+                        Height="25" />
+                </Button>
+                <Button
+                    Width="100"
+                    Click="Close_Click">x</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

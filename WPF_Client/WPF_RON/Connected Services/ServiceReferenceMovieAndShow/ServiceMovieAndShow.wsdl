@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServiceMovieAndShow" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceMovieAndShow_GetAllShows_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllShows" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllShows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllShowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMovies" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_InsertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_InsertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_InsertMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMovies" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_InsertMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_UpdateMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMovies" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_UpdateMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_DeleteMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMovies" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_DeleteMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_InsertShows_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertShows" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_InsertShows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertShowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_UpdateShows_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShows" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_UpdateShows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateShowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_DeleteShows_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteShows" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_DeleteShows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteShowsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceMovieAndShow">
+    <wsdl:operation name="GetAllShows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows" message="tns:IServiceMovieAndShow_GetAllShows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse" message="tns:IServiceMovieAndShow_GetAllShows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllMovies" message="tns:IServiceMovieAndShow_GetAllMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesResponse" message="tns:IServiceMovieAndShow_GetAllMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllUsers" message="tns:IServiceMovieAndShow_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllUsersResponse" message="tns:IServiceMovieAndShow_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/Login" message="tns:IServiceMovieAndShow_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/LoginResponse" message="tns:IServiceMovieAndShow_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/InsertUser" message="tns:IServiceMovieAndShow_InsertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/InsertUserResponse" message="tns:IServiceMovieAndShow_InsertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/UpdateUser" message="tns:IServiceMovieAndShow_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/UpdateUserResponse" message="tns:IServiceMovieAndShow_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteUser" message="tns:IServiceMovieAndShow_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteUserResponse" message="tns:IServiceMovieAndShow_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/InsertMovies" message="tns:IServiceMovieAndShow_InsertMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/InsertMoviesResponse" message="tns:IServiceMovieAndShow_InsertMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/UpdateMovies" message="tns:IServiceMovieAndShow_UpdateMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/UpdateMoviesResponse" message="tns:IServiceMovieAndShow_UpdateMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteMovies" message="tns:IServiceMovieAndShow_DeleteMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteMoviesResponse" message="tns:IServiceMovieAndShow_DeleteMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertShows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/InsertShows" message="tns:IServiceMovieAndShow_InsertShows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/InsertShowsResponse" message="tns:IServiceMovieAndShow_InsertShows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/UpdateShows" message="tns:IServiceMovieAndShow_UpdateShows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/UpdateShowsResponse" message="tns:IServiceMovieAndShow_UpdateShows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteShows" message="tns:IServiceMovieAndShow_DeleteShows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteShowsResponse" message="tns:IServiceMovieAndShow_DeleteShows_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceMovieAndShow" type="tns:IServiceMovieAndShow">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllShows">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetAllShows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetAllMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/InsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMovies">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/InsertMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovies">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/UpdateMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMovies">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/DeleteMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertShows">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/InsertShows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShows">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/UpdateShows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShows">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/DeleteShows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceMovieAndShow">
+    <wsdl:port name="BasicHttpBinding_IServiceMovieAndShow" binding="tns:BasicHttpBinding_IServiceMovieAndShow">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WCF_RON/ServiceMovieAndShow/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
