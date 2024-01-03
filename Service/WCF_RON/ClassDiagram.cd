@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ServiceModel.ServiceMovieAndShow">
+    <Position X="5.75" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACQAAAEAAEAAAAAAEAgQAAAAAIAAAQAAEIAAA=</HashCode>
+      <FileName>ServiceMovieAndShow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ServiceModel.IServiceMovieAndShow">
+    <Position X="3.5" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACQAAAEAAEAAAAAAEAgQAAAAAIAAAQAAEIAAA=</HashCode>
+      <FileName>IServiceMovieAndShow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

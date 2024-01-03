@@ -17,6 +17,7 @@ namespace ServiceModel
         [OperationContract] MovieList GetAllMovies();
         [OperationContract] UserList GetAllUsers();
         [OperationContract] User Login(User user);
+        [OperationContract] bool CheckUserName(string UserName);
         [OperationContract] int InsertUser(User user);
         [OperationContract] int UpdateUser(User user);
         [OperationContract] int DeleteUser(User user);

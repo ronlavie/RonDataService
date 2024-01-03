@@ -347,6 +347,12 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/Login", ReplyAction="http://tempuri.org/IServiceMovieAndShow/LoginResponse")]
         System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.User> LoginAsync(WPF_RON.ServiceReferenceMovieAndShow.User user);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/CheckUserName", ReplyAction="http://tempuri.org/IServiceMovieAndShow/CheckUserNameResponse")]
+        bool CheckUserName(string UserName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/CheckUserName", ReplyAction="http://tempuri.org/IServiceMovieAndShow/CheckUserNameResponse")]
+        System.Threading.Tasks.Task<bool> CheckUserNameAsync(string UserName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/InsertUser", ReplyAction="http://tempuri.org/IServiceMovieAndShow/InsertUserResponse")]
         int InsertUser(WPF_RON.ServiceReferenceMovieAndShow.User user);
         
@@ -459,6 +465,14 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.User> LoginAsync(WPF_RON.ServiceReferenceMovieAndShow.User user) {
             return base.Channel.LoginAsync(user);
+        }
+        
+        public bool CheckUserName(string UserName) {
+            return base.Channel.CheckUserName(UserName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckUserNameAsync(string UserName) {
+            return base.Channel.CheckUserNameAsync(UserName);
         }
         
         public int InsertUser(WPF_RON.ServiceReferenceMovieAndShow.User user) {

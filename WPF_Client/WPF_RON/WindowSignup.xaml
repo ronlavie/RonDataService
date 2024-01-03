@@ -22,6 +22,7 @@
                 Value="50" />
         </Style>
     </Window.Resources>
+    
     <Grid>
         <Grid.Background>
             <ImageBrush

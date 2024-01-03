@@ -25,12 +25,12 @@ namespace ServiceModel
             MovieList list = db.SelectAll();
             return list;
         }
-        public UserList GetAllUsers()
-        {
-            UserDB db = new UserDB();
-            UserList list = db.SelectAll();
-            return list;
-        }
+public UserList GetAllUsers()
+{
+    UserDB db = new UserDB();
+    UserList list = db.SelectAll();
+    return list;
+}
         public int InsertUser(User user)
         {
             UserDB userdb = new UserDB();
@@ -87,6 +87,13 @@ namespace ServiceModel
             if (tmp == null) return null;
             if (!tmp.Password.Equals(user.Password)) return null;
             return tmp;
+        }
+        public bool CheckUserName(string UserName)
+        {
+            UserDB db = new UserDB();
+            User tmp = db.CheckUserName(UserName);
+            if (tmp == null) return true;
+            return false;
         }
 
     }

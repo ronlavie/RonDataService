@@ -58,6 +58,17 @@ namespace ViewModel
             {
                 return null;
             }
+            return userList[0];
+        }
+        public User CheckUserName(string UserName)
+        {
+            command.CommandText = $"SELECT * FROM TblUsers WHERE UserName='{UserName}'";
+            UserList userList = new UserList(ExecuteCommand());
+
+            if (userList.Count == 0)
+            {
+                return null;
+            }
 
             return userList[0];
         }

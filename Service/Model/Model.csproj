@@ -51,5 +51,8 @@
     <Compile Include="Show.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

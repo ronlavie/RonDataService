@@ -23,15 +23,46 @@ namespace WPF_RON
     {
         private bool rePassOK, passOK;
         private ServiceMovieAndShowClient myService;
+        private User user;
         public WindowSignup()
         {
             InitializeComponent();
+            user=new User();
+            this.DataContext = user;
         }
-
+        
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            tbUserName.Text =
+          tbFirstName.Text =
+          tbLastName.Text =
+          pbPassword.Password =
+          pbRePassword.Password = string.Empty;
+        }
 
         private void Signup_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (!CheckData()) 
+            {
+                MessageBox.Show("Data error", "Error",MessageBoxButton.OK);
+                return;
+            }
+            //Check if username is in use?
+            if (!myService.CheckUserName(tbUserName.Text))
+            {
+                MessageBox.Show("Username is used", "Error", MessageBoxButton.OK);
+                return;
+            }
+            //Username if free, Create new user
+            user.Password = pbPassword.Password;
+            user.PermissionLevel = false;
+            //Send to service
+            if (myService.InsertUser(user) != 1)
+            {
+                MessageBox.Show("Oh oh...something is wrong", "Error", MessageBoxButton.OK);
+                return;
+            }
+            this.Close();
         }
 
         private bool CheckData()
@@ -54,7 +85,7 @@ namespace WPF_RON
             this.Close();
         }
 
-        private void pbRePassword_RePasswordChanged(object sender, RoutedEventArgs e)
+        private void pbRePassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
             if (pbPassword.Password.Equals(pbRePassword.Password))
             {
