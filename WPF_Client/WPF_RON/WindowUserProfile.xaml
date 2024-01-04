@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_RON"
         mc:Ignorable="d"
-        Title="WindowUserProfile" Height="450" Width="800">
+        Title="WindowUserProfile" Height="800" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition />
+            <RowDefinition Height="80"/>
+            <RowDefinition />  
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Shows" FontSize="50" />
+        </StackPanel>
+        <Grid
+            Grid.Row="2">
+            <ScrollBar
+                Style="{StaticResource MaterialDesignScrollViewer}"
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                Height="200"
+                Background="Aqua"
+                CanContentScroll="True">
+                <StackPanel
+                    Name="pnlViewShows" Orientation="Horizontal"
+                    OverridesDefaultStyle="False"
+                    Height="193"
+                    Width="790"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"></StackPanel>
+            </ScrollBar>
+        </Grid>
+        <StackPanel
+            Grid.Row="3">
+            <TextBlock Text="Movies" FontSize="50"/>
+        </StackPanel>
     </Grid>
 </Window>

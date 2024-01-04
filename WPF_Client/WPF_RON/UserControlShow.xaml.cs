@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_RON.ServiceReferenceMovieAndShow;
 
 namespace WPF_RON
 {
@@ -23,6 +24,11 @@ namespace WPF_RON
         public UserControlShow()
         {
             InitializeComponent();
+        }
+        public UserControlShow(Show show)
+        {
+            InitializeComponent();
+            this.DataContext = show;    
         }
     }
 }

@@ -6,33 +6,33 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WPF_RON"
     mc:Ignorable="d"
-    d:DesignHeight="450"
-    d:DesignWidth="280">
-    <Grid
+    Height="150"
+    Width="100">
+    <Grid Margin="5"
         Background="AntiqueWhite">
         <Grid.RowDefinitions>
-            <RowDefinition Height="250" />
+            <RowDefinition Height="1.5*" />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition  Height="100"/>
+            <RowDefinition  Height="1.2*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Images/Breaking-Bad-Logo-PNG-Image.png" Margin="15"/>
+        <Image Source="/Images/Breaking-Bad-Logo-PNG-Image.png"/>
 
         <TextBlock
             Grid.Row="1"
-            FontSize="20"
+            FontSize="10"
             Text="Breaking Bad" 
             TextAlignment="Center"/>
             
         <TextBlock
             Grid.Row="2"
-            FontSize="20"
+            FontSize="10"
             Text="Drama"
             TextAlignment ="Center"/>
             
         <TextBlock
-            Grid.Row="3"
-            Text="the series follows the exploits of Walter White,&#10; a modest high school chemistry teacher,&#10; who discovers a new purpose in life when he&#10; learns he has terminal cancer and turns to a &#10;life of crime to provide for his family"
-            FontSize="14" />
+            Grid.Row="3" TextWrapping="WrapWithOverflow"
+            Text="the series follows the exploits of Walter White, a modest high school chemistry teacher, who discovers a new purpose in life when he learns he has terminal cancer and turns to a life of crime to provide for his family"
+            FontSize="5" />
     </Grid>
 </UserControl>

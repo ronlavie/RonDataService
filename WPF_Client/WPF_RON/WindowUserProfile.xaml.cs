@@ -25,8 +25,34 @@ namespace WPF_RON
         public WindowUserProfile(User user)
         {
             InitializeComponent();
-            myService=new ServiceMovieAndShowClient();
+            myService = new ServiceMovieAndShowClient();
             myUser = user;
+            LoadShows();
+        }
+        public WindowUserProfile()
+        {
+            InitializeComponent();
+            myService = new ServiceMovieAndShowClient();
+            myUser = new User { Firstname = "Ron", Lastname = "X", PermissionLevel = false };
+            LoadShows();
+        }
+
+
+        public void LoadShows()
+        {
+            ShowList shows = myService.GetAllShows();
+            pnlViewShows.Children.Clear();
+            for (int i = 0;i<20;i++) 
+            {
+                UserControlShow controlShow = new UserControlShow();
+                controlShow.Margin = new Thickness(5);
+                pnlViewShows.Children.Add(controlShow);
+            }
+        }
+
+        private void ScrollViewer_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
         }
     }
 }

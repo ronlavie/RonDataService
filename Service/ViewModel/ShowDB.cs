@@ -13,8 +13,8 @@ namespace ViewModel
         {
             Show show = entity as Show;
             
-            show.ShowName = reader["Name"].ToString();
-            show.ShowDescription = (reader["Description"].ToString());
+            show.ShowName = reader["ShowName"].ToString();
+            show.ShowDescription = (reader["ShowDescription"].ToString());
             CategoryDB categoryDB = new CategoryDB();
             show.ShowCategory = categoryDB.SelectById(int.Parse(reader["ShowCategory"].ToString()));
             show.Id = int.Parse(reader["id"].ToString());
