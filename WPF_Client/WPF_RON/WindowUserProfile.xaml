@@ -5,39 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_RON"
         mc:Ignorable="d"
-        Title="WindowUserProfile" Height="800" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition />
-            <RowDefinition Height="80"/>
-            <RowDefinition />  
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1">
-            <TextBlock Text="Shows" FontSize="50" />
+        Title="WindowUserProfile"
+        Height="800"
+        Width="800">
+    <StackPanel Background="AntiqueWhite">
+        <TextBlock FontSize="50">
+            <Run Text="{Binding Path=Firstname}" />
+            <Run Text=" " />
+            <Run Text="{Binding Path=Lastname}" />
+        </TextBlock>
+        <StackPanel>
+            <TextBlock Text="Shows"
+                       FontSize="50" />
         </StackPanel>
-        <Grid
-            Grid.Row="2">
-            <ScrollBar
-                Style="{StaticResource MaterialDesignScrollViewer}"
-                VerticalScrollBarVisibility="Auto"
-                HorizontalScrollBarVisibility="Auto"
-                Height="200"
-                Background="Aqua"
-                CanContentScroll="True">
-                <StackPanel
-                    Name="pnlViewShows" Orientation="Horizontal"
-                    OverridesDefaultStyle="False"
-                    Height="193"
-                    Width="790"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Left"></StackPanel>
-            </ScrollBar>
-        </Grid>
-        <StackPanel
-            Grid.Row="3">
-            <TextBlock Text="Movies" FontSize="50"/>
+        <ScrollViewer Height="250"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Hidden"
+                      CanContentScroll="True"
+                      Margin="20">
+            <StackPanel>
+                <StackPanel x:Name="pnlViewShows"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"></StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel>
+            <TextBlock Text="Movies"
+                       FontSize="50" />
         </StackPanel>
-    </Grid>
+        <ScrollViewer Height="300"
+                      HorizontalScrollBarVisibility="Visible">
+            <StackPanel>
+                <StackPanel x:Name="pnlViewMovies"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"></StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </StackPanel>
 </Window>

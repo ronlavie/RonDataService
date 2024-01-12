@@ -34,7 +34,7 @@ namespace WPF_RON
             InitializeComponent();
             myService = new ServiceMovieAndShowClient();
             myUser = new User { Firstname = "Ron", Lastname = "X", PermissionLevel = false };
-            LoadShows();
+            LoadShows(); LoadMovies();
         }
 
 
@@ -42,17 +42,23 @@ namespace WPF_RON
         {
             ShowList shows = myService.GetAllShows();
             pnlViewShows.Children.Clear();
-            for (int i = 0;i<20;i++) 
+            foreach (var show in shows)
             {
-                UserControlShow controlShow = new UserControlShow();
+                UserControlShow controlShow = new UserControlShow(show);
                 controlShow.Margin = new Thickness(5);
                 pnlViewShows.Children.Add(controlShow);
             }
         }
-
-        private void ScrollViewer_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        public void LoadMovies()
         {
-
+            MovieList movies = myService.GetAllMovies();
+            pnlViewMovies.Children.Clear();
+            foreach (var movie in movies)
+            {
+                UserControlMovie controlMovie = new UserControlMovie(movie);
+                controlMovie.Margin = new Thickness(5);
+                pnlViewMovies.Children.Add(controlMovie);
+            }
         }
     }
 }

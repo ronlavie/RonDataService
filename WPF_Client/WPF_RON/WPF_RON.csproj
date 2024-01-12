@@ -68,6 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AllViewWindow.xaml.cs">
+      <DependentUpon>AllViewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReferenceMovieAndShow\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +78,9 @@
     </Compile>
     <Compile Include="ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMovie.xaml.cs">
+      <DependentUpon>UserControlMovie.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlShow.xaml.cs">
       <DependentUpon>UserControlShow.xaml</DependentUpon>
@@ -89,6 +95,10 @@
     <Compile Include="WindowUserProfile.xaml.cs">
       <DependentUpon>WindowUserProfile.xaml</DependentUpon>
     </Compile>
+    <Page Include="AllViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -102,6 +112,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlMovie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -208,6 +222,23 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Breaking-Bad-Logo-PNG-Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\food-salad-restaurant-person.jpg" />
+    <Resource Include="Assets\insta.jpg" />
+    <Resource Include="Assets\pexels-photo-192439.jpeg" />
+    <Resource Include="Assets\pexels-photo-257360.jpeg" />
+    <Resource Include="Assets\pexels-photo-288583.jpeg" />
+    <Resource Include="Assets\pexels-photo-301290.jpeg" />
+    <Resource Include="Assets\pexels-photo-614810.jpeg" />
+    <Resource Include="Assets\pexels-photo-638791.jpeg" />
+    <Resource Include="Assets\pexels-photo-790164.jpeg" />
+    <Resource Include="Assets\pexels-photo-792778.jpeg" />
+    <Resource Include="Assets\pexels-photo-797640.jpeg" />
+    <Resource Include="Assets\profile.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Se7en.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
