@@ -9,14 +9,19 @@ namespace ViewModel
 {
     public class MovieDB: BaseDB
     {
+
+        protected override BaseEntity NewEntity()
+        {
+            return new Movie();
+        }
         protected override BaseEntity CreateModel(BaseEntity entity)
         {
             Movie movie  = entity as Movie;
-            movie.Id = int.Parse(reader["id"].ToString());
-            movie.MovieName = reader["id"].ToString();
+            movie.MovieName = reader["MovieName"].ToString();
             movie.MovieLength = int.Parse(reader["Length"].ToString());
             movie.About = reader["About"].ToString();
-            
+            movie.Id = int.Parse(reader["id"].ToString());
+
             CategoryDB categoryDB = new CategoryDB();
             movie.MovieCategory = categoryDB.SelectById(int.Parse(reader["MovieCategory"].ToString()));
             return movie;
@@ -30,10 +35,6 @@ namespace ViewModel
             command.Parameters.AddWithValue("@MovieLength",movie.MovieLength);
             command.Parameters.AddWithValue("@MovieCategory", movie.MovieCategory.Id);
             command.Parameters.AddWithValue("@Id", movie.Id);
-        }
-        protected override BaseEntity NewEntity()
-        {
-            return new User();
         }
         public Movie SelectById(int Id)
         {

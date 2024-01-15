@@ -224,21 +224,61 @@
     <Resource Include="Images\Breaking-Bad-Logo-PNG-Image.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\food-salad-restaurant-person.jpg" />
-    <Resource Include="Assets\insta.jpg" />
-    <Resource Include="Assets\pexels-photo-192439.jpeg" />
-    <Resource Include="Assets\pexels-photo-257360.jpeg" />
-    <Resource Include="Assets\pexels-photo-288583.jpeg" />
-    <Resource Include="Assets\pexels-photo-301290.jpeg" />
-    <Resource Include="Assets\pexels-photo-614810.jpeg" />
-    <Resource Include="Assets\pexels-photo-638791.jpeg" />
-    <Resource Include="Assets\pexels-photo-790164.jpeg" />
-    <Resource Include="Assets\pexels-photo-792778.jpeg" />
-    <Resource Include="Assets\pexels-photo-797640.jpeg" />
-    <Resource Include="Assets\profile.jpeg" />
+    <Resource Include="Images\Se7en.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Se7en.png" />
+    <Resource Include="Images\Shows\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\smallLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Shows\17.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />

@@ -33,8 +33,11 @@
             <TextBlock Text="Movies"
                        FontSize="50" />
         </StackPanel>
-        <ScrollViewer Height="300"
-                      HorizontalScrollBarVisibility="Visible">
+        <ScrollViewer Height="250"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Hidden"
+                      CanContentScroll="True"
+                      Margin="20"> 
             <StackPanel>
                 <StackPanel x:Name="pnlViewMovies"
                             Orientation="Horizontal"

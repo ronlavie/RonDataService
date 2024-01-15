@@ -28,7 +28,15 @@ namespace WPF_RON
         public UserControlShow(Show show)
         {
             InitializeComponent();
-            this.DataContext = show;    
+            this.DataContext = show;
+            try
+            {
+                img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Shows/{show.Id}.png"));
+            }
+            catch (Exception ex)
+            {
+                img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Shows/smallLogo.png"));
+            }
         }
     }
 }

@@ -16,7 +16,7 @@
             <RowDefinition />
             <RowDefinition  Height="1.2*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Images/Breaking-Bad-Logo-PNG-Image.png"/>
+        <Image x:Name="img" Source="/Images/Breaking-Bad-Logo-PNG-Image.png"/>
 
         <TextBlock
             Grid.Row="1"
