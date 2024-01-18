@@ -30,14 +30,14 @@ namespace Model
         [DataMember]
         public int MovieLength
         {
-            get { return MovieLength; }
-            set { MovieLength = value; }
+            get { return movieLength; }
+            set { movieLength = value; }
         }
         [DataMember]
         public string About
         {
-            get { return About; }
-            set {About = value; }
+            get { return about; }
+            set { about = value; }
         }
     }
     [CollectionDataContract]

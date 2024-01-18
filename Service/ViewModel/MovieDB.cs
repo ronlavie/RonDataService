@@ -18,7 +18,7 @@ namespace ViewModel
         {
             Movie movie  = entity as Movie;
             movie.MovieName = reader["MovieName"].ToString();
-            movie.MovieLength = int.Parse(reader["Length"].ToString());
+            movie.MovieLength = int.Parse(reader["MovieLength"].ToString());
             movie.About = reader["About"].ToString();
             movie.Id = int.Parse(reader["id"].ToString());
 

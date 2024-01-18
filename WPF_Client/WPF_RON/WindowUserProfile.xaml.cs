@@ -28,6 +28,7 @@ namespace WPF_RON
             myService = new ServiceMovieAndShowClient();
             myUser = user;
             LoadShows();
+            LoadMovies();           
         }
         public WindowUserProfile()
         {

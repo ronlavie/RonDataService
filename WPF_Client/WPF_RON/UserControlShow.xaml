@@ -6,26 +6,26 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WPF_RON"
     mc:Ignorable="d"
-    Height="150"
-    Width="100">
+    Height="170"
+    Width="150">
     <Grid Margin="5"
         Background="AntiqueWhite">
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*" />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition  Height="1.2*"/>
+            <RowDefinition  Height="1.4*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="img" Source="/Images/Breaking-Bad-Logo-PNG-Image.png"/>
+        <Image x:Name="img" Source="/Images/Breaking-Bad-Logo-PNG-Image.png" Stretch="Uniform"/>
 
         <TextBlock
             Grid.Row="1"
-            FontSize="10"
+            FontSize="15"
             Text="{Binding Path=ShowName}" 
             TextAlignment="Center"/>            
         <TextBlock
             Grid.Row="2"
-            FontSize="10"
+            FontSize="15"
                    Text="{Binding Path=ShowCategory.CategoryName}"
             TextAlignment ="Center"/>
             

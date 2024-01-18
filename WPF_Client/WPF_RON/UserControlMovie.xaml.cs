@@ -21,10 +21,22 @@ namespace WPF_RON
     /// </summary>
     public partial class UserControlMovie : UserControl
     {
+        public UserControlMovie()
+        {
+            InitializeComponent();
+        }
         public UserControlMovie(Movie movie)
         {
             InitializeComponent();
             this.DataContext = movie;
+            try
+            {
+                img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Shows/{movie.Id}.png"));
+            }
+            catch (Exception ex)
+            {
+                img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Shows/smallLogo.png"));
+            }
         }
     }
 }
