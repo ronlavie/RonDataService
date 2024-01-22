@@ -280,6 +280,57 @@
   <ItemGroup>
     <Resource Include="Images\Shows\17.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Movies\17.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

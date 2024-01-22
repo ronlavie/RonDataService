@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WPF_RON"
              mc:Ignorable="d"
-             Height="500"
+             Height="250"
              Width="400">
     <Border BorderBrush="Red"
             BorderThickness="5"
@@ -20,15 +20,15 @@
                 <RowDefinition  Height="1.2*" />
             </Grid.RowDefinitions>
             <Image x:Name="img"
-                   Source="Images/Se7en.png"
+                   Source="Images/Se7en.png" 
                    Width="250" />
             <TextBlock Grid.Row="1"
-                       FontSize="10"
+                       FontSize="15"
                        Text="{Binding Path=MovieName}"
                        TextAlignment="Center"
                        TextWrapping="WrapWithOverflow" />
             <TextBlock Grid.Row="2"
-                       FontSize="10"
+                       FontSize="15"
                        Text="{Binding Path=MovieCategory.CategoryName}"
                        TextAlignment="Center" />
             <TextBlock Grid.Row="3"

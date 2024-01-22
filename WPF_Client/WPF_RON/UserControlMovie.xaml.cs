@@ -31,7 +31,7 @@ namespace WPF_RON
             this.DataContext = movie;
             try
             {
-                img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Shows/{movie.Id}.png"));
+                img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Movies/{movie.Id}.png"));
             }
             catch (Exception ex)
             {

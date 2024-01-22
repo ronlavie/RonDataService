@@ -6,17 +6,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WPF_RON"
     mc:Ignorable="d"
-    Height="170"
-    Width="150">
+    Height="300"
+    Width="200">
     <Grid Margin="5"
         Background="AntiqueWhite">
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*" />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition  Height="1.4*"/>
+            <RowDefinition  Height="1.5*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="img" Source="/Images/Breaking-Bad-Logo-PNG-Image.png" Stretch="Uniform"/>
+        <Image x:Name="img" Source="/Images/Breaking-Bad-Logo-PNG-Image.png"/>
 
         <TextBlock
             Grid.Row="1"
@@ -32,6 +32,6 @@
         <TextBlock
             Grid.Row="3" TextWrapping="WrapWithOverflow"
                    Text="{Binding Path=ShowDescription}"
-            FontSize="5" />
+            FontSize="11" />
     </Grid>
 </UserControl>
