@@ -1,14 +1,16 @@
-﻿<Window x:Class="WPF_RON.WindowUserProfile"
+﻿<Window x:Class="WPF_RON.UserProfileWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_RON"
         mc:Ignorable="d"
-        Title="WindowUserProfile"
-        Height="800"
+        WindowState="Maximized"
+        Title="User Profile"
+        Height="1000"
         Width="800">
-    <StackPanel Background="AntiqueWhite">
+    
+    <StackPanel Background="BlanchedAlmond">
         <TextBlock FontSize="50">
             <Run Text="{Binding Path=Firstname}" />
             <Run Text=" " />
@@ -18,7 +20,7 @@
             <TextBlock Text="Shows"
                        FontSize="50" />
         </StackPanel>
-        <ScrollViewer Height="250"
+        <ScrollViewer Height="350"
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Hidden"
                       CanContentScroll="True"
@@ -33,7 +35,7 @@
             <TextBlock Text="Movies"
                        FontSize="50" />
         </StackPanel>
-        <ScrollViewer Height="250"
+        <ScrollViewer Height="350"
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Hidden"
                       CanContentScroll="True"

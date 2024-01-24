@@ -29,6 +29,12 @@ namespace WPF_RON
         {
             InitializeComponent();
             this.DataContext = show;
+            ServiceMovieAndShowClient client = new ServiceMovieAndShowClient();
+            RateShowList rates = client.GetShowRatingByShow(show);
+            if (rates != null && rates.Count > 0)
+                RatingBar.Value = rates.Average(s => s.Stars);
+            else
+                RatingBar.Value = 2.5; 
             try
             {
                 img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Shows/{show.Id}.png"));

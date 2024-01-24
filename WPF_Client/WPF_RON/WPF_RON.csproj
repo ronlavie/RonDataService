@@ -86,14 +86,17 @@
       <DependentUpon>UserControlShow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowSignin.xaml.cs">
       <DependentUpon>WindowSignin.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowSignup.xaml.cs">
       <DependentUpon>WindowSignup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowUserProfile.xaml.cs">
-      <DependentUpon>WindowUserProfile.xaml</DependentUpon>
+    <Compile Include="UserProfileWindow.xaml.cs">
+      <DependentUpon>UserProfileWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AllViewWindow.xaml">
       <SubType>Designer</SubType>
@@ -123,6 +126,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowSignin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,7 +138,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowUserProfile.xaml">
+    <Page Include="UserProfileWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +172,9 @@
     </None>
     <None Include="Connected Services\ServiceReferenceMovieAndShow\ServiceMovieAndShow.wsdl" />
     <None Include="Connected Services\ServiceReferenceMovieAndShow\WPF_RON.ServiceReferenceMovieAndShow.MovieList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceMovieAndShow\WPF_RON.ServiceReferenceMovieAndShow.RateShowList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceMovieAndShow\WPF_RON.ServiceReferenceMovieAndShow.ShowList.datasource">

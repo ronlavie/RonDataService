@@ -13,7 +13,6 @@ namespace ServiceModel
     [ServiceContract]
     public  interface IServiceMovieAndShow
     {
-        [OperationContract] ShowList GetAllShows();
         [OperationContract] MovieList GetAllMovies();
         [OperationContract] UserList GetAllUsers();
         [OperationContract] User Login(User user);
@@ -21,12 +20,19 @@ namespace ServiceModel
         [OperationContract] int InsertUser(User user);
         [OperationContract] int UpdateUser(User user);
         [OperationContract] int DeleteUser(User user);
+        #region Movies
         [OperationContract] int InsertMovies(Movie movie);
         [OperationContract] int UpdateMovies(Movie movie);
         [OperationContract] int DeleteMovies(Movie movie);
+        #endregion
+        #region Shows
+        [OperationContract] ShowList GetAllShows();
+        [OperationContract] RateShowList GetShowRatingByShow(Show show);
+        [OperationContract] RateShowList GetShowRatingByUser(User user);
         [OperationContract] int InsertShows(Show show);
         [OperationContract] int UpdateShows(Show show);
         [OperationContract] int DeleteShows(Show show);
+        #endregion
 
     }
 }

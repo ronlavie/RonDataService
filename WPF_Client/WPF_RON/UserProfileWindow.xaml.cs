@@ -16,25 +16,28 @@ using WPF_RON.ServiceReferenceMovieAndShow;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for WindowUserProfile.xaml
+    /// Interaction logic for UserProfileWindow.xaml
     /// </summary>
-    public partial class WindowUserProfile : Window
+    public partial class UserProfileWindow : Window
     {
         private ServiceMovieAndShowClient myService;
         private User myUser;
-        public WindowUserProfile(User user)
+        public UserProfileWindow(User user)
         {
             InitializeComponent();
+
             myService = new ServiceMovieAndShowClient();
             myUser = user;
+            this.DataContext = myUser;
             LoadShows();
             LoadMovies();           
         }
-        public WindowUserProfile()
+        public UserProfileWindow()
         {
             InitializeComponent();
             myService = new ServiceMovieAndShowClient();
             myUser = new User { Firstname = "Ron", Lastname = "X", PermissionLevel = false };
+            this.DataContext = myUser;
             LoadShows(); LoadMovies();
         }
 
@@ -43,7 +46,7 @@ namespace WPF_RON
         {
             ShowList shows = myService.GetAllShows();
             pnlViewShows.Children.Clear();
-            foreach (var show in shows)
+            foreach (Show show in shows)
             {
                 UserControlShow controlShow = new UserControlShow(show);
                 controlShow.Margin = new Thickness(5);
@@ -54,7 +57,7 @@ namespace WPF_RON
         {
             MovieList movies = myService.GetAllMovies();
             pnlViewMovies.Children.Clear();
-            foreach (var movie in movies)
+            foreach (Movie movie in movies)
             {
                 UserControlMovie controlMovie = new UserControlMovie(movie);
                 controlMovie.Margin = new Thickness(5);

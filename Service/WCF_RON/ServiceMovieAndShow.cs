@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +18,19 @@ namespace ServiceModel
         {
             ShowDB db = new ShowDB();
             ShowList list = db.SelectAll();
+            return list;
+        }
+
+        public RateShowList GetShowRatingByShow(Show show)
+        {
+            RateShowDB db = new RateShowDB();
+            RateShowList list = db.SelectByShow(show);
+            return list;
+        }
+        public RateShowList GetShowRatingByUser(User user)
+        {
+            RateShowDB db = new RateShowDB();
+            RateShowList list = db.SelectByUser(user);
             return list;
         }
         public MovieList GetAllMovies()

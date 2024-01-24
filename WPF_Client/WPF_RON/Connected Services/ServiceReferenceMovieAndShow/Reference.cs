@@ -15,136 +15,9 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShowList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Show")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="MovieList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Movie")]
     [System.SerializableAttribute()]
-    public class ShowList : System.Collections.Generic.List<WPF_RON.ServiceReferenceMovieAndShow.Show> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Show", Namespace="http://schemas.datacontract.org/2004/07/Model")]
-    [System.SerializableAttribute()]
-    public partial class Show : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WPF_RON.ServiceReferenceMovieAndShow.Category ShowCategoryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShowDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShowNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WPF_RON.ServiceReferenceMovieAndShow.Category ShowCategory {
-            get {
-                return this.ShowCategoryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShowCategoryField, value) != true)) {
-                    this.ShowCategoryField = value;
-                    this.RaisePropertyChanged("ShowCategory");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShowDescription {
-            get {
-                return this.ShowDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShowDescriptionField, value) != true)) {
-                    this.ShowDescriptionField = value;
-                    this.RaisePropertyChanged("ShowDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShowName {
-            get {
-                return this.ShowNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShowNameField, value) != true)) {
-                    this.ShowNameField = value;
-                    this.RaisePropertyChanged("ShowName");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://schemas.datacontract.org/2004/07/Model")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Category))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Movie))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.User))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Show))]
-    public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/Model")]
-    [System.SerializableAttribute()]
-    public partial class Category : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CategoryNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CategoryName {
-            get {
-                return this.CategoryNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
-                    this.CategoryNameField = value;
-                    this.RaisePropertyChanged("CategoryName");
-                }
-            }
-        }
+    public class MovieList : System.Collections.Generic.List<WPF_RON.ServiceReferenceMovieAndShow.Movie> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -213,6 +86,79 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
                 if ((object.ReferenceEquals(this.MovieNameField, value) != true)) {
                     this.MovieNameField = value;
                     this.RaisePropertyChanged("MovieName");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Category))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.User))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Show))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.RateShow))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Movie))]
+    public partial class BaseEntity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    public partial class Category : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CategoryName {
+            get {
+                return this.CategoryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
+                    this.CategoryNameField = value;
+                    this.RaisePropertyChanged("CategoryName");
                 }
             }
         }
@@ -307,9 +253,112 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="MovieList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Movie")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Show", Namespace="http://schemas.datacontract.org/2004/07/Model")]
     [System.SerializableAttribute()]
-    public class MovieList : System.Collections.Generic.List<WPF_RON.ServiceReferenceMovieAndShow.Movie> {
+    public partial class Show : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WPF_RON.ServiceReferenceMovieAndShow.Category ShowCategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShowDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShowNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WPF_RON.ServiceReferenceMovieAndShow.Category ShowCategory {
+            get {
+                return this.ShowCategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShowCategoryField, value) != true)) {
+                    this.ShowCategoryField = value;
+                    this.RaisePropertyChanged("ShowCategory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShowDescription {
+            get {
+                return this.ShowDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShowDescriptionField, value) != true)) {
+                    this.ShowDescriptionField = value;
+                    this.RaisePropertyChanged("ShowDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShowName {
+            get {
+                return this.ShowNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShowNameField, value) != true)) {
+                    this.ShowNameField = value;
+                    this.RaisePropertyChanged("ShowName");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RateShow", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    public partial class RateShow : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WPF_RON.ServiceReferenceMovieAndShow.Show ShowField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StarsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WPF_RON.ServiceReferenceMovieAndShow.User UserField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WPF_RON.ServiceReferenceMovieAndShow.Show Show {
+            get {
+                return this.ShowField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShowField, value) != true)) {
+                    this.ShowField = value;
+                    this.RaisePropertyChanged("Show");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Stars {
+            get {
+                return this.StarsField;
+            }
+            set {
+                if ((this.StarsField.Equals(value) != true)) {
+                    this.StarsField = value;
+                    this.RaisePropertyChanged("Stars");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WPF_RON.ServiceReferenceMovieAndShow.User User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -319,15 +368,23 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
     public class UserList : System.Collections.Generic.List<WPF_RON.ServiceReferenceMovieAndShow.User> {
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShowList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Show")]
+    [System.SerializableAttribute()]
+    public class ShowList : System.Collections.Generic.List<WPF_RON.ServiceReferenceMovieAndShow.Show> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="RateShowList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="RateShow")]
+    [System.SerializableAttribute()]
+    public class RateShowList : System.Collections.Generic.List<WPF_RON.ServiceReferenceMovieAndShow.RateShow> {
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceMovieAndShow.IServiceMovieAndShow")]
     public interface IServiceMovieAndShow {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse")]
-        WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShows();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse")]
-        System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.ShowList> GetAllShowsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesResponse")]
         WPF_RON.ServiceReferenceMovieAndShow.MovieList GetAllMovies();
@@ -389,6 +446,24 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteMoviesResponse")]
         System.Threading.Tasks.Task<int> DeleteMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse")]
+        WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShows();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse")]
+        System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.ShowList> GetAllShowsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByShow", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByShowResponse")]
+        WPF_RON.ServiceReferenceMovieAndShow.RateShowList GetShowRatingByShow(WPF_RON.ServiceReferenceMovieAndShow.Show show);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByShow", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByShowResponse")]
+        System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateShowList> GetShowRatingByShowAsync(WPF_RON.ServiceReferenceMovieAndShow.Show show);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByUser", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByUserResponse")]
+        WPF_RON.ServiceReferenceMovieAndShow.RateShowList GetShowRatingByUser(WPF_RON.ServiceReferenceMovieAndShow.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByUser", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByUserResponse")]
+        System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateShowList> GetShowRatingByUserAsync(WPF_RON.ServiceReferenceMovieAndShow.User user);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/InsertShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/InsertShowsResponse")]
         int InsertShows(WPF_RON.ServiceReferenceMovieAndShow.Show show);
         
@@ -433,14 +508,6 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public ServiceMovieAndShowClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShows() {
-            return base.Channel.GetAllShows();
-        }
-        
-        public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.ShowList> GetAllShowsAsync() {
-            return base.Channel.GetAllShowsAsync();
         }
         
         public WPF_RON.ServiceReferenceMovieAndShow.MovieList GetAllMovies() {
@@ -521,6 +588,30 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public System.Threading.Tasks.Task<int> DeleteMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
             return base.Channel.DeleteMoviesAsync(movie);
+        }
+        
+        public WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShows() {
+            return base.Channel.GetAllShows();
+        }
+        
+        public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.ShowList> GetAllShowsAsync() {
+            return base.Channel.GetAllShowsAsync();
+        }
+        
+        public WPF_RON.ServiceReferenceMovieAndShow.RateShowList GetShowRatingByShow(WPF_RON.ServiceReferenceMovieAndShow.Show show) {
+            return base.Channel.GetShowRatingByShow(show);
+        }
+        
+        public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateShowList> GetShowRatingByShowAsync(WPF_RON.ServiceReferenceMovieAndShow.Show show) {
+            return base.Channel.GetShowRatingByShowAsync(show);
+        }
+        
+        public WPF_RON.ServiceReferenceMovieAndShow.RateShowList GetShowRatingByUser(WPF_RON.ServiceReferenceMovieAndShow.User user) {
+            return base.Channel.GetShowRatingByUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateShowList> GetShowRatingByUserAsync(WPF_RON.ServiceReferenceMovieAndShow.User user) {
+            return base.Channel.GetShowRatingByUserAsync(user);
         }
         
         public int InsertShows(WPF_RON.ServiceReferenceMovieAndShow.Show show) {
