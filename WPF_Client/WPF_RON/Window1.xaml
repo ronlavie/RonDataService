@@ -1,12 +1,59 @@
-﻿<Window x:Class="WPF_RON.Window1"
+﻿<Window x:Class="WPF_RON.WindowSignin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WPF_RON"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="WindowSignin"
+        Height="450"
+        Width="600">
+    <Window.Resources>
+        <Style TargetType="Button"
+               BasedOn="{StaticResource MaterialDesignFlatButton}">
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="Height"
+                    Value="50" />
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/back.png" />
+        </Grid.Background>
+        <Grid Margin="15 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="0.8*" />
+                <RowDefinition Height="0.15*"/>
+                
+               
+            </Grid.RowDefinitions>
+            <Image Source="/Images/smallLogoNoBack.png"
+                   Width="250" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+            <TextBlock Text="Admin Section"
+                       Foreground="Snow"
+                       Grid.Row="0"
+                       TextAlignment="Center"
+                       FontSize="30" />
+            <Button  Width="200"
+                     Grid.Row="1"
+                     Margin="10 0"
+                     HorizontalAlignment="Left"
+                     
+                     Click="GoTo_Category">CATEGORY</Button>
+            <Button  Width="200"
+                     Grid.Row="1"
+                     Margin="10 0"
+                     HorizontalAlignment="Center"
+                     Click="GoTo_Show">SHOW</Button>
+            <Button  Width="200"
+                     Grid.Row="1"
+                     Margin="10 0"
+                     HorizontalAlignment="Right"
+                     Click="GoMovie">MOVIE</Button>
+        </Grid>
     </Grid>
 </Window>

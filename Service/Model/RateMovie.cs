@@ -13,11 +13,9 @@ namespace Model
         protected Movie movie;
         protected User user;
         protected int stars;
-        protected DateTime stamp;
 
         [DataMember] public Movie Movie { get { return movie; } set { movie = value; } }
         [DataMember] public User User { get { return user; } set { user = value; } }
-        [DataMember] public DateTime Stamp { get { return stamp; } set { stamp = value; } }
         [DataMember] public int Stars { get { return stars; } set { stars = value; } }
     }
     [CollectionDataContract]

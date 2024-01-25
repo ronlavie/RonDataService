@@ -174,6 +174,9 @@
     <None Include="Connected Services\ServiceReferenceMovieAndShow\WPF_RON.ServiceReferenceMovieAndShow.MovieList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReferenceMovieAndShow\WPF_RON.ServiceReferenceMovieAndShow.RateMovieList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceMovieAndShow\WPF_RON.ServiceReferenceMovieAndShow.RateShowList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

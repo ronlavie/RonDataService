@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,12 @@ namespace WPF_RON
         {
             InitializeComponent();
             this.DataContext = movie;
+            ServiceMovieAndShowClient client = new ServiceMovieAndShowClient();
+            RateMovieList rates = client.GetMovieRatingByMovie(movie);
+            if (rates != null && rates.Count > 0)
+                RatingBar.Value = rates.Average(m => m.Stars);
+            else
+                RatingBar.Value = 2.5;
             try
             {
                 img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Movies/{movie.Id}.png"));

@@ -34,7 +34,7 @@ namespace ViewModel
         }
         protected override BaseEntity NewEntity()
         {
-            return new Show();
+            return new RateShow();
         }
         public RateShow SelectById(int Id)
         {

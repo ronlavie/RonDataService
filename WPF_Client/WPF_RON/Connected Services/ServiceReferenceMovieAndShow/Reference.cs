@@ -97,6 +97,7 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Category))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.User))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.RateMovie))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Show))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.RateShow))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(WPF_RON.ServiceReferenceMovieAndShow.Movie))]
@@ -253,6 +254,61 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RateMovie", Namespace="http://schemas.datacontract.org/2004/07/Model")]
+    [System.SerializableAttribute()]
+    public partial class RateMovie : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WPF_RON.ServiceReferenceMovieAndShow.Movie MovieField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StarsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WPF_RON.ServiceReferenceMovieAndShow.User UserField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WPF_RON.ServiceReferenceMovieAndShow.Movie Movie {
+            get {
+                return this.MovieField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MovieField, value) != true)) {
+                    this.MovieField = value;
+                    this.RaisePropertyChanged("Movie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Stars {
+            get {
+                return this.StarsField;
+            }
+            set {
+                if ((this.StarsField.Equals(value) != true)) {
+                    this.StarsField = value;
+                    this.RaisePropertyChanged("Stars");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WPF_RON.ServiceReferenceMovieAndShow.User User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Show", Namespace="http://schemas.datacontract.org/2004/07/Model")]
     [System.SerializableAttribute()]
     public partial class Show : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
@@ -370,6 +426,13 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="RateMovieList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="RateMovie")]
+    [System.SerializableAttribute()]
+    public class RateMovieList : System.Collections.Generic.List<WPF_RON.ServiceReferenceMovieAndShow.RateMovie> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ShowList", Namespace="http://schemas.datacontract.org/2004/07/Model", ItemName="Show")]
     [System.SerializableAttribute()]
     public class ShowList : System.Collections.Generic.List<WPF_RON.ServiceReferenceMovieAndShow.Show> {
@@ -445,6 +508,18 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteMoviesResponse")]
         System.Threading.Tasks.Task<int> DeleteMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovie", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovieResponse")]
+        WPF_RON.ServiceReferenceMovieAndShow.RateMovieList GetMovieRatingByMovie(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovie", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovieResponse")]
+        System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateMovieList> GetMovieRatingByMovieAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUser", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUserResponse")]
+        WPF_RON.ServiceReferenceMovieAndShow.RateMovieList GetMovieRatingByUser(WPF_RON.ServiceReferenceMovieAndShow.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUser", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUserResponse")]
+        System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateMovieList> GetMovieRatingByUserAsync(WPF_RON.ServiceReferenceMovieAndShow.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse")]
         WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShows();
@@ -588,6 +663,22 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public System.Threading.Tasks.Task<int> DeleteMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
             return base.Channel.DeleteMoviesAsync(movie);
+        }
+        
+        public WPF_RON.ServiceReferenceMovieAndShow.RateMovieList GetMovieRatingByMovie(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
+            return base.Channel.GetMovieRatingByMovie(movie);
+        }
+        
+        public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateMovieList> GetMovieRatingByMovieAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
+            return base.Channel.GetMovieRatingByMovieAsync(movie);
+        }
+        
+        public WPF_RON.ServiceReferenceMovieAndShow.RateMovieList GetMovieRatingByUser(WPF_RON.ServiceReferenceMovieAndShow.User user) {
+            return base.Channel.GetMovieRatingByUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateMovieList> GetMovieRatingByUserAsync(WPF_RON.ServiceReferenceMovieAndShow.User user) {
+            return base.Channel.GetMovieRatingByUserAsync(user);
         }
         
         public WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShows() {

@@ -51,6 +51,18 @@ public UserList GetAllUsers()
             return userdb.Insert(user); 
 
         }
+        public RateMovieList GetMovieRatingByUser(User user)
+        {
+            RateMovieDB db = new RateMovieDB();
+            RateMovieList list = db.SelectByUser(user);
+            return list;
+        }
+        public RateMovieList GetMovieRatingByMovie(Movie movie)
+        {
+            RateMovieDB db = new RateMovieDB();
+            RateMovieList list = db.SelectBymovie(movie);
+            return list;
+        }
         public int InsertMovies(Movie movie)
         {
             MovieDB movieDB = new MovieDB();
@@ -109,9 +121,11 @@ public UserList GetAllUsers()
             if (tmp == null) return true;
             return false;
         }
-
+   
+    
     }
-    
+   
 
-    
+
+
 }
