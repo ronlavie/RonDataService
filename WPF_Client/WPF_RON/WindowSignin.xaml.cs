@@ -52,7 +52,7 @@ namespace WPF_RON
             if (user.PermissionLevel)
             {
                 MessageBox.Show("nice Login");
-                ManagerWindow mW = new ManagerWindow(user);
+                WindowAdmin mW = new WindowAdmin(user);
                 mW.ShowDialog();
             }
             else

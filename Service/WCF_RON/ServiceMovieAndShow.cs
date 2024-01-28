@@ -121,10 +121,31 @@ public UserList GetAllUsers()
             if (tmp == null) return true;
             return false;
         }
-   
-    
+        #region Category
+        public CategoryList GetAllCategories()
+        {
+            CategoryDB categoryDB = new CategoryDB();
+            return (categoryDB.SelectAll());
+        }
+        public int InsertCategory(Category category)
+        {
+            CategoryDB categoryDB = new CategoryDB();
+            return (categoryDB.Insert(category));
+        }
+        public int UpdateCategory(Category category)
+        {
+            CategoryDB categoryDB = new CategoryDB();
+            return (categoryDB.Update(category));
+        }
+        public int DeleteCategory(Category category)
+        {
+            CategoryDB categoryDB = new CategoryDB();
+            return (categoryDB.Delete(category));
+        }
+        #endregion
+
     }
-   
+
 
 
 

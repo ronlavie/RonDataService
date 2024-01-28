@@ -9,6 +9,58 @@ using System.Windows.Controls;
 
 namespace WPF_RON
 {
+    public class ValidationMovieShowName : ValidationRule
+    {
+        int max;
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            try
+            {
+                string text = value as string;
+                Regex letter = new Regex("[a-zA-z]");
+                if (text.Length > max)
+                {
+                    return new ValidationResult(false, "too long");
+                }
+                if (text.Length==0)
+                {
+                    return new ValidationResult(false, "too short");
+                }
+            }
+            catch (Exception ex)
+            {
+                return new ValidationResult(false, ex.Message);
+            }
+
+            return ValidationResult.ValidResult;
+        }
+    }
+    public class ValidationLength : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            try
+            {
+                string len = value as string;
+                Regex letter = new Regex("[0-9]");
+                if (len.Length > 3)
+                {
+                    return new ValidationResult(false, "too long");
+                }
+                for(int i = 0;i< len.Length; i++)
+                {
+                    if (!Char.IsDigit(len[i]))
+                        return new ValidationResult(false, "must contain only digits");
+                }
+            }
+            catch (Exception ex)
+            {
+                return new ValidationResult(false, ex.Message);
+            }
+
+            return ValidationResult.ValidResult;
+        }
+    }
     public class ValidationUserName : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
@@ -19,11 +71,11 @@ namespace WPF_RON
                 Regex letter = new Regex("[a-zA-z]");
                 if (username.Length > 12)
                 {
-                    return new ValidationResult(false, "username can't be longer than 12");
+                    return new ValidationResult(false, "text can't be longer than 12");
                 }
                 if (!letter.IsMatch(username))
                 {
-                    return new ValidationResult(false, "username must contain a letter");
+                    return new ValidationResult(false, "text must contain a letter");
                 }
             }
             catch (Exception ex)

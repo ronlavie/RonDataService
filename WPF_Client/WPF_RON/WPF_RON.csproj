@@ -76,8 +76,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ManagerWindow.xaml.cs">
-      <DependentUpon>ManagerWindow.xaml</DependentUpon>
+    <Compile Include="UserControlEditMovie.xaml.cs">
+      <DependentUpon>UserControlEditMovie.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlMovie.xaml.cs">
       <DependentUpon>UserControlMovie.xaml</DependentUpon>
@@ -86,8 +86,8 @@
       <DependentUpon>UserControlShow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="WindowAdmin.xaml.cs">
+      <DependentUpon>WindowAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowSignin.xaml.cs">
       <DependentUpon>WindowSignin.xaml</DependentUpon>
@@ -114,7 +114,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ManagerWindow.xaml">
+    <Page Include="UserControlEditMovie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,7 +126,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window1.xaml">
+    <Page Include="WindowAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,6 +171,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServiceReferenceMovieAndShow\ServiceMovieAndShow.wsdl" />
+    <None Include="Connected Services\ServiceReferenceMovieAndShow\WPF_RON.ServiceReferenceMovieAndShow.CategoryList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceMovieAndShow\WPF_RON.ServiceReferenceMovieAndShow.MovieList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
