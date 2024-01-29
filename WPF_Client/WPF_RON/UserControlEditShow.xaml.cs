@@ -17,47 +17,47 @@ using WPF_RON.ServiceReferenceMovieAndShow;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for UserControlEditMovie.xaml
+    /// Interaction logic for UserControlEditShow.xaml
     /// </summary>
-    public partial class UserControlEditMovie : UserControl
+    public partial class UserControlEditShow : UserControl
     {
-        ServiceMovieAndShowClient service;
-        MovieList movies;
-        Movie movie;
+        ShowList shows;
+        Show show;
         bool update;
-        public UserControlEditMovie()
+        ServiceMovieAndShowClient service;
+        public UserControlEditShow()
         {
             InitializeComponent();
-            service=new ServiceMovieAndShowClient();
-            cbCategory.ItemsSource=service.GetAllCategories();
-            lbMovies.ItemsSource= movies=service.GetAllMovies();
+            service = new ServiceMovieAndShowClient();
+            cbCategory.ItemsSource = service.GetAllCategories();
+            lbShows.ItemsSource = shows = service.GetAllShows();
         }
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lbMovies.ItemsSource = movies.FindAll(m => m.MovieName.Contains(tbSearch.Text));
+            lbShows.ItemsSource = shows.FindAll(m => m.ShowName.Contains(tbSearch.Text));
         }
         private void lbMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            movie=lbMovies.SelectedValue as Movie;
-            spEdit.DataContext = movie;
+            show = lbShows.SelectedValue as Show;
+            spEdit.DataContext = show;
         }
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             tbName.Clear();
-            tbLength.Clear();
-            tbAbout.Clear();
-  
+            tbDisc.Clear();
+        
+
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if(update)
+            if (update)
             {
-                service.UpdateMovies(movie);
+                service.UpdateShows(show);
             }
             else
             {
-                service.InsertMovies(movie);
+                service.InsertShows(show);
             }
         }
 
@@ -66,5 +66,12 @@ namespace WPF_RON
             update = false;
 
         }
+
+        private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
+    
+

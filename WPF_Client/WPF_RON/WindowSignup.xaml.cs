@@ -33,8 +33,7 @@ namespace WPF_RON
         
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            tbUserName.Text =
-          tbFirstName.Text =
+            tbUserName.Text = tbFirstName.Text =
           tbLastName.Text =
           pbPassword.Password =
           pbRePassword.Password = string.Empty;
