@@ -34,12 +34,16 @@ namespace WPF_RON
 
         private void GoTo_Category(object sender, RoutedEventArgs e)
         {
-
+            UserControlEditCategory editCategory = new UserControlEditCategory();
+            grMain.Children.Clear();
+            grMain.Children.Add(editCategory);
         }
 
         private void GoTo_Show(object sender, RoutedEventArgs e)
         {
-
+            UserControlEditShow editShow = new UserControlEditShow();
+            grMain.Children.Clear();
+            grMain.Children.Add(editShow);
         }
 
         private void GoTo_Movie(object sender, RoutedEventArgs e)

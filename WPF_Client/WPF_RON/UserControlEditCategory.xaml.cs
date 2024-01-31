@@ -17,58 +17,49 @@ using WPF_RON.ServiceReferenceMovieAndShow;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for UserControlEditShow.xaml
+    /// Interaction logic for UserControlEditCategory.xaml
     /// </summary>
-    public partial class UserControlEditShow : UserControl
+    public partial class UserControlEditCategory : UserControl
     {
-        ShowList shows;
-        Show show;
+        CategoryList category;
+        Category Categ;
         bool update;
         ServiceMovieAndShowClient service;
-        public UserControlEditShow()
+        public UserControlEditCategory()
         {
             InitializeComponent();
             service = new ServiceMovieAndShowClient();
-            cbCategory.ItemsSource = service.GetAllCategories();
-            lbShows.ItemsSource = shows = service.GetAllShows();
+            lbCategorys.ItemsSource = category = service.GetAllCategories();
         }
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lbShows.ItemsSource = shows.FindAll(m => m.ShowName.Contains(tbSearch.Text));
+            lbCategorys.ItemsSource = category.FindAll(m => m.CategoryName.Contains(tbSearch.Text));
         }
-        private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lbCategorys_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            show = lbShows.SelectedValue as Show;
-            spEdit.DataContext = show;
+            Categ = lbCategorys.SelectedValue as Category;
+            spEdit.DataContext = Categ;
         }
-        private void Clear_Click(object sender, RoutedEventArgs e)
-        {
-            tbName.Clear();
-            tbDisc.Clear();
-
-
-        }
-
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
-            if (update)
-            {
-                service.UpdateShows(show);
-            }
-            else
-            {
-                service.InsertShows(show);
-            }
-        }
-
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             update = false;
 
         }
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            if (update)
+            {
+                service.UpdateCategory(Categ);
+            }
+            else
+            {
+                service.InsertCategory(Categ);
+            }
 
-
+        }
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            tbName.Clear();
+        }
     }
 }
-    
-
