@@ -85,6 +85,9 @@
     <Compile Include="UserControlEditMovie.xaml.cs">
       <DependentUpon>UserControlEditMovie.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlEditUser.xaml.cs">
+      <DependentUpon>UserControlEditUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlMovie.xaml.cs">
       <DependentUpon>UserControlMovie.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlEditMovie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlEditUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
