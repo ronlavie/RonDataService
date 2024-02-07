@@ -39,7 +39,7 @@
                          ValidatesOnDataErrors="True"
                          UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
-                        <local:ValidationMovieShowName />
+                        <local:ValidationUserName/>
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox>
@@ -67,8 +67,7 @@
                       materialDesign:HintAssist.Hint="Category"
                       materialDesign:HintAssist.HelperText="select category"
                       materialDesign:HintAssist.HintOpacity=".56"
-                      DisplayMemberPath="CategoryName"
-                      SelectedValue="{Binding Path=MovieCategory}"/>
+                      DisplayMemberPath="CategoryName"/>
             <TextBox Height="100"
                      x:Name="tbAbout"
                      FontSize="30"

@@ -55,7 +55,9 @@ namespace WPF_RON
 
         private void GoTo_Users(object sender, RoutedEventArgs e)
         {
-
+            UserControlEditUser editUser = new UserControlEditUser();
+            grMain.Children.Clear();
+            grMain.Children.Add(editUser);
         }
     }
 }

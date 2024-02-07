@@ -40,6 +40,10 @@ namespace WPF_RON
             usr = lbUsers.SelectedValue as User;
             spEdit.DataContext = usr;
         }
+        private void lbUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             update = false;

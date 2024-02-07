@@ -31,8 +31,8 @@ namespace ViewModel
             Movie movie = entity as Movie;
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@MovieName", movie.MovieName);
-            command.Parameters.AddWithValue("@About", movie.About);
             command.Parameters.AddWithValue("@MovieLength",movie.MovieLength);
+            command.Parameters.AddWithValue("@About", movie.About);
             command.Parameters.AddWithValue("@MovieCategory", movie.MovieCategory.Id);
             command.Parameters.AddWithValue("@Id", movie.Id);
         }
@@ -65,7 +65,7 @@ namespace ViewModel
         }
         public int Update(Movie movie)
         {
-            command.CommandText = "UPDATE TblMovies SET MovieName=@MovieName, MovieLength = @MovieLength, MovieCategory = @MovieCategory, About = @About WHERE Id = @Id";
+            command.CommandText = "UPDATE TblMovies SET MovieName=@MovieName, MovieLength = @MovieLength, About = @About, MovieCategory = @MovieCategory WHERE Id = @Id";
             LoadParameters(movie);
             return ExecuteCRUD();
         }
