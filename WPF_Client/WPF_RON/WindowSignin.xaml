@@ -54,7 +54,9 @@
                          Click="Signin_Click">Sign in</Button>
             <Button Width="100"
                         Click="Close_Click">x</Button>
-        </StackPanel>
+                <Button Width="100"
+                        Click="GoTo_Signup">Signup</Button>
+            </StackPanel>
     </Grid>
     </Grid>
 </Window>

@@ -19,14 +19,14 @@ namespace Model
         protected bool permissionLevel;
 
         [DataMember]
-        public string Firstname
+        public string FirstName
         {
             get { return firstName; }
             set { firstName = value; }
         }
         
         [DataMember]
-        public string Lastname
+        public string LastName
         {
             get { return lastName; }
             set { lastName = value; }

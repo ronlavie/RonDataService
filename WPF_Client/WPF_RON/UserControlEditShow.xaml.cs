@@ -30,6 +30,8 @@ namespace WPF_RON
             InitializeComponent();
             service = new ServiceMovieAndShowClient();
             cbCategory.ItemsSource = service.GetAllCategories();
+            cbCategory.DisplayMemberPath = "CategoryName";
+            cbCategory.SelectedValuePath = "Id";
             lbShows.ItemsSource = shows = service.GetAllShows();
         }
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
@@ -39,18 +41,21 @@ namespace WPF_RON
         private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             show = lbShows.SelectedValue as Show;
+            cbCategory.SelectedValue = show.ShowCategory.Id;
             spEdit.DataContext = show;
+            update = true;
         }
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             tbName.Clear();
             tbDisc.Clear();
-
+            spEdit.DataContext = show = new Show();
 
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            show.ShowCategory = cbCategory.SelectedItem as Category;
             if (update)
             {
                 service.UpdateShows(show);
@@ -64,7 +69,10 @@ namespace WPF_RON
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             update = false;
-
+            tbName.Clear();
+            tbDisc.Clear();
+            cbCategory.Text = string.Empty;
+            spEdit.DataContext = show = new Show();
         }
 
 

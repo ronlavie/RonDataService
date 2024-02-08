@@ -50,9 +50,13 @@
                      Click="GoTo_Show">SHOW</Button>
             <Button  Width="200"
                      Grid.Row="1"
-                    
                      HorizontalAlignment="Right"
                      Click="GoTo_Movie">MOVIE</Button>
+                <Button  Width="200"
+                         HorizontalAlignment="right"
+                         Click="GoTo_Home">
+                    <materialDesign:PackIcon Kind="Home" Height="50" Width="50" Margin="-30"/>
+                </Button>
             </UniformGrid>
             <Grid x:Name="grMain"
                   Grid.Row="2" />

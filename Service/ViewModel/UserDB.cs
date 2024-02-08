@@ -13,12 +13,12 @@ namespace ViewModel
         {
             User user = entity as User;
            
-            user.Firstname = reader["FirstName"].ToString();
-            user.Lastname = reader["LastName"].ToString();
+            user.FirstName = reader["FirstName"].ToString();
+            user.LastName = reader["LastName"].ToString();
             user.UserName = reader["UserName"].ToString();
             user.Password = reader["Password"].ToString();
-            user.PermissionLevel = bool.Parse(reader["isadmin"].ToString());
-            user.Id = int.Parse(reader["id"].ToString());
+            user.PermissionLevel = bool.Parse(reader["PermissionLevel"].ToString());
+            user.Id = int.Parse(reader["Id"].ToString());
             return user;
         }
 
@@ -26,11 +26,11 @@ namespace ViewModel
         {
             User user = entity as User;
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@FirstName", user.Firstname);
-            command.Parameters.AddWithValue("@LastName", user.Lastname);
+            command.Parameters.AddWithValue("@FirstName", user.FirstName);
+            command.Parameters.AddWithValue("@LastName", user.LastName);
             command.Parameters.AddWithValue("@UserName", user.UserName);
             command.Parameters.AddWithValue("@Password", user.Password);
-            command.Parameters.AddWithValue("@isAdmin", user.PermissionLevel);
+            command.Parameters.AddWithValue("@PermissionLevel", user.PermissionLevel);
             command.Parameters.AddWithValue("@ID", user.Id);
         }
         protected override BaseEntity NewEntity()
@@ -80,13 +80,13 @@ namespace ViewModel
         }
         public int Insert(User user)
         {
-            command.CommandText = "INSERT INTO TblUser (FirstName,LastName,UserName,Password,isAdmin) VALUES (@FirstName,@LastName,@UserName,@Password,@isAdmin)";
+            command.CommandText = "INSERT INTO TblUser (FirstName,LastName,UserName,Password,PermissionLevel) VALUES (@FirstName,@LastName,@UserName,@Password,@PermissionLevel)";
             LoadParameters(user);
             return ExecuteCRUD();
         }
         public int Update(User user)
         {
-            command.CommandText = "UPDATE TblUser SET FirstName = @FirstName, LastName = @LastName,  IsAdmin = @IsAdmin, Password = @Password" +
+            command.CommandText = "UPDATE TblUser SET FirstName = @FirstName, LastName = @LastName,  PermissionLevel = @PermissionLevel, Password = @Password" +
                 "WHERE ID = @ID";
             LoadParameters(user);
             return ExecuteCRUD();

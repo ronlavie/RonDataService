@@ -36,7 +36,7 @@ namespace WPF_RON
         {
             InitializeComponent();
             myService = new ServiceMovieAndShowClient();
-            myUser = new User { Firstname = "Ron", Lastname = "X", PermissionLevel = false };
+            myUser = new User { FirstName = "Ron", LastName = "X", PermissionLevel = false };
             this.DataContext = myUser;
             LoadShows(); LoadMovies();
         }

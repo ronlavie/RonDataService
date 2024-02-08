@@ -72,8 +72,7 @@
                       materialDesign:HintAssist.Hint="Category"
                       materialDesign:HintAssist.HelperText="select category"
                       materialDesign:HintAssist.HintOpacity=".56"
-                      DisplayMemberPath="CategoryName"
-                      SelectedValue="{Binding Path=ShowCategory}" />
+                      DisplayMemberPath="CategoryName"/>
             <StackPanel Orientation="Horizontal"
                         Margin="10 20"
                         HorizontalAlignment="Center">

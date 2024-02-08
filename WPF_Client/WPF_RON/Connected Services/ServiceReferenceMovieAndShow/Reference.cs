@@ -27,10 +27,10 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
     public partial class User : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstnameField;
+        private string FirstNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastnameField;
+        private string LastNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
@@ -42,27 +42,27 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         private string UserNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Firstname {
+        public string FirstName {
             get {
-                return this.FirstnameField;
+                return this.FirstNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.FirstnameField, value) != true)) {
-                    this.FirstnameField = value;
-                    this.RaisePropertyChanged("Firstname");
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Lastname {
+        public string LastName {
             get {
-                return this.LastnameField;
+                return this.LastNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.LastnameField, value) != true)) {
-                    this.LastnameField = value;
-                    this.RaisePropertyChanged("Lastname");
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
                 }
             }
         }

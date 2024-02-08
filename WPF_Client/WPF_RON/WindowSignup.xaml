@@ -69,7 +69,7 @@
                 materialDesign:HintAssist.Hint="First name"
                 materialDesign:HintAssist.HelperText="Insert your FirstName here">
                 <Binding
-                    Path="Firstname"
+                    Path="FirstName"
                     ValidatesOnDataErrors="True"
                     UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>

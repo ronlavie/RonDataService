@@ -52,7 +52,7 @@ namespace WPF_RON
             if (user.PermissionLevel)
             {
                 MessageBox.Show("nice Login");
-                WindowAdmin mW = new WindowAdmin(user);
+                WindowAdmin mW = new WindowAdmin();
                 mW.ShowDialog();
             }
             else
@@ -101,6 +101,13 @@ namespace WPF_RON
                 pbPassword.ToolTip = null;
                 PassOK = true;
             }
+        }
+        private void GoTo_Signup(object sender, RoutedEventArgs e) 
+        {
+            WindowSignup windowSignup = new WindowSignup();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            windowSignup.ShowDialog();
+            Close();
         }
     }
 }

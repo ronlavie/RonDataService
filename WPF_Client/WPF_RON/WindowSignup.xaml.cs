@@ -22,7 +22,7 @@ namespace WPF_RON
     public partial class WindowSignup : Window
     {
         private bool rePassOK, passOK;
-        private ServiceMovieAndShowClient myService;
+        private ServiceMovieAndShowClient myService = new ServiceMovieAndShowClient();
         private User user;
         public WindowSignup()
         {
@@ -34,9 +34,9 @@ namespace WPF_RON
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             tbUserName.Text = tbFirstName.Text =
-          tbLastName.Text =
-          pbPassword.Password =
-          pbRePassword.Password = string.Empty;
+            tbLastName.Text =
+            pbPassword.Password =
+            pbRePassword.Password = string.Empty;
         }
 
         private void Signup_Click(object sender, RoutedEventArgs e)
@@ -55,6 +55,9 @@ namespace WPF_RON
             //Username if free, Create new user
             user.Password = pbPassword.Password;
             user.PermissionLevel = false;
+            user.UserName = tbUserName.Text;
+            user.FirstName = tbFirstName.Text;
+            user.LastName = tbLastName.Text;
             //Send to service
             if (myService.InsertUser(user) != 1)
             {
