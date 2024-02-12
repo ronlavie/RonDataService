@@ -27,7 +27,7 @@
                      SelectionChanged="lbUsers_SelectionChanged" />
         </StackPanel>
         <StackPanel Grid.Column="1"
-                    x:Name="spEdit">
+                    x:Name="spEdit" Margin="15 0">
             <TextBox Height="50"
                      x:Name="tbName"
                      FontSize="30"
@@ -43,12 +43,53 @@
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox>
+            <TextBox Grid.Row="2"
+                     Height="50"
+                     x:Name="tbFirstName"
+                     FontSize="30"
+                     Margin="10"
+                     Foreground="Snow"
+                     materialDesign:HintAssist.Hint="First name"
+                     materialDesign:HintAssist.HelperText="Insert your FirstName here">
+                <Binding Path="FirstName"
+                         ValidatesOnDataErrors="True"
+                         UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ValidationUserName />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+            <TextBox Grid.Row="3"
+                     Height="50"
+                     x:Name="tbLastName"
+                     FontSize="30"
+                     Foreground="Snow"
+                     Margin="10"
+                     materialDesign:HintAssist.Hint="LastName"
+                     materialDesign:HintAssist.HelperText="Insert your username here">
+                <Binding Path="LastName"
+                         ValidatesOnDataErrors="True"
+                         UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ValidationUserName />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+            <CheckBox Content=" Is admin" VerticalContentAlignment="Center"
+                      FontSize="30"
+                      Foreground="Snow"
+                      Margin="10"
+                      IsChecked="{Binding Path=PermissionLevel}" />
             <StackPanel Orientation="Horizontal"
                         Margin="10 20"
                         HorizontalAlignment="Center">
                 <Button Width="80"
                         Margin="10 0"
-                        Click="Add_Click">Add</Button>
+                        Click="ResetPass_Click">
+                    <materialDesign:PackIcon Kind="PasswordExpiration"
+                                             Width="25"
+                                             Height="25" />
+                </Button>
                 <Button Width="80"
                         Click="Save_Click">Save</Button>
                 <Button Width="80"

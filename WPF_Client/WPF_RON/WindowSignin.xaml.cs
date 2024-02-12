@@ -58,7 +58,7 @@ namespace WPF_RON
             else
             {
                 MessageBox.Show("Regular user login");
-                UserProfileWindow wp = new UserProfileWindow(user);
+                WindowUserProfile wp = new WindowUserProfile(user);
                 wp.ShowDialog();
             }
             UserName.Text = pbPassword.Password = string.Empty;

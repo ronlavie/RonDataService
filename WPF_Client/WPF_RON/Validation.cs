@@ -98,7 +98,7 @@ namespace WPF_RON
                 Regex uppercase = new Regex("[A-Z]");
                 Regex lowercase = new Regex("[a-z]");
                 Regex specialChar = new Regex("[!@#$%^&*]");
-
+                //CiniMeter1$
                 if (passwsord.Length < 6)
                 {
                     return new ValidationResult(false, "password must be at least 6 chars long"); // check if the password lenght is 8

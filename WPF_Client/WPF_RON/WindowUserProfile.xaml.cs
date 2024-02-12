@@ -16,23 +16,30 @@ using WPF_RON.ServiceReferenceMovieAndShow;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for UserProfileWindow.xaml
+    /// Interaction logic for WindowUserProfile.xaml
     /// </summary>
-    public partial class UserProfileWindow : Window
+    public partial class WindowUserProfile : Window
     {
         private ServiceMovieAndShowClient myService;
         private User myUser;
-        public UserProfileWindow(User user)
+        public WindowUserProfile(User user)
         {
             InitializeComponent();
 
             myService = new ServiceMovieAndShowClient();
             myUser = user;
+            //האם הסיסמה היא ברירת מחדל
+            //מסך שינוי סיסמה
+            if(myUser.Password == "CiniMeter1$")
+            {
+               ChangePassWindow changePassWindow = new ChangePassWindow();
+                changePassWindow.ShowDialog();
+            }
             this.DataContext = myUser;
             LoadShows();
             LoadMovies();           
         }
-        public UserProfileWindow()
+        public WindowUserProfile()
         {
             InitializeComponent();
             myService = new ServiceMovieAndShowClient();

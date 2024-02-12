@@ -46,26 +46,21 @@ namespace WPF_RON
             spEdit.DataContext = usr;
             update = true;
         }
-        private void Add_Click(object sender, RoutedEventArgs e)
-        {
-            update = false;
-
-        }
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (update)
-            {
                 service.UpdateUser(usr);
-            }
-            else
-            {
-                service.InsertUser(usr);
-            }
-
         }
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             tbName.Clear();
+        }
+
+        private void ResetPass_Click(object sender, RoutedEventArgs e)
+        {
+            //CiniMeter1$
+            usr.Password = "CiniMeter1$";
+            service.UpdateUser(usr);
+            MessageBox.Show("Your new Password is CiniMeter1$");
         }
     }
 }

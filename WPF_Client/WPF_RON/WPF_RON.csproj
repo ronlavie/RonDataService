@@ -71,6 +71,9 @@
     <Compile Include="AllViewWindow.xaml.cs">
       <DependentUpon>AllViewWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassWindow.xaml.cs">
+      <DependentUpon>ChangePassWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReferenceMovieAndShow\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,10 +107,14 @@
     <Compile Include="WindowSignup.xaml.cs">
       <DependentUpon>WindowSignup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserProfileWindow.xaml.cs">
-      <DependentUpon>UserProfileWindow.xaml</DependentUpon>
+    <Compile Include="WindowUserProfile.xaml.cs">
+      <DependentUpon>WindowUserProfile.xaml</DependentUpon>
     </Compile>
     <Page Include="AllViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangePassWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,7 +166,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserProfileWindow.xaml">
+    <Page Include="WindowUserProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -61,7 +61,7 @@ namespace WPF_RON
         }
         private void GoTo_Home(object sender, RoutedEventArgs e)
         {
-            UserProfileWindow profileWindow = new UserProfileWindow();
+            WindowUserProfile profileWindow = new WindowUserProfile();
             profileWindow.WindowStartupLocation = WindowStartupLocation.Manual;
             profileWindow.ShowDialog();
             Close();
