@@ -32,13 +32,26 @@ namespace WPF_RON
         {
             InitializeComponent();
         }
-        public void Close_Click()
+      
+
+        private void Close_Click(object sender, RoutedEventArgs e)
         {
-          Close();
+            Close();
         }
-        public void Change_Password()
+
+        private void tbxPassword_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+
+        }
+
+        private void Change_Password(object sender, RoutedEventArgs e)
+        {
+            service.UpdateUser(usr);
+        }
+
+        private void pbPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -36,7 +36,7 @@
             <TextBox Grid.Row="1"
                      Height="50"
                      x:Name="UserName"
-                     TextChanged="tbxUserName_TextChanged"
+                     TextChanged="tbxPassword_TextChanged"
                      FontSize="30"
                      Background="Snow"
                      Foreground="Snow"
@@ -60,8 +60,7 @@
                          Click="Change_Password">Change</Button>
                 <Button Width="100"
                         Click="Close_Click">x</Button>
-                <Button Width="100"
-                        Click="Clear">Clear</Button>
+              
             </StackPanel>
         </Grid>
     </Grid>
