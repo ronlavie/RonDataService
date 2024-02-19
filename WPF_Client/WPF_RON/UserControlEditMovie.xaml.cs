@@ -76,4 +76,58 @@ namespace WPF_RON
             spEdit.DataContext = movie = new Movie();
         }
     }
+//    using System;
+//using System.Collections.Generic;
+//using System.IO;
+
+//class Program
+//    {
+//        static void Main()
+//        {
+//            // Example usage
+//            string filePath = "path_to_your_file.tsv";
+//            string primaryTitle = "Carmencita";
+
+//            string tconst = GetTConstByPrimaryTitle(filePath, primaryTitle);
+
+//            if (tconst != null)
+//            {
+//                Console.WriteLine($"tconst for {primaryTitle}: {tconst}");
+//            }
+//            else
+//            {
+//                Console.WriteLine($"No matching tconst found for {primaryTitle}");
+//            }
+//        }
+
+//        static string GetTConstByPrimaryTitle(string filePath, string targetTitle)
+//        {
+//            try
+//            {
+//                // Read all lines from the TSV file
+//                string[] lines = File.ReadAllLines(filePath);
+
+//                // Iterate through each line (starting from the second line as the first line contains headers)
+//                for (int i = 1; i < lines.Length; i++)
+//                {
+//                    // Split the line into columns
+//                    string[] columns = lines[i].Split('\t');
+
+//                    // Check if the primaryTitle matches the targetTitle
+//                    if (columns.Length >= 4 && columns[2].Equals(targetTitle, StringComparison.OrdinalIgnoreCase))
+//                    {
+//                        // Return the corresponding tconst
+//                        return columns[0];
+//                    }
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                Console.WriteLine($"Error: {ex.Message}");
+//            }
+
+//            // Return null if no match is found
+//            return null;
+//        }
+    //}
 }
