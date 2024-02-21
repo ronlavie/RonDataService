@@ -22,6 +22,10 @@ namespace WPF_RON
     {
         private ServiceMovieAndShowClient myService;
         private User myUser;
+        ShowList shows;
+        Show show;
+        bool update;
+       
         public WindowUserProfile(User user)
         {
             InitializeComponent();
@@ -71,5 +75,32 @@ namespace WPF_RON
                 pnlViewMovies.Children.Add(controlMovie);
             }
         }
+
+        private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            show = lbShows.SelectedValue as Show;
+            update = true;
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Top_Movies_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
-}
+    }
+

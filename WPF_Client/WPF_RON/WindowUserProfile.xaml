@@ -5,17 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_RON"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowState="Maximized"
         Title="User Profile"
         Height="1000"
         Width="800">
-    
     <StackPanel Background="BlanchedAlmond">
         <TextBlock FontSize="50">
-            <Run Text="{Binding Path=Firstname}" />
-            <Run Text=" " />
-            <Run Text="{Binding Path=Lastname}" />
-        </TextBlock>
+          <Run Text="{Binding Path=Firstname}" />
+          <Run Text=" " />
+          <Run Text="{Binding Path=Lastname}" />
+          <Menu IsMainMenu="True"
+                HorizontalAlignment="Left">
+              <MenuItem Header="TOP MOVIES"
+                        FontSize="20"
+                        Foreground="Black"
+                        Click="Top_Movies_Click" />
+              <MenuItem Header="TOP SHOWS"
+                        FontSize="20"
+                        Foreground="Black"
+                        Click="Top_Shows_Click_1" />
+              
+          </Menu></TextBlock>
+        <StackPanel Grid.Column="0"
+                    Margin="10 0">
+            <TextBox x:Name="tbSearch"
+                     materialDesign:HintAssist.Hint="Search"
+                     Foreground="Black"
+                     Margin="0 0 0 15"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     VerticalAlignment="Center"
+                     TextChanged="tbSearch_TextChanged" />
+            <ListBox x:Name="lbShows"
+                     DisplayMemberPath="ShowName"
+                     SelectionChanged="lbShows_SelectionChanged" />
+        </StackPanel>
         <StackPanel>
             <TextBlock Text="Shows"
                        FontSize="50" />
@@ -39,7 +63,7 @@
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Hidden"
                       CanContentScroll="True"
-                      Margin="20"> 
+                      Margin="20">
             <StackPanel>
                 <StackPanel x:Name="pnlViewMovies"
                             Orientation="Horizontal"
