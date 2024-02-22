@@ -32,6 +32,8 @@ namespace WPF_RON
             this.user = user;
         }
 
+        //WindowAdmin wnd = new WindowAdmin(User user);
+        //wnd.showDiaglog();
         private void GoTo_Category(object sender, RoutedEventArgs e)
         {
             UserControlEditCategory editCategory = new UserControlEditCategory();

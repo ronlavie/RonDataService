@@ -1,0 +1,36 @@
+﻿<Window x:Class="WPF_RON.TopShowsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_RON"
+        WindowState="Maximized"
+        mc:Ignorable="d"
+        Title="TopShowsWindow"
+        Height="450"
+        Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Image Source="/Images/צילום מסך 2024-02-22 102708 (2) (1).png" />
+
+
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+           <Image Source="/Images/צילום מסך 2024-02-22 102730.png" />
+
+
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Background="#FFA7A132">
+            <TextBlock Text="TOP SHOWS"
+                       HorizontalAlignment="Center"
+                       FontSize="25"
+                       Foreground="Black" />
+        </StackPanel>
+    </Grid>
+</Window>

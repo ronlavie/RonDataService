@@ -79,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="TopMoviesWindow.xaml.cs">
+      <DependentUpon>TopMoviesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TopShowsWindow.xaml.cs">
+      <DependentUpon>TopShowsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlEditCategory.xaml.cs">
       <DependentUpon>UserControlEditCategory.xaml</DependentUpon>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Validation.cs" />
     <Compile Include="WindowAdmin.xaml.cs">
       <DependentUpon>WindowAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowCategory.xaml.cs">
+      <DependentUpon>WindowCategory.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowSignin.xaml.cs">
       <DependentUpon>WindowSignin.xaml</DependentUpon>
@@ -130,6 +139,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TopMoviesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TopShowsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlEditCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -374,6 +395,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Movies\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RETARD-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\2022_cillianmurphy_oppenheimer_universalpictures_2000x1270-696x442 %282%29 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\צילום מסך 2024-02-22 092353.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Monkey_D_Luffy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\צילום מסך 2024-02-22 102730.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\צילום מסך 2024-02-22 102708 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\צילום מסך 2024-02-22 102708 %282%29 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />

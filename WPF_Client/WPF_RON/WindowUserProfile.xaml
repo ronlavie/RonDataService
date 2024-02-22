@@ -10,11 +10,20 @@
         Title="User Profile"
         Height="1000"
         Width="800">
-    <StackPanel Background="BlanchedAlmond">
+    <StackPanel Background="AntiqueWhite">
         <TextBlock FontSize="50">
-          <Run Text="{Binding Path=Firstname}" />
-          <Run Text=" " />
-          <Run Text="{Binding Path=Lastname}" />
+  <Run Text="{Binding Path=Firstname}" />
+  <Run Text=" " />
+  <Run Text="{Binding Path=Lastname}" />
+            <Button Width="45"
+                    Height="45"
+                    VerticalAlignment="Top"
+                    Margin="1 6"
+                    Style="{StaticResource MaterialDesignRaisedButton}">
+   <Button.Background>
+    <ImageBrush ImageSource="/Images/RETARD-removebg-preview.png" />
+</Button.Background>
+</Button>
           <Menu IsMainMenu="True"
                 HorizontalAlignment="Left">
               <MenuItem Header="TOP MOVIES"
@@ -24,12 +33,19 @@
               <MenuItem Header="TOP SHOWS"
                         FontSize="20"
                         Foreground="Black"
-                        Click="Top_Shows_Click_1" />
+                        Click="Top_Shows_Click_" />
+              <MenuItem Header="CATEGORIES"
+                        FontSize="20"
+                        Foreground="Black"
+                        Click="Categories_Click" />
+           
+
               
           </Menu></TextBlock>
+       
         <StackPanel Grid.Column="0"
                     Margin="10 0">
-            <TextBox x:Name="tbSearch"
+            <TextBox x:Name="tbSearch" Height="50"
                      materialDesign:HintAssist.Hint="Search"
                      Foreground="Black"
                      Margin="0 0 0 15"
@@ -59,7 +75,7 @@
             <TextBlock Text="Movies"
                        FontSize="50" />
         </StackPanel>
-        <ScrollViewer Height="350"
+        <ScrollViewer Height="330"
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Hidden"
                       CanContentScroll="True"

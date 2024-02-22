@@ -25,7 +25,7 @@ namespace WPF_RON
         ShowList shows;
         Show show;
         bool update;
-       
+
         public WindowUserProfile(User user)
         {
             InitializeComponent();
@@ -34,14 +34,14 @@ namespace WPF_RON
             myUser = user;
             //האם הסיסמה היא ברירת מחדל
             //מסך שינוי סיסמה
-            if(myUser.Password == "CiniMeter1$")
+            if (myUser.Password == "CiniMeter1$")
             {
-               ChangePassWindow changePassWindow = new ChangePassWindow();
+                ChangePassWindow changePassWindow = new ChangePassWindow();
                 changePassWindow.ShowDialog();
             }
             this.DataContext = myUser;
             LoadShows();
-            LoadMovies();           
+            LoadMovies();
         }
         public WindowUserProfile()
         {
@@ -84,23 +84,33 @@ namespace WPF_RON
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
 
         }
 
         private void Top_Movies_Click(object sender, RoutedEventArgs e)
         {
-
+            TopMoviesWindow moviesWindow = new TopMoviesWindow();
+            moviesWindow.ShowDialog();
+            
+            
+            
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
+            private void Top_Shows_Click_(object sender, RoutedEventArgs e)
+            {
+                TopShowsWindow showsWindow = new TopShowsWindow();
+                showsWindow.ShowDialog();
+            }
 
+            private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void Categories_Click(object sender, RoutedEventArgs e)
+            {
+
+            }
         }
-    }
     }
 
