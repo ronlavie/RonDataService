@@ -110,6 +110,9 @@
     <Compile Include="WindowCategory.xaml.cs">
       <DependentUpon>WindowCategory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowRateMovie.xaml.cs">
+      <DependentUpon>WindowRateMovie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowSignin.xaml.cs">
       <DependentUpon>WindowSignin.xaml</DependentUpon>
     </Compile>
@@ -176,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowRateMovie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

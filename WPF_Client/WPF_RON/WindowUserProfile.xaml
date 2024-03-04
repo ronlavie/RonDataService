@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowState="Maximized"
         Title="User Profile"
-        Height="1000"
+        Height="1100"
         Width="800">
     <StackPanel Background="AntiqueWhite">
         <TextBlock FontSize="50">

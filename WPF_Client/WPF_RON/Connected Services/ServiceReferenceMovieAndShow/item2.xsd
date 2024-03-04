@@ -37,9 +37,13 @@
       <xs:extension base="tns:BaseEntity">
         <xs:sequence>
           <xs:element minOccurs="0" name="About" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImdbRating" type="xs:double" />
+          <xs:element minOccurs="0" name="ImdbVotes" type="xs:int" />
+          <xs:element minOccurs="0" name="Metascore" type="xs:int" />
           <xs:element minOccurs="0" name="MovieCategory" nillable="true" type="tns:Category" />
           <xs:element minOccurs="0" name="MovieLength" type="xs:int" />
           <xs:element minOccurs="0" name="MovieName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PosterUrl" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -55,12 +59,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Category" nillable="true" type="tns:Category" />
-  <xs:complexType name="RateMovieList">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="RateMovie" nillable="true" type="tns:RateMovie" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="RateMovieList" nillable="true" type="tns:RateMovieList" />
   <xs:complexType name="RateMovie">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseEntity">
@@ -73,6 +71,12 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="RateMovie" nillable="true" type="tns:RateMovie" />
+  <xs:complexType name="RateMovieList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RateMovie" nillable="true" type="tns:RateMovie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RateMovieList" nillable="true" type="tns:RateMovieList" />
   <xs:complexType name="ShowList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Show" nillable="true" type="tns:Show" />

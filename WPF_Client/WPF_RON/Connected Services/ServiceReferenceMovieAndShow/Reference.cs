@@ -168,6 +168,15 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         private string AboutField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ImdbRatingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ImdbVotesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MetascoreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WPF_RON.ServiceReferenceMovieAndShow.Category MovieCategoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -175,6 +184,9 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MovieNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PosterUrlField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string About {
@@ -185,6 +197,45 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
                 if ((object.ReferenceEquals(this.AboutField, value) != true)) {
                     this.AboutField = value;
                     this.RaisePropertyChanged("About");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ImdbRating {
+            get {
+                return this.ImdbRatingField;
+            }
+            set {
+                if ((this.ImdbRatingField.Equals(value) != true)) {
+                    this.ImdbRatingField = value;
+                    this.RaisePropertyChanged("ImdbRating");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ImdbVotes {
+            get {
+                return this.ImdbVotesField;
+            }
+            set {
+                if ((this.ImdbVotesField.Equals(value) != true)) {
+                    this.ImdbVotesField = value;
+                    this.RaisePropertyChanged("ImdbVotes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Metascore {
+            get {
+                return this.MetascoreField;
+            }
+            set {
+                if ((this.MetascoreField.Equals(value) != true)) {
+                    this.MetascoreField = value;
+                    this.RaisePropertyChanged("Metascore");
                 }
             }
         }
@@ -224,6 +275,19 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
                 if ((object.ReferenceEquals(this.MovieNameField, value) != true)) {
                     this.MovieNameField = value;
                     this.RaisePropertyChanged("MovieName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PosterUrl {
+            get {
+                return this.PosterUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PosterUrlField, value) != true)) {
+                    this.PosterUrlField = value;
+                    this.RaisePropertyChanged("PosterUrl");
                 }
             }
         }
@@ -504,6 +568,12 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/InsertMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/InsertMoviesResponse")]
         System.Threading.Tasks.Task<int> InsertMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateMoviesResponse")]
+        int RateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateMoviesResponse")]
+        System.Threading.Tasks.Task<int> RateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/UpdateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/UpdateMoviesResponse")]
         int UpdateMovies(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
         
@@ -515,6 +585,12 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteMoviesResponse")]
         System.Threading.Tasks.Task<int> DeleteMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteRateMoviesResponse")]
+        int DeleteRateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteRateMoviesResponse")]
+        System.Threading.Tasks.Task<int> DeleteRateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovie", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovieResponse")]
         WPF_RON.ServiceReferenceMovieAndShow.RateMovieList GetMovieRatingByMovie(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
@@ -680,6 +756,14 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
             return base.Channel.InsertMoviesAsync(movie);
         }
         
+        public int RateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
+            return base.Channel.RateMovies(rateMovie);
+        }
+        
+        public System.Threading.Tasks.Task<int> RateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
+            return base.Channel.RateMoviesAsync(rateMovie);
+        }
+        
         public int UpdateMovies(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
             return base.Channel.UpdateMovies(movie);
         }
@@ -694,6 +778,14 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public System.Threading.Tasks.Task<int> DeleteMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
             return base.Channel.DeleteMoviesAsync(movie);
+        }
+        
+        public int DeleteRateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
+            return base.Channel.DeleteRateMovies(rateMovie);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteRateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
+            return base.Channel.DeleteRateMoviesAsync(rateMovie);
         }
         
         public WPF_RON.ServiceReferenceMovieAndShow.RateMovieList GetMovieRatingByMovie(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {

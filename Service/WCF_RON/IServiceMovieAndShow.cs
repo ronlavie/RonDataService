@@ -24,8 +24,10 @@ namespace ServiceModel
         #region Movies
         [OperationContract] MovieList GetAllMovies();
         [OperationContract] int InsertMovies(Movie movie);
+        [OperationContract] int RateMovies(RateMovie rateMovie);
         [OperationContract] int UpdateMovies(Movie movie);
         [OperationContract] int DeleteMovies(Movie movie);
+        [OperationContract] int DeleteRateMovies(RateMovie rateMovie);
         [OperationContract] RateMovieList GetMovieRatingByMovie(Movie movie);
         [OperationContract] RateMovieList GetMovieRatingByUser(User user);
         #endregion

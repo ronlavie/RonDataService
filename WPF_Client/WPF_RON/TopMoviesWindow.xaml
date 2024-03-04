@@ -17,16 +17,13 @@
                     Background="#FF9C9C9C">
             <TextBlock Text="TOP MOVIES" HorizontalAlignment="Center" FontSize="25"
                        Foreground="#FF2A2A2A" />
+            <StackPanel x:Name="listMovies"  Orientation="Vertical"/>
         </StackPanel>
-        <StackPanel Grid.Column="0">
-          
+        <StackPanel Grid.Column="0">          
            <Image Source="/Images/2022_cillianmurphy_oppenheimer_universalpictures_2000x1270-696x442 (2) (1).jpg" />
-
-
         </StackPanel>
         <StackPanel Grid.Column="2">
             <Image Source="/Images/צילום מסך 2024-02-22 092353.png"/>
-
         </StackPanel>
     </Grid>
 </Window>

@@ -37,6 +37,10 @@ namespace ServiceModel
         {
             MovieDB db = new MovieDB();
             MovieList list = db.SelectAll();
+            foreach (Movie movie in list)
+            {
+                ApiData.LoadMovieData(movie);
+            }
             return list;
         }
 public UserList GetAllUsers()
@@ -60,7 +64,7 @@ public UserList GetAllUsers()
         public RateMovieList GetMovieRatingByMovie(Movie movie)
         {
             RateMovieDB db = new RateMovieDB();
-            RateMovieList list = db.SelectBymovie(movie);
+            RateMovieList list = db.SelectByMovie(movie);
             return list;
         }
         public int InsertMovies(Movie movie)
@@ -68,6 +72,14 @@ public UserList GetAllUsers()
             MovieDB movieDB = new MovieDB();
             return movieDB.Insert(movie);
 
+        }
+        public int RateMovies(RateMovie rateMovie)
+        {
+            RateMovieDB rateMovieDB = new RateMovieDB();
+            if(rateMovieDB.IsExist(rateMovie))
+                return rateMovieDB.Update(rateMovie);
+            else
+                return rateMovieDB.Insert(rateMovie);
         }
         public int InsertShows(Show show)
         {
@@ -80,10 +92,16 @@ public UserList GetAllUsers()
             ShowDB ShowDB = new ShowDB();
             return ShowDB.Delete(show);
         }
+
         public int DeleteMovies(Movie movie)
         {
             MovieDB movieDb = new MovieDB();
             return movieDb.Delete(movie);
+        }
+        public int DeleteRateMovies(RateMovie rateMovie)
+        {
+            RateMovieDB movieDb = new RateMovieDB();
+            return movieDb.Delete(rateMovie);
         }
         public int DeleteUser(User user)
         {

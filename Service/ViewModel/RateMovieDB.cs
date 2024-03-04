@@ -54,7 +54,7 @@ namespace ViewModel
             RateMovieList list = new RateMovieList(ExecuteCommand());
             return list;
         }
-        public RateMovieList SelectBymovie(Movie movie)
+        public RateMovieList SelectByMovie(Movie movie)
         {
             command.CommandText = $"SELECT * FROM TblRatemovie WHERE movie={movie.Id}";
             RateMovieList list = new RateMovieList(ExecuteCommand());
@@ -66,23 +66,30 @@ namespace ViewModel
             RateMovieList list = new RateMovieList(ExecuteCommand());
             return list;
         }
-        public int Insert(Movie movie)
+        public int Insert(RateMovie movie)
         {
             command.CommandText = "INSERT INTO TblRatemovie (movie, User, Stars) VALUES (@movie,@User, @Stars)";
             LoadParameters(movie);
             return ExecuteCRUD();
         }
-        public int Delete(Movie shID)
+        public int Delete(RateMovie shID)
         {
             command.CommandText = "DELETE FROM TblRatemovie WHERE ID =@ID";
             LoadParameters(shID);
             return ExecuteCRUD();
         }
-        public int Update(Movie shid)
+        public int Update(RateMovie shid)
         {
             command.CommandText = "UPDATE TblRatemovie SET movie = @movie,User = @User, Stars = @Stars WHERE Id = @Id, ";
             LoadParameters(shid);
             return ExecuteCRUD();
+        }
+
+        public bool IsExist(RateMovie rateMovie)
+        {
+            command.CommandText = $"SELECT * FROM TblRatemovie WHERE user={rateMovie.User.Id} AND movie={rateMovie.Movie.Id}";
+            RateMovieList list = new RateMovieList(ExecuteCommand());
+            return list.Count==1;
         }
     }
 }

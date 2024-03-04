@@ -22,7 +22,8 @@ namespace WPF_RON
     {
         private ServiceMovieAndShowClient myService;
         private User myUser;
-        ShowList shows;
+        private MovieList movies;
+        private ShowList shows;
         Show show;
         bool update;
 
@@ -55,7 +56,7 @@ namespace WPF_RON
 
         public void LoadShows()
         {
-            ShowList shows = myService.GetAllShows();
+            shows = myService.GetAllShows();
             pnlViewShows.Children.Clear();
             foreach (Show show in shows)
             {
@@ -66,14 +67,23 @@ namespace WPF_RON
         }
         public void LoadMovies()
         {
-            MovieList movies = myService.GetAllMovies();
+            movies = myService.GetAllMovies();
             pnlViewMovies.Children.Clear();
             foreach (Movie movie in movies)
             {
                 UserControlMovie controlMovie = new UserControlMovie(movie);
                 controlMovie.Margin = new Thickness(5);
+                controlMovie.Tag = movie;
+                controlMovie.MouseDoubleClick += ControlMovie_MouseDoubleClick;
                 pnlViewMovies.Children.Add(controlMovie);
             }
+        }
+
+        private void ControlMovie_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Movie movie = ((UserControlMovie)sender).Tag as Movie;
+            WindowRateMovie windowRate = new WindowRateMovie(movie, myUser);
+            windowRate.ShowDialog();
         }
 
         private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -89,28 +99,25 @@ namespace WPF_RON
 
         private void Top_Movies_Click(object sender, RoutedEventArgs e)
         {
-            TopMoviesWindow moviesWindow = new TopMoviesWindow();
+            TopMoviesWindow moviesWindow = new TopMoviesWindow(movies);
             moviesWindow.ShowDialog();
-            
-            
-            
         }
 
-            private void Top_Shows_Click_(object sender, RoutedEventArgs e)
-            {
-                TopShowsWindow showsWindow = new TopShowsWindow();
-                showsWindow.ShowDialog();
-            }
+        private void Top_Shows_Click_(object sender, RoutedEventArgs e)
+        {
+            TopShowsWindow showsWindow = new TopShowsWindow();
+            showsWindow.ShowDialog();
+        }
 
-            private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-            {
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
 
-            }
+        }
 
-            private void Categories_Click(object sender, RoutedEventArgs e)
-            {
+        private void Categories_Click(object sender, RoutedEventArgs e)
+        {
 
-            }
         }
     }
+}
 
