@@ -49,17 +49,17 @@
   <wsdl:message name="IServiceMovieAndShow_GetAllMovies_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllMoviesFullData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesFullData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllMoviesFullData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesFullDataResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_InsertMovies_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertMovies" />
   </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_InsertMovies_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertMoviesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceMovieAndShow_RateMovies_InputMessage">
-    <wsdl:part name="parameters" element="tns:RateMovies" />
-  </wsdl:message>
-  <wsdl:message name="IServiceMovieAndShow_RateMovies_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RateMoviesResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_UpdateMovies_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateMovies" />
@@ -73,12 +73,6 @@
   <wsdl:message name="IServiceMovieAndShow_DeleteMovies_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteMoviesResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceMovieAndShow_DeleteRateMovies_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRateMovies" />
-  </wsdl:message>
-  <wsdl:message name="IServiceMovieAndShow_DeleteRateMovies_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRateMoviesResponse" />
-  </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_GetMovieRatingByMovie_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMovieRatingByMovie" />
   </wsdl:message>
@@ -90,6 +84,24 @@
   </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_GetMovieRatingByUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMovieRatingByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_RateMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateMovies" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_RateMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_DeleteRateMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRateMovies" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_DeleteRateMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRateMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetMovieinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovieinfo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetMovieinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovieinfoResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_GetAllShows_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllShows" />
@@ -180,13 +192,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllMovies" message="tns:IServiceMovieAndShow_GetAllMovies_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesResponse" message="tns:IServiceMovieAndShow_GetAllMovies_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllMoviesFullData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesFullData" message="tns:IServiceMovieAndShow_GetAllMoviesFullData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesFullDataResponse" message="tns:IServiceMovieAndShow_GetAllMoviesFullData_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertMovies">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/InsertMovies" message="tns:IServiceMovieAndShow_InsertMovies_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/InsertMoviesResponse" message="tns:IServiceMovieAndShow_InsertMovies_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="RateMovies">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/RateMovies" message="tns:IServiceMovieAndShow_RateMovies_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/RateMoviesResponse" message="tns:IServiceMovieAndShow_RateMovies_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateMovies">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/UpdateMovies" message="tns:IServiceMovieAndShow_UpdateMovies_InputMessage" />
@@ -196,10 +208,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteMovies" message="tns:IServiceMovieAndShow_DeleteMovies_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteMoviesResponse" message="tns:IServiceMovieAndShow_DeleteMovies_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteRateMovies">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies" message="tns:IServiceMovieAndShow_DeleteRateMovies_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMoviesResponse" message="tns:IServiceMovieAndShow_DeleteRateMovies_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetMovieRatingByMovie">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovie" message="tns:IServiceMovieAndShow_GetMovieRatingByMovie_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovieResponse" message="tns:IServiceMovieAndShow_GetMovieRatingByMovie_OutputMessage" />
@@ -207,6 +215,18 @@
     <wsdl:operation name="GetMovieRatingByUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUser" message="tns:IServiceMovieAndShow_GetMovieRatingByUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUserResponse" message="tns:IServiceMovieAndShow_GetMovieRatingByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/RateMovies" message="tns:IServiceMovieAndShow_RateMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/RateMoviesResponse" message="tns:IServiceMovieAndShow_RateMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRateMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies" message="tns:IServiceMovieAndShow_DeleteRateMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMoviesResponse" message="tns:IServiceMovieAndShow_DeleteRateMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMovieinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetMovieinfo" message="tns:IServiceMovieAndShow_GetMovieinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetMovieinfoResponse" message="tns:IServiceMovieAndShow_GetMovieinfo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllShows">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows" message="tns:IServiceMovieAndShow_GetAllShows_InputMessage" />
@@ -314,8 +334,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="InsertMovies">
-      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/InsertMovies" style="document" />
+    <wsdl:operation name="GetAllMoviesFullData">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesFullData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -323,8 +343,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RateMovies">
-      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/RateMovies" style="document" />
+    <wsdl:operation name="InsertMovies">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/InsertMovies" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -350,15 +370,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteRateMovies">
-      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetMovieRatingByMovie">
       <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovie" style="document" />
       <wsdl:input>
@@ -370,6 +381,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetMovieRatingByUser">
       <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateMovies">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/RateMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRateMovies">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovieinfo">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetMovieinfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

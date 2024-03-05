@@ -6,11 +6,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WPF_RON"
              mc:Ignorable="d"
-             d:DesignHeight="700"
-             d:DesignWidth="700">
+             d:DesignHeight="600"
+             d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition Width="0.4*" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0"
@@ -18,19 +18,20 @@
             <TextBox x:Name="tbSearch"
                      materialDesign:HintAssist.Hint="Search"
                      Foreground="Snow"
-                     Margin="0 0 0 15"
+                     Margin="0 5"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
                      VerticalAlignment="Center"
                      TextChanged="tbSearch_TextChanged" />
-            <ListBox x:Name="lbMovies"
-                     DisplayMemberPath="MovieName"
+            <ListBox x:Name="lbMovies" BorderThickness="1" BorderBrush="Snow" 
+                     FontSize="20" Height="450" 
+                     DisplayMemberPath="MovieName" ScrollViewer.VerticalScrollBarVisibility="Visible"
                      SelectionChanged="lbMovies_SelectionChanged" />
         </StackPanel>
         <StackPanel Grid.Column="1"
                     x:Name="spEdit">
             <TextBox Height="50"
                      x:Name="tbName"
-                     FontSize="30"
+                     FontSize="25"
                      Foreground="Snow"
                      Margin="10"
                      materialDesign:HintAssist.Hint="Movie name"
@@ -39,38 +40,44 @@
                          ValidatesOnDataErrors="True"
                          UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
-                        <local:ValidationUserName/>
+                        <local:ValidationMovieShowName Max="55" />
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox>
-            <TextBox Height="50"
-                     x:Name="tbLength"
-                     FontSize="30"
-                     Margin="10"
-                     Foreground="Snow"
-                     materialDesign:HintAssist.Hint="Movie length"
-                     materialDesign:HintAssist.HelperText="Insert Movie Length here">
-                <Binding Path="MovieLength"
-                         ValidatesOnDataErrors="True"
-                         UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <local:ValidationMovieShowName />
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox>
-            <ComboBox x:Name="cbCategory"
-                      FontSize="30"
-                      Margin="10"
-                      IsEditable="True"
-                      Foreground="Snow"
-                      materialDesign:TextFieldAssist.HasClearButton="True"
-                      materialDesign:HintAssist.Hint="Category"
-                      materialDesign:HintAssist.HelperText="select category"
-                      materialDesign:HintAssist.HintOpacity=".56"
-                      DisplayMemberPath="CategoryName"/>
-            <TextBox Height="100"
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Margin="10 15">
+                <TextBox Height="50"
+                         x:Name="tbLength"
+                         FontSize="25"
+                         MinWidth="170"
+                         Margin="0 0 20 0"
+                         Foreground="Snow"
+                         materialDesign:HintAssist.Hint="Length"
+                         materialDesign:HintAssist.HelperText="Insert Movie Length in minutes">
+                    <Binding Path="MovieLength"
+                             ValidatesOnDataErrors="True"
+                             UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:ValidationLength />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox>
+                <ComboBox x:Name="cbCategory"
+                          FontSize="25"
+                          MinWidth="170"
+                          IsEditable="True"
+                          Foreground="Snow"
+                          materialDesign:TextFieldAssist.HasClearButton="True"
+                          materialDesign:HintAssist.Hint="Category"
+                          materialDesign:HintAssist.HelperText="select category"
+                          materialDesign:HintAssist.HintOpacity=".56"
+                          DisplayMemberPath="CategoryName" />
+            </StackPanel>
+            <TextBox MinHeight="100"
+                     MaxHeight="150"
                      x:Name="tbAbout"
-                     FontSize="30"
+                     FontSize="25"
                      Margin="10"
                      Foreground="Snow"
                      TextWrapping="Wrap"
@@ -89,21 +96,41 @@
                 </Binding>
             </TextBox>
             <StackPanel Orientation="Horizontal"
-                        Margin="10 20"
-                        HorizontalAlignment="Center">
-                <Button Width="80"
+                        Margin="10 10"
+                        HorizontalAlignment="Right">
+                <Button Width="60"
+                        ToolTip="Create a new movie"
                         Margin="10 0"
-                        Click="Add_Click">Add</Button>
-                <Button Width="80"
-                        Click="Save_Click">Save</Button>
-                <Button Width="80"
-                        Margin="10 0"
+                        Click="Add_Click">
+                    <materialDesign:PackIcon Kind="Add"
+                                             Width="25"
+                                             Height="25" /></Button>
+                <Button Width="60" ToolTip="Save changes"
+                        Click="Save_Click">
+                    <materialDesign:PackIcon Kind="ContentSave"
+                                             Width="25"
+                                             Height="25" /></Button>
+                <Button Width="60" ToolTip="Clear data"
                         Click="Clear_Click">
                     <materialDesign:PackIcon Kind="Delete"
                                              Width="25"
                                              Height="25" />
                 </Button>
             </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left">
+                <Button Width="120"
+                        ToolTip="Get data from Api"
+                        Foreground="#FF065F34"
+                        Margin="5 0"
+                        Click="GetApi_Click">🎬 info</Button>
+                <Button Width="120"
+                        Foreground="#FF065F34"
+                        Click="Copy_Click">✨Copy</Button>
+            </StackPanel>
+            <TextBlock x:Name="tbInfo" Margin="5 0"
+                       FontSize="15"
+                       Foreground="Snow" />
         </StackPanel>
     </Grid>
 </UserControl>

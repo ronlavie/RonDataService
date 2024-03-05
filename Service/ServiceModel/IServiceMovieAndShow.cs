@@ -23,13 +23,17 @@ namespace ServiceModel
         #endregion
         #region Movies
         [OperationContract] MovieList GetAllMovies();
+        [OperationContract] MovieList GetAllMoviesFullData();
         [OperationContract] int InsertMovies(Movie movie);
-        [OperationContract] int RateMovies(RateMovie rateMovie);
         [OperationContract] int UpdateMovies(Movie movie);
         [OperationContract] int DeleteMovies(Movie movie);
-        [OperationContract] int DeleteRateMovies(RateMovie rateMovie);
         [OperationContract] RateMovieList GetMovieRatingByMovie(Movie movie);
         [OperationContract] RateMovieList GetMovieRatingByUser(User user);
+        //Rate actions
+        [OperationContract] int RateMovies(RateMovie rateMovie);
+        [OperationContract] int DeleteRateMovies(RateMovie rateMovie);
+        //API info
+        [OperationContract] string GetMovieinfo(string movieName);
         #endregion
         #region Shows
         [OperationContract] ShowList GetAllShows();

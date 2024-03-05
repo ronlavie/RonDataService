@@ -11,14 +11,14 @@ namespace WPF_RON
 {
     public class ValidationMovieShowName : ValidationRule
     {
-        int max;
+        public int Max { get; set; }
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             try
             {
                 string text = value as string;
                 Regex letter = new Regex("[a-zA-z]");
-                if (text.Length > max)
+                if (text.Length > Max)
                 {
                     return new ValidationResult(false, "too long");
                 }

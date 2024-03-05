@@ -100,13 +100,13 @@
       <Project>{fd9b60cc-ce40-4a5e-a0c9-982bbf8dbd94}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiceModel\ServiceModel.csproj">
+      <Project>{30891be1-244b-4ea8-8abf-4e26560ede93}</Project>
+      <Name>ServiceModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModel\ViewModel.csproj">
       <Project>{21dc50b3-f0a9-43e2-a5fd-cf099b8e3990}</Project>
       <Name>ViewModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WCF_RON\ServiceModel.csproj">
-      <Project>{30891be1-244b-4ea8-8abf-4e26560ede93}</Project>
-      <Name>ServiceModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

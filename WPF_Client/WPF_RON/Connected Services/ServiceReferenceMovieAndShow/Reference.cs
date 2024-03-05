@@ -562,17 +562,17 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesResponse")]
         System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.MovieList> GetAllMoviesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesFullData", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesFullDataResponse")]
+        WPF_RON.ServiceReferenceMovieAndShow.MovieList GetAllMoviesFullData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesFullData", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllMoviesFullDataResponse")]
+        System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.MovieList> GetAllMoviesFullDataAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/InsertMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/InsertMoviesResponse")]
         int InsertMovies(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/InsertMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/InsertMoviesResponse")]
         System.Threading.Tasks.Task<int> InsertMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateMoviesResponse")]
-        int RateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateMoviesResponse")]
-        System.Threading.Tasks.Task<int> RateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/UpdateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/UpdateMoviesResponse")]
         int UpdateMovies(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
@@ -586,12 +586,6 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteMoviesResponse")]
         System.Threading.Tasks.Task<int> DeleteMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteRateMoviesResponse")]
-        int DeleteRateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteRateMoviesResponse")]
-        System.Threading.Tasks.Task<int> DeleteRateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovie", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByMovieResponse")]
         WPF_RON.ServiceReferenceMovieAndShow.RateMovieList GetMovieRatingByMovie(WPF_RON.ServiceReferenceMovieAndShow.Movie movie);
         
@@ -603,6 +597,24 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUser", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieRatingByUserResponse")]
         System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateMovieList> GetMovieRatingByUserAsync(WPF_RON.ServiceReferenceMovieAndShow.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateMoviesResponse")]
+        int RateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateMoviesResponse")]
+        System.Threading.Tasks.Task<int> RateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteRateMoviesResponse")]
+        int DeleteRateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteRateMovies", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteRateMoviesResponse")]
+        System.Threading.Tasks.Task<int> DeleteRateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieinfo", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieinfoResponse")]
+        string GetMovieinfo(string movieName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetMovieinfo", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetMovieinfoResponse")]
+        System.Threading.Tasks.Task<string> GetMovieinfoAsync(string movieName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse")]
         WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShows();
@@ -748,20 +760,20 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
             return base.Channel.GetAllMoviesAsync();
         }
         
+        public WPF_RON.ServiceReferenceMovieAndShow.MovieList GetAllMoviesFullData() {
+            return base.Channel.GetAllMoviesFullData();
+        }
+        
+        public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.MovieList> GetAllMoviesFullDataAsync() {
+            return base.Channel.GetAllMoviesFullDataAsync();
+        }
+        
         public int InsertMovies(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
             return base.Channel.InsertMovies(movie);
         }
         
         public System.Threading.Tasks.Task<int> InsertMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
             return base.Channel.InsertMoviesAsync(movie);
-        }
-        
-        public int RateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
-            return base.Channel.RateMovies(rateMovie);
-        }
-        
-        public System.Threading.Tasks.Task<int> RateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
-            return base.Channel.RateMoviesAsync(rateMovie);
         }
         
         public int UpdateMovies(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
@@ -780,14 +792,6 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
             return base.Channel.DeleteMoviesAsync(movie);
         }
         
-        public int DeleteRateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
-            return base.Channel.DeleteRateMovies(rateMovie);
-        }
-        
-        public System.Threading.Tasks.Task<int> DeleteRateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
-            return base.Channel.DeleteRateMoviesAsync(rateMovie);
-        }
-        
         public WPF_RON.ServiceReferenceMovieAndShow.RateMovieList GetMovieRatingByMovie(WPF_RON.ServiceReferenceMovieAndShow.Movie movie) {
             return base.Channel.GetMovieRatingByMovie(movie);
         }
@@ -802,6 +806,30 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.RateMovieList> GetMovieRatingByUserAsync(WPF_RON.ServiceReferenceMovieAndShow.User user) {
             return base.Channel.GetMovieRatingByUserAsync(user);
+        }
+        
+        public int RateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
+            return base.Channel.RateMovies(rateMovie);
+        }
+        
+        public System.Threading.Tasks.Task<int> RateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
+            return base.Channel.RateMoviesAsync(rateMovie);
+        }
+        
+        public int DeleteRateMovies(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
+            return base.Channel.DeleteRateMovies(rateMovie);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteRateMoviesAsync(WPF_RON.ServiceReferenceMovieAndShow.RateMovie rateMovie) {
+            return base.Channel.DeleteRateMoviesAsync(rateMovie);
+        }
+        
+        public string GetMovieinfo(string movieName) {
+            return base.Channel.GetMovieinfo(movieName);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetMovieinfoAsync(string movieName) {
+            return base.Channel.GetMovieinfoAsync(movieName);
         }
         
         public WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShows() {

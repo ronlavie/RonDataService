@@ -67,7 +67,7 @@ namespace WPF_RON
         }
         public void LoadMovies()
         {
-            movies = myService.GetAllMovies();
+            movies = myService.GetAllMoviesFullData();
             pnlViewMovies.Children.Clear();
             foreach (Movie movie in movies)
             {
@@ -84,6 +84,7 @@ namespace WPF_RON
             Movie movie = ((UserControlMovie)sender).Tag as Movie;
             WindowRateMovie windowRate = new WindowRateMovie(movie, myUser);
             windowRate.ShowDialog();
+            sender=new UserControlMovie(movie);
         }
 
         private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -99,13 +100,13 @@ namespace WPF_RON
 
         private void Top_Movies_Click(object sender, RoutedEventArgs e)
         {
-            TopMoviesWindow moviesWindow = new TopMoviesWindow(movies);
+            WindowTopMovies moviesWindow = new WindowTopMovies(movies);
             moviesWindow.ShowDialog();
         }
 
         private void Top_Shows_Click_(object sender, RoutedEventArgs e)
         {
-            TopShowsWindow showsWindow = new TopShowsWindow();
+            WindowTopShows showsWindow = new WindowTopShows();
             showsWindow.ShowDialog();
         }
 

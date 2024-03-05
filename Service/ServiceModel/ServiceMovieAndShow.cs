@@ -14,6 +14,10 @@ namespace ServiceModel
 
     public class ServiceMovieAndShow : IServiceMovieAndShow
     {
+        public string GetMovieinfo(string movieName)
+        {
+            return ApiData.GetMovieData(movieName);
+        }
         public ShowList GetAllShows()
         {
             ShowDB db = new ShowDB();
@@ -37,22 +41,28 @@ namespace ServiceModel
         {
             MovieDB db = new MovieDB();
             MovieList list = db.SelectAll();
+            return list;
+        }
+        public MovieList GetAllMoviesFullData()
+        {
+            MovieDB db = new MovieDB();
+            MovieList list = db.SelectAll();
             foreach (Movie movie in list)
             {
                 ApiData.LoadMovieData(movie);
             }
             return list;
         }
-public UserList GetAllUsers()
-{
-    UserDB db = new UserDB();
-    UserList list = db.SelectAll();
-    return list;
-}
+        public UserList GetAllUsers()
+        {
+            UserDB db = new UserDB();
+            UserList list = db.SelectAll();
+            return list;
+        }
         public int InsertUser(User user)
         {
             UserDB userdb = new UserDB();
-            return userdb.Insert(user); 
+            return userdb.Insert(user);
 
         }
         public RateMovieList GetMovieRatingByUser(User user)
@@ -76,10 +86,11 @@ public UserList GetAllUsers()
         public int RateMovies(RateMovie rateMovie)
         {
             RateMovieDB rateMovieDB = new RateMovieDB();
-            if(rateMovieDB.IsExist(rateMovie))
-                return rateMovieDB.Update(rateMovie);
-            else
+            RateMovie current = rateMovieDB.IsExist(rateMovie);
+            if (current == null)
                 return rateMovieDB.Insert(rateMovie);
+            rateMovie.Id = current.Id;
+            return rateMovieDB.Update(rateMovie);
         }
         public int InsertShows(Show show)
         {
@@ -163,8 +174,4 @@ public UserList GetAllUsers()
         #endregion
 
     }
-
-
-
-
 }

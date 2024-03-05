@@ -33,9 +33,15 @@ namespace WPF_RON
             ServiceMovieAndShowClient client = new ServiceMovieAndShowClient();
             RateMovieList rates = client.GetMovieRatingByMovie(movie);
             if (rates != null && rates.Count > 0)
+            {
                 RatingBar.Value = rates.Average(m => m.Stars);
+                tbNumRates.Text = $"({rates.Count})";
+            }
             else
+            {
                 RatingBar.Value = 2.5;
+                tbNumRates.Text = string.Empty;
+            }
             try
             {
                 img.Source = new BitmapImage(new Uri(movie.PosterUrl));

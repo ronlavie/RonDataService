@@ -6,17 +6,20 @@
         xmlns:local="clr-namespace:WPF_RON"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="WindowRateMovie" Height="250" Width="250">
     <StackPanel>
+        <TextBlock FontSize="15"
+                   x:Name="tbTitle" />
         <TextBlock 
-                   FontSize="20"
+                   FontSize="20" FontWeight="Bold"
                    Text="{Binding Path=MovieName}"
                    TextAlignment="Center"
                    TextWrapping="WrapWithOverflow"
             Margin="0 15"/>
-        <materialDesign:RatingBar Value="4"
+        <materialDesign:RatingBar  HorizontalAlignment="Center"
                                   IsReadOnly="False"
                                   x:Name="RatingBar" Margin="0 15"/>
-        <Button Content="Save rating"  Click="Save_Click"/>
+        <Button Content="Save rating"  Click="Save_Click" Margin="10"/>
     </StackPanel>
 </Window>

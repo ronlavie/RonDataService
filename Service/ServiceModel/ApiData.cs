@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml;
 using Model;
+using ViewModel;
 
 namespace ServiceModel
 {
     public class ApiData
     {
-        private static string apiKey = @"&apikey=ada3cd49";
-        private static string url = @"https://www.omdbapi.com/?t=[1234]&plot=full&r=xml&apikey=ada3cd49";
-        public static void LoadMovieData(Movie movie)
+        private static string apiKey = @"apikey=ada3cd49";
+        private static string url = @"https://www.omdbapi.com/?t=[1234]&plot=full&r=xml&"+ apiKey;
+        internal static void LoadMovieData(Movie movie)
         {
             string path = url.Replace("[1234]", movie.MovieName);
             try
@@ -45,6 +46,35 @@ namespace ServiceModel
                 }
             }
             catch { }
+        }
+
+        internal static string GetMovieData(string movieName)
+        {
+            string path = url.Replace("[1234]", movieName);
+            string movieData = "";
+            try
+            {
+                XmlTextReader reader = new XmlTextReader(path);
+                while (reader.Read())
+                {
+                    switch (reader.NodeType)
+                    {
+                        case XmlNodeType.Element: // The node is an element.
+                            Console.Write("<" + reader.Name);
+
+                            while (reader.MoveToNextAttribute())
+                            {// Read the attributes.
+                                if (reader.Name.Equals("actors"))
+                                    movieData += "Starring " + reader.Value + "\n";
+                                if (reader.Name.Equals("plot"))
+                                    movieData += reader.Value + "\n";
+                            }
+                            break;
+                    }
+                }
+            }
+            catch { }
+            return movieData;
         }
     }
 }

@@ -79,11 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="TopMoviesWindow.xaml.cs">
-      <DependentUpon>TopMoviesWindow.xaml</DependentUpon>
+    <Compile Include="WindowTopMovies.xaml.cs">
+      <DependentUpon>WindowTopMovies.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TopShowsWindow.xaml.cs">
-      <DependentUpon>TopShowsWindow.xaml</DependentUpon>
+    <Compile Include="WindowTopShows.xaml.cs">
+      <DependentUpon>WindowTopShows.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlEditCategory.xaml.cs">
       <DependentUpon>UserControlEditCategory.xaml</DependentUpon>
@@ -142,11 +142,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TopMoviesWindow.xaml">
+    <Page Include="WindowTopMovies.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TopShowsWindow.xaml">
+    <Page Include="WindowTopShows.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

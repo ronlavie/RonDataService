@@ -25,6 +25,7 @@ namespace WPF_RON
         public WindowAdmin()
         {
             InitializeComponent();
+            this.user = new User { Id = 4, UserName = "ABCD123" };
         }
 
         public WindowAdmin(User user)
@@ -63,7 +64,7 @@ namespace WPF_RON
         }
         private void GoTo_Home(object sender, RoutedEventArgs e)
         {
-            WindowUserProfile profileWindow = new WindowUserProfile();
+            WindowUserProfile profileWindow = new WindowUserProfile(user);
             profileWindow.WindowStartupLocation = WindowStartupLocation.Manual;
             profileWindow.ShowDialog();
             Close();

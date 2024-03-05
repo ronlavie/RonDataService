@@ -28,6 +28,7 @@ namespace WPF_RON
             this.movie = movie;
             this.DataContext = movie;   
             this.user = user;
+            tbTitle.Text = user.UserName + " rate the movie";
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)

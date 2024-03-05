@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowState="Maximized"
         Title="User Profile"
-        Height="1100"
+        Height="1200"
         Width="800">
     <StackPanel Background="AntiqueWhite">
         <TextBlock FontSize="50">
@@ -18,12 +18,8 @@
             <Button Width="45"
                     Height="45"
                     VerticalAlignment="Top"
-                    Margin="1 6"
-                    Style="{StaticResource MaterialDesignRaisedButton}">
-   <Button.Background>
-    <ImageBrush ImageSource="/Images/RETARD-removebg-preview.png" />
-</Button.Background>
-</Button>
+                    Content="⚙️" Background="Transparent" Foreground="Black"
+                    Style="{StaticResource MaterialDesignRaisedButton}" />
           <Menu IsMainMenu="True"
                 HorizontalAlignment="Left">
               <MenuItem Header="TOP MOVIES"
@@ -58,13 +54,13 @@
         </StackPanel>
         <StackPanel>
             <TextBlock Text="Shows"
-                       FontSize="50" />
+                       FontSize="45" />
         </StackPanel>
         <ScrollViewer Height="350"
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Hidden"
                       CanContentScroll="True"
-                      Margin="20">
+                      Margin="10">
             <StackPanel>
                 <StackPanel x:Name="pnlViewShows"
                             Orientation="Horizontal"
@@ -73,13 +69,13 @@
         </ScrollViewer>
         <StackPanel>
             <TextBlock Text="Movies"
-                       FontSize="50" />
+                       FontSize="45" />
         </StackPanel>
-        <ScrollViewer Height="330"
+        <ScrollViewer Height="350"
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Hidden"
                       CanContentScroll="True"
-                      Margin="20">
+                      Margin="10">
             <StackPanel>
                 <StackPanel x:Name="pnlViewMovies"
                             Orientation="Horizontal"

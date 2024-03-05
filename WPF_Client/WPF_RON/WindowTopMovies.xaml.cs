@@ -17,13 +17,13 @@ using WPF_RON.ServiceReferenceMovieAndShow;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for TopMoviesWindow.xaml
+    /// Interaction logic for WindowTopMovies.xaml
     /// </summary>
-    public partial class TopMoviesWindow : Window
+    public partial class WindowTopMovies : Window
     {
         Dictionary<Movie, double> myMovies;
         int rows = 10;
-        public TopMoviesWindow(MovieList movies)
+        public WindowTopMovies(MovieList movies)
         {
             InitializeComponent();
             double avg;

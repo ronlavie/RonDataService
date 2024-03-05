@@ -29,6 +29,7 @@ namespace ViewModel
             command.Parameters.AddWithValue("@Movie", movie.Movie.Id);
             command.Parameters.AddWithValue("@User", movie.User.Id);
             command.Parameters.AddWithValue("@Stars", movie.Stars);
+            command.Parameters.AddWithValue("@TimeStamp", DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
             command.Parameters.AddWithValue("@ID", movie.Id);
 
         }
@@ -62,16 +63,17 @@ namespace ViewModel
         }
         public RateMovieList SelectByUser(User user)
         {
-            command.CommandText = $"SELECT * FROM TblRatemovie WHERE user={user.Id}";
+            command.CommandText = $"SELECT * FROM TblRatemovie WHERE [User]={user.Id}";
             RateMovieList list = new RateMovieList(ExecuteCommand());
             return list;
         }
         public int Insert(RateMovie movie)
         {
-            command.CommandText = "INSERT INTO TblRatemovie (movie, User, Stars) VALUES (@movie,@User, @Stars)";
+            command.CommandText = "INSERT INTO TblRatemovie (Movie, [User], Stars,[TimeStamp]) VALUES (@movie,@User, @Stars, @TimeStamp)";
             LoadParameters(movie);
             return ExecuteCRUD();
         }
+
         public int Delete(RateMovie shID)
         {
             command.CommandText = "DELETE FROM TblRatemovie WHERE ID =@ID";
@@ -80,16 +82,21 @@ namespace ViewModel
         }
         public int Update(RateMovie shid)
         {
-            command.CommandText = "UPDATE TblRatemovie SET movie = @movie,User = @User, Stars = @Stars WHERE Id = @Id, ";
+            command.CommandText = "UPDATE TblRatemovie SET movie = @movie,[User] = @User, Stars = @Stars, [TimeStamp]=@TimeStamp WHERE Id = @Id ";
             LoadParameters(shid);
             return ExecuteCRUD();
         }
 
-        public bool IsExist(RateMovie rateMovie)
+        public RateMovie IsExist(RateMovie rateMovie)
         {
-            command.CommandText = $"SELECT * FROM TblRatemovie WHERE user={rateMovie.User.Id} AND movie={rateMovie.Movie.Id}";
+            command.CommandText = $"SELECT * FROM TblRatemovie WHERE [User]={rateMovie.User.Id} AND movie={rateMovie.Movie.Id}";
             RateMovieList list = new RateMovieList(ExecuteCommand());
-            return list.Count==1;
+            if (list.Count == 0)
+            {
+                return null;
+            }
+
+            return list[0];
         }
     }
 }

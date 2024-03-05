@@ -28,11 +28,12 @@ namespace WPF_RON
         public UserControlEditMovie()
         {
             InitializeComponent();
-            service=new ServiceMovieAndShowClient();
-            cbCategory.ItemsSource=service.GetAllCategories();
+            service = new ServiceMovieAndShowClient();
+            cbCategory.ItemsSource = service.GetAllCategories();
             cbCategory.DisplayMemberPath = "CategoryName";
             cbCategory.SelectedValuePath = "Id";
-            lbMovies.ItemsSource= movies=service.GetAllMovies();
+            lbMovies.ItemsSource = movies = service.GetAllMovies();
+            lbMovies.SelectedIndex = 0;
         }
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -40,24 +41,25 @@ namespace WPF_RON
         }
         private void lbMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            movie=lbMovies.SelectedValue as Movie;
+            movie = lbMovies.SelectedValue as Movie;
             cbCategory.SelectedValue = movie.MovieCategory.Id;
             spEdit.DataContext = movie;
-            update=true;
+            update = true;
+            tbInfo.Text=string.Empty;
         }
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             tbName.Clear();
             tbLength.Clear();
             tbAbout.Clear();
-            spEdit.DataContext = movie=new Movie();
+            spEdit.DataContext = movie = new Movie();
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             movie.MovieCategory = cbCategory.SelectedItem as Category;
             if (update)
-            {                
+            {
                 service.UpdateMovies(movie);
             }
             else
@@ -72,62 +74,18 @@ namespace WPF_RON
             tbName.Clear();
             tbLength.Clear();
             tbAbout.Clear();
-            cbCategory.Text=string.Empty;
+            cbCategory.Text = string.Empty;
             spEdit.DataContext = movie = new Movie();
         }
+
+        private void GetApi_Click(object sender, RoutedEventArgs e)
+        {
+            tbInfo.Text= service.GetMovieinfo(tbName.Text);
+        }
+
+        private void Copy_Click(object sender, RoutedEventArgs e)
+        {
+            movie.About = tbInfo.Text;
+        }
     }
-//    using System;
-//using System.Collections.Generic;
-//using System.IO;
-
-//class Program
-//    {
-//        static void Main()
-//        {
-//            // Example usage
-//            string filePath = "path_to_your_file.tsv";
-//            string primaryTitle = "Carmencita";
-
-//            string tconst = GetTConstByPrimaryTitle(filePath, primaryTitle);
-
-//            if (tconst != null)
-//            {
-//                Console.WriteLine($"tconst for {primaryTitle}: {tconst}");
-//            }
-//            else
-//            {
-//                Console.WriteLine($"No matching tconst found for {primaryTitle}");
-//            }
-//        }
-
-//        static string GetTConstByPrimaryTitle(string filePath, string targetTitle)
-//        {
-//            try
-//            {
-//                // Read all lines from the TSV file
-//                string[] lines = File.ReadAllLines(filePath);
-
-//                // Iterate through each line (starting from the second line as the first line contains headers)
-//                for (int i = 1; i < lines.Length; i++)
-//                {
-//                    // Split the line into columns
-//                    string[] columns = lines[i].Split('\t');
-
-//                    // Check if the primaryTitle matches the targetTitle
-//                    if (columns.Length >= 4 && columns[2].Equals(targetTitle, StringComparison.OrdinalIgnoreCase))
-//                    {
-//                        // Return the corresponding tconst
-//                        return columns[0];
-//                    }
-//                }
-//            }
-//            catch (Exception ex)
-//            {
-//                Console.WriteLine($"Error: {ex.Message}");
-//            }
-
-//            // Return null if no match is found
-//            return null;
-//        }
-    //}
 }

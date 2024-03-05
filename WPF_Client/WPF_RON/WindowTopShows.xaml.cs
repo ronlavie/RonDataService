@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for TopShowsWindow.xaml
+    /// Interaction logic for WindowTopShows.xaml
     /// </summary>
-    public partial class TopShowsWindow : Window
+    public partial class WindowTopShows : Window
     {
-        public TopShowsWindow()
+        public WindowTopShows()
         {
             InitializeComponent();
         }

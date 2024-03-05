@@ -59,6 +59,12 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="RateMovieList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RateMovie" nillable="true" type="tns:RateMovie" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RateMovieList" nillable="true" type="tns:RateMovieList" />
   <xs:complexType name="RateMovie">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseEntity">
@@ -71,12 +77,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="RateMovie" nillable="true" type="tns:RateMovie" />
-  <xs:complexType name="RateMovieList">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="RateMovie" nillable="true" type="tns:RateMovie" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="RateMovieList" nillable="true" type="tns:RateMovieList" />
   <xs:complexType name="ShowList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Show" nillable="true" type="tns:Show" />
