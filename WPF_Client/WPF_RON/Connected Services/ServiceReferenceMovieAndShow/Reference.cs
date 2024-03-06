@@ -378,6 +378,18 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
     public partial class Show : WPF_RON.ServiceReferenceMovieAndShow.BaseEntity {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ImdbRatingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ImdbVotesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MetascoreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PosterUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WPF_RON.ServiceReferenceMovieAndShow.Category ShowCategoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -385,6 +397,58 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ShowNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ImdbRating {
+            get {
+                return this.ImdbRatingField;
+            }
+            set {
+                if ((this.ImdbRatingField.Equals(value) != true)) {
+                    this.ImdbRatingField = value;
+                    this.RaisePropertyChanged("ImdbRating");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ImdbVotes {
+            get {
+                return this.ImdbVotesField;
+            }
+            set {
+                if ((this.ImdbVotesField.Equals(value) != true)) {
+                    this.ImdbVotesField = value;
+                    this.RaisePropertyChanged("ImdbVotes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Metascore {
+            get {
+                return this.MetascoreField;
+            }
+            set {
+                if ((this.MetascoreField.Equals(value) != true)) {
+                    this.MetascoreField = value;
+                    this.RaisePropertyChanged("Metascore");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PosterUrl {
+            get {
+                return this.PosterUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PosterUrlField, value) != true)) {
+                    this.PosterUrlField = value;
+                    this.RaisePropertyChanged("PosterUrl");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public WPF_RON.ServiceReferenceMovieAndShow.Category ShowCategory {

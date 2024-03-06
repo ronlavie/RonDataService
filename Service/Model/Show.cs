@@ -13,9 +13,37 @@ namespace Model
         protected string showName;
         protected string showDescription;
         protected Category showCategory;
+        protected string posterUrl;
+        protected double imdbRating;
+        protected int imdbVotes;
+        protected int metascore;
         [DataMember] public string ShowName { get { return showName; } set { showName = value; } }
         [DataMember] public string ShowDescription {  get { return showDescription; } set {  showDescription = value; } }
         [DataMember] public Category ShowCategory { get {  return showCategory; } set { showCategory = value; } }
+        [DataMember]
+        public string PosterUrl
+        {
+            get { return posterUrl; }
+            set { posterUrl = value; }
+        }
+        [DataMember]
+        public double ImdbRating
+        {
+            get { return imdbRating; }
+            set { imdbRating = value; }
+        }
+        [DataMember]
+        public int ImdbVotes
+        {
+            get { return imdbVotes; }
+            set { imdbVotes = value; }
+        }
+        [DataMember]
+        public int Metascore
+        {
+            get { return metascore; }
+            set { metascore = value; }
+        }
     }
     [CollectionDataContract]
     public class ShowList : List<Show>

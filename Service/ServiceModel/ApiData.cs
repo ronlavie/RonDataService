@@ -76,5 +76,64 @@ namespace ServiceModel
             catch { }
             return movieData;
         }
+        internal static void LoadShowsData(Show show)
+        {
+            string path = url.Replace("[1234]",show.ShowName);
+            try
+            {
+                XmlTextReader reader = new XmlTextReader(path);
+                while (reader.Read())
+                {
+                    switch (reader.NodeType)
+                    {
+                        case XmlNodeType.Element: // The node is an element.
+                            Console.Write("<" + reader.Name);
+
+                            while (reader.MoveToNextAttribute())
+                            {// Read the attributes.
+                                if (reader.Name.Equals("poster"))
+                                    show.PosterUrl = reader.Value;
+                                if (reader.Name.Equals("imdbRating"))
+                                    show.ImdbRating = double.Parse(reader.Value.ToString());
+                                if (reader.Name.Equals("imdbVotes"))
+                                    show.ImdbVotes = int.Parse(reader.Value.ToString());
+                                if (reader.Name.Equals("metascore"))
+                                    show.Metascore = int.Parse(reader.Value.ToString());
+                            }
+                            break;
+                    }
+                }
+            }
+            catch { }
+        }
+
+        internal static string GetShowData(string showname)
+        {
+            string path = url.Replace("[1234]", showname);
+            string showdata = "";
+            try
+            {
+                XmlTextReader reader = new XmlTextReader(path);
+                while (reader.Read())
+                {
+                    switch (reader.NodeType)
+                    {
+                        case XmlNodeType.Element: // The node is an element.
+                            Console.Write("<" + reader.Name);
+
+                            while (reader.MoveToNextAttribute())
+                            {// Read the attributes.
+                                if (reader.Name.Equals("actors"))
+                                    showdata += "Starring " + reader.Value + "\n";
+                                if (reader.Name.Equals("plot"))
+                                    showdata += reader.Value + "\n";
+                            }
+                            break;
+                    }
+                }
+            }
+            catch { }
+            return showdata;
+        }
     }
 }

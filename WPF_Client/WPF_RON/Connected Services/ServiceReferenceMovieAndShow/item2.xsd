@@ -87,6 +87,10 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseEntity">
         <xs:sequence>
+          <xs:element minOccurs="0" name="ImdbRating" type="xs:double" />
+          <xs:element minOccurs="0" name="ImdbVotes" type="xs:int" />
+          <xs:element minOccurs="0" name="Metascore" type="xs:int" />
+          <xs:element minOccurs="0" name="PosterUrl" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ShowCategory" nillable="true" type="tns:Category" />
           <xs:element minOccurs="0" name="ShowDescription" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ShowName" nillable="true" type="xs:string" />

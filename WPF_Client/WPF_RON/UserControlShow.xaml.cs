@@ -37,7 +37,7 @@ namespace WPF_RON
                 RatingBar.Value = 2.5; 
             try
             {
-                img.Source = new BitmapImage(new Uri($"pack://application:,,,/Images/Shows/{show.Id}.png"));
+                img.Source = new BitmapImage(new Uri(show.PosterUrl));
             }
             catch (Exception ex)
             {
