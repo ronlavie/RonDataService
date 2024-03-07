@@ -109,6 +109,12 @@
   <wsdl:message name="IServiceMovieAndShow_GetAllShows_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllShowsResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllShowsFullData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllShowsFullData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetAllShowsFullData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllShowsFullDataResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_GetShowRatingByShow_InputMessage">
     <wsdl:part name="parameters" element="tns:GetShowRatingByShow" />
   </wsdl:message>
@@ -231,6 +237,10 @@
     <wsdl:operation name="GetAllShows">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows" message="tns:IServiceMovieAndShow_GetAllShows_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse" message="tns:IServiceMovieAndShow_GetAllShows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShowsFullData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllShowsFullData" message="tns:IServiceMovieAndShow_GetAllShowsFullData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllShowsFullDataResponse" message="tns:IServiceMovieAndShow_GetAllShowsFullData_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetShowRatingByShow">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByShow" message="tns:IServiceMovieAndShow_GetShowRatingByShow_InputMessage" />
@@ -417,6 +427,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllShows">
       <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetAllShows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShowsFullData">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsFullData" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

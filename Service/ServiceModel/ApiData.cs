@@ -15,11 +15,14 @@ namespace ServiceModel
 {
     public class ApiData
     {
-        private static string apiKey = @"apikey=ada3cd49";
-        private static string url = @"https://www.omdbapi.com/?t=[1234]&plot=full&r=xml&"+ apiKey;
+        private static string apiKeyMovie = @"apikey=ada3cd49";
+        private static string urlMovie = @"https://www.omdbapi.com/?t=[1234]&plot=full&r=xml&"+ apiKeyMovie;
+        private static string apiKeyShow = @"apikey=bb3547dfb368ea565d5d25c913a89dc8";
+        private static string urlShow = @"https://api.themoviedb.org/3/search/tv?[1234]&" + apiKeyMovie;
+        private static string urlShowPoster = @"https://image.tmdb.org/t/p/w500/";
         internal static void LoadMovieData(Movie movie)
         {
-            string path = url.Replace("[1234]", movie.MovieName);
+            string path = urlMovie.Replace("[1234]", movie.MovieName);
             try
             {
                 XmlTextReader reader = new XmlTextReader(path);
@@ -47,10 +50,9 @@ namespace ServiceModel
             }
             catch { }
         }
-
         internal static string GetMovieData(string movieName)
         {
-            string path = url.Replace("[1234]", movieName);
+            string path = urlMovie.Replace("[1234]", movieName);
             string movieData = "";
             try
             {
@@ -76,9 +78,10 @@ namespace ServiceModel
             catch { }
             return movieData;
         }
+        
         internal static void LoadShowsData(Show show)
         {
-            string path = url.Replace("[1234]",show.ShowName);
+            string path = urlMovie.Replace("[1234]",show.ShowName);
             try
             {
                 XmlTextReader reader = new XmlTextReader(path);
@@ -86,19 +89,12 @@ namespace ServiceModel
                 {
                     switch (reader.NodeType)
                     {
-                        case XmlNodeType.Element: // The node is an element.
-                            Console.Write("<" + reader.Name);
-
-                            while (reader.MoveToNextAttribute())
-                            {// Read the attributes.
-                                if (reader.Name.Equals("poster"))
-                                    show.PosterUrl = reader.Value;
-                                if (reader.Name.Equals("imdbRating"))
-                                    show.ImdbRating = double.Parse(reader.Value.ToString());
-                                if (reader.Name.Equals("imdbVotes"))
-                                    show.ImdbVotes = int.Parse(reader.Value.ToString());
-                                if (reader.Name.Equals("metascore"))
-                                    show.Metascore = int.Parse(reader.Value.ToString());
+                        case XmlNodeType.Element:
+                            if (reader.Name == "movie")
+                            { // The node is an element.
+                                show.PosterUrl = reader.GetAttribute("poster");
+                                show.ImdbRating = double.Parse(reader.GetAttribute("imdbRating").ToString());
+                                show.ImdbVotes = int.Parse(reader.GetAttribute("imdbVotes").ToString().Replace(",",string.Empty));
                             }
                             break;
                     }
@@ -109,7 +105,7 @@ namespace ServiceModel
 
         internal static string GetShowData(string showname)
         {
-            string path = url.Replace("[1234]", showname);
+            string path = urlMovie.Replace("[1234]", showname);
             string showdata = "";
             try
             {

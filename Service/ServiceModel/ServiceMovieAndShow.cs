@@ -24,6 +24,16 @@ namespace ServiceModel
             ShowList list = db.SelectAll();
             return list;
         }
+        public ShowList GetAllShowsFullData()
+        {
+            ShowDB db = new ShowDB();
+            ShowList list = db.SelectAll();
+            foreach (Show show in list)
+            {
+                ApiData.LoadShowsData(show);
+            }
+            return list;
+        }
 
         public RateShowList GetShowRatingByShow(Show show)
         {

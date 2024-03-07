@@ -56,7 +56,7 @@ namespace WPF_RON
 
         public void LoadShows()
         {
-            shows = myService.GetAllShows();
+            shows = myService.GetAllShowsFullData();
             pnlViewShows.Children.Clear();
             foreach (Show show in shows)
             {

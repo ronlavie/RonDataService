@@ -686,6 +686,12 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsResponse")]
         System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.ShowList> GetAllShowsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShowsFullData", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsFullDataResponse")]
+        WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShowsFullData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllShowsFullData", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllShowsFullDataResponse")]
+        System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.ShowList> GetAllShowsFullDataAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByShow", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetShowRatingByShowResponse")]
         WPF_RON.ServiceReferenceMovieAndShow.RateShowList GetShowRatingByShow(WPF_RON.ServiceReferenceMovieAndShow.Show show);
         
@@ -902,6 +908,14 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.ShowList> GetAllShowsAsync() {
             return base.Channel.GetAllShowsAsync();
+        }
+        
+        public WPF_RON.ServiceReferenceMovieAndShow.ShowList GetAllShowsFullData() {
+            return base.Channel.GetAllShowsFullData();
+        }
+        
+        public System.Threading.Tasks.Task<WPF_RON.ServiceReferenceMovieAndShow.ShowList> GetAllShowsFullDataAsync() {
+            return base.Channel.GetAllShowsFullDataAsync();
         }
         
         public WPF_RON.ServiceReferenceMovieAndShow.RateShowList GetShowRatingByShow(WPF_RON.ServiceReferenceMovieAndShow.Show show) {

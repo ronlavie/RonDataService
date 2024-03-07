@@ -37,6 +37,7 @@ namespace ServiceModel
         #endregion
         #region Shows
         [OperationContract] ShowList GetAllShows();
+        [OperationContract] ShowList GetAllShowsFullData();
         [OperationContract] RateShowList GetShowRatingByShow(Show show);
         [OperationContract] RateShowList GetShowRatingByUser(User user);
         [OperationContract] int InsertShows(Show show);
