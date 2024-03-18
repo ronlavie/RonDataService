@@ -102,12 +102,21 @@ namespace ServiceModel
             rateMovie.Id = current.Id;
             return rateMovieDB.Update(rateMovie);
         }
-        public int InsertShows(Show show)
+        public int RateShows(RateShow rateShow)
+        {
+            RateMovieDB rateshowDB = new RateMovieDB();
+            RateShow current = rateshowDB.IsExist(rateShow);
+            if (current == null)
+                return rateshowDB.Insert(rateShow);
+            rateShow.Id = current.Id;
+            return rateshowDB.Update(rateShow);
+            public int InsertShows(Show show)
         {
             ShowDB ShowDB = new ShowDB();
             return ShowDB.Insert(show);
 
         }
+
         public int DeleteShows(Show show)
         {
             ShowDB ShowDB = new ShowDB();

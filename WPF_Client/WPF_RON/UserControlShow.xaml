@@ -51,12 +51,8 @@
                                VerticalAlignment="Center">
   <Run Text="{Binding Path=ImdbRating}" />
      <Run Text="(Imdb)" /></TextBlock>
-                    <TextBlock FontSize="10"
-                               ToolTip="Avg from META"
-                               TextAlignment="Center"
-                               VerticalAlignment="Center">
-     <Run Text="{Binding Path=Metascore}" />
-     <Run Text="(Meta)" /></TextBlock>
+             
+    
                 </StackPanel>
                 
                    

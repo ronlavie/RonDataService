@@ -85,6 +85,12 @@ namespace WPF_RON
             WindowRateMovie windowRate = new WindowRateMovie(movie, myUser);
             windowRate.ShowDialog();
             sender=new UserControlMovie(movie);
+        }   private void ControlShow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Show show1 = ((UserControlShow)sender).Tag as Show;
+            WindowRateShow windowRate = new WindowRateMovie(show, myUser);
+            windowRate.ShowDialog();
+            sender=new UserControlMovie(show);
         }
 
         private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
