@@ -28,14 +28,14 @@ namespace WPF_RON
             this.show = show;
             this.DataContext = show;
             this.user = user;
-            tbTitle.Text = user.UserName + " rate the movie";
+            tbTitle.Text = user.UserName + " rate the Show";
         }
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             ServiceMovieAndShowClient myService = new ServiceMovieAndShowClient();
-            myService.RateMovies(new RateMovie { User = user, Show = show, Stars = (int)RatingBar.Value });
+            myService.RateShows(new RateShow { User = user, Show = show, Stars = (int)RatingBar.Value });
             this.Close();
         }
     }
 }
-}
+

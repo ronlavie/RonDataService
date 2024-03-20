@@ -145,6 +145,12 @@
   <wsdl:message name="IServiceMovieAndShow_DeleteShows_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteShowsResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_RateShows_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateShows" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_RateShows_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateShowsResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_GetAllCategories_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCategories" />
   </wsdl:message>
@@ -261,6 +267,10 @@
     <wsdl:operation name="DeleteShows">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteShows" message="tns:IServiceMovieAndShow_DeleteShows_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/DeleteShowsResponse" message="tns:IServiceMovieAndShow_DeleteShows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateShows">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/RateShows" message="tns:IServiceMovieAndShow_RateShows_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/RateShowsResponse" message="tns:IServiceMovieAndShow_RateShows_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllCategories" message="tns:IServiceMovieAndShow_GetAllCategories_InputMessage" />
@@ -481,6 +491,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteShows">
       <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/DeleteShows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateShows">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/RateShows" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

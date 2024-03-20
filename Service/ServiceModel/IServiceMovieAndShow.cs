@@ -43,6 +43,8 @@ namespace ServiceModel
         [OperationContract] int InsertShows(Show show);
         [OperationContract] int UpdateShows(Show show);
         [OperationContract] int DeleteShows(Show show);
+        [OperationContract] int RateShows(RateShow rateShow);
+        
         #endregion
         #region Category
         [OperationContract] CategoryList GetAllCategories();

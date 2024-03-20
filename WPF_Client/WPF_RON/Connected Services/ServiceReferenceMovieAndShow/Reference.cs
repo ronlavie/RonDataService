@@ -722,6 +722,12 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/DeleteShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/DeleteShowsResponse")]
         System.Threading.Tasks.Task<int> DeleteShowsAsync(WPF_RON.ServiceReferenceMovieAndShow.Show show);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateShowsResponse")]
+        int RateShows(WPF_RON.ServiceReferenceMovieAndShow.RateShow rateShow);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateShowsResponse")]
+        System.Threading.Tasks.Task<int> RateShowsAsync(WPF_RON.ServiceReferenceMovieAndShow.RateShow rateShow);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllCategories", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllCategoriesResponse")]
         WPF_RON.ServiceReferenceMovieAndShow.CategoryList GetAllCategories();
         
@@ -956,6 +962,14 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public System.Threading.Tasks.Task<int> DeleteShowsAsync(WPF_RON.ServiceReferenceMovieAndShow.Show show) {
             return base.Channel.DeleteShowsAsync(show);
+        }
+        
+        public int RateShows(WPF_RON.ServiceReferenceMovieAndShow.RateShow rateShow) {
+            return base.Channel.RateShows(rateShow);
+        }
+        
+        public System.Threading.Tasks.Task<int> RateShowsAsync(WPF_RON.ServiceReferenceMovieAndShow.RateShow rateShow) {
+            return base.Channel.RateShowsAsync(rateShow);
         }
         
         public WPF_RON.ServiceReferenceMovieAndShow.CategoryList GetAllCategories() {

@@ -313,6 +313,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RateShows">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="rateShow" nillable="true" type="q27:RateShow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RateShowsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RateShowsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllCategories">
     <xs:complexType>
       <xs:sequence />
@@ -321,14 +335,14 @@
   <xs:element name="GetAllCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q27:CategoryList" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q28:CategoryList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="category" nillable="true" type="q28:Category" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="category" nillable="true" type="q29:Category" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -342,7 +356,7 @@
   <xs:element name="UpdateCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="category" nillable="true" type="q29:Category" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="category" nillable="true" type="q30:Category" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -356,7 +370,7 @@
   <xs:element name="DeleteCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="category" nillable="true" type="q30:Category" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="category" nillable="true" type="q31:Category" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

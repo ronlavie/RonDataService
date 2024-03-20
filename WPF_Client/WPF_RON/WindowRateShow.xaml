@@ -13,7 +13,7 @@
                    x:Name="tbTitle" />
         <TextBlock 
                    FontSize="20" FontWeight="Bold"
-                   Text="{Binding Path=showName}"
+                   Text="{Binding Path=ShowName}"
                    TextAlignment="Center"
                    TextWrapping="WrapWithOverflow"
             Margin="0 15"/>

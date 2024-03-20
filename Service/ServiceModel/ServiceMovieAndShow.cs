@@ -104,93 +104,94 @@ namespace ServiceModel
         }
         public int RateShows(RateShow rateShow)
         {
-            RateMovieDB rateshowDB = new RateMovieDB();
+            RateShowDB rateshowDB = new RateShowDB();
             RateShow current = rateshowDB.IsExist(rateShow);
             if (current == null)
                 return rateshowDB.Insert(rateShow);
             rateShow.Id = current.Id;
             return rateshowDB.Update(rateShow);
-            public int InsertShows(Show show)
+       
+        }
+        public int InsertShows(Show show)
         {
             ShowDB ShowDB = new ShowDB();
             return ShowDB.Insert(show);
 
         }
-
         public int DeleteShows(Show show)
-        {
-            ShowDB ShowDB = new ShowDB();
-            return ShowDB.Delete(show);
-        }
+            {
+                ShowDB ShowDB = new ShowDB();
+                return ShowDB.Delete(show);
+            }
 
         public int DeleteMovies(Movie movie)
-        {
-            MovieDB movieDb = new MovieDB();
-            return movieDb.Delete(movie);
-        }
+            {
+                MovieDB movieDb = new MovieDB();
+                return movieDb.Delete(movie);
+            }
         public int DeleteRateMovies(RateMovie rateMovie)
-        {
-            RateMovieDB movieDb = new RateMovieDB();
-            return movieDb.Delete(rateMovie);
-        }
+            {
+                RateMovieDB movieDb = new RateMovieDB();
+                return movieDb.Delete(rateMovie);
+            }
         public int DeleteUser(User user)
-        {
-            UserDB userdb = new UserDB();
-            return userdb.Delete(user);
-        }
+            {
+                UserDB userdb = new UserDB();
+                return userdb.Delete(user);
+            }
         public int UpdateMovies(Movie movie)
-        {
-            MovieDB movieDB = new MovieDB();
-            return movieDB.Update(movie);
-        }
+            {
+                MovieDB movieDB = new MovieDB();
+                return movieDB.Update(movie);
+            }
         public int UpdateShows(Show shows)
-        {
-            ShowDB ShowDB = new ShowDB();
-            return ShowDB.Update(shows);
-        }
+            {
+                ShowDB ShowDB = new ShowDB();
+                return ShowDB.Update(shows);
+            }
         public int UpdateUser(User user)
-        {
-            UserDB userdb = new UserDB();
-            return (userdb.Update(user));
-        }
+            {
+                UserDB userdb = new UserDB();
+                return (userdb.Update(user));
+            }
 
         public User Login(User user)
-        {
-            UserDB db = new UserDB();
-            User tmp = db.Login(user);
-            if (tmp == null) return null;
-            if (!tmp.Password.Equals(user.Password)) return null;
-            return tmp;
-        }
+            {
+                UserDB db = new UserDB();
+                User tmp = db.Login(user);
+                if (tmp == null) return null;
+                if (!tmp.Password.Equals(user.Password)) return null;
+                return tmp;
+            }
         public bool CheckUserName(string UserName)
-        {
-            UserDB db = new UserDB();
-            User tmp = db.CheckUserName(UserName);
-            if (tmp == null) return true;
-            return false;
-        }
+            {
+                UserDB db = new UserDB();
+                User tmp = db.CheckUserName(UserName);
+                if (tmp == null) return true;
+                return false;
+            }
         #region Category
-        public CategoryList GetAllCategories()
-        {
-            CategoryDB categoryDB = new CategoryDB();
-            return (categoryDB.SelectAll());
-        }
-        public int InsertCategory(Category category)
-        {
-            CategoryDB categoryDB = new CategoryDB();
-            return (categoryDB.Insert(category));
-        }
-        public int UpdateCategory(Category category)
-        {
-            CategoryDB categoryDB = new CategoryDB();
-            return (categoryDB.Update(category));
-        }
-        public int DeleteCategory(Category category)
-        {
-            CategoryDB categoryDB = new CategoryDB();
-            return (categoryDB.Delete(category));
-        }
-        #endregion
+            public CategoryList GetAllCategories()
+            {
+                CategoryDB categoryDB = new CategoryDB();
+                return (categoryDB.SelectAll());
+            }
+            public int InsertCategory(Category category)
+            {
+                CategoryDB categoryDB = new CategoryDB();
+                return (categoryDB.Insert(category));
+            }
+            public int UpdateCategory(Category category)
+            {
+                CategoryDB categoryDB = new CategoryDB();
+                return (categoryDB.Update(category));
+            }
+            public int DeleteCategory(Category category)
+            {
+                CategoryDB categoryDB = new CategoryDB();
+                return (categoryDB.Delete(category));
+            }
+            #endregion
 
+        }
     }
-}
