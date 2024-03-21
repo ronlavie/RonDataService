@@ -60,6 +60,7 @@ namespace WPF_RON
             pnlViewShows.Children.Clear();
             foreach (Show show in shows)
             {
+
                 UserControlShow controlShow = new UserControlShow(show);
                 controlShow.Margin = new Thickness(5);
                 controlShow.Tag = show;

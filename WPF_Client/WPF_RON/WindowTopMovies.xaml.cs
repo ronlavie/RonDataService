@@ -21,6 +21,12 @@ namespace WPF_RON
     /// </summary>
     public partial class WindowTopMovies : Window
     {
+
+        private ServiceMovieAndShowClient myService;
+        private User myUser;
+        private MovieList movies;
+        bool update;
+       
         Dictionary<Movie, double> myMovies;
         int rows = 10;
         public WindowTopMovies(MovieList movies)
@@ -38,9 +44,12 @@ namespace WPF_RON
                     avg = 2.5;
                 myMovies.Add(movie, avg);
             }
-            myMovies.OrderByDescending(m=>m.Value);
+            List<KeyValuePair<Movie, double>> list = myMovies.ToList();
+            list.Sort((first, next) => {
+                return next.Value.CompareTo(first.Value);
+            });
             listMovies.Children.Clear();
-            foreach (KeyValuePair<Movie, double> entry in myMovies)
+            foreach (KeyValuePair<Movie, double> entry in list)
             {
                 rows--;
                 if (rows == 0) break;
@@ -52,6 +61,8 @@ namespace WPF_RON
                 textBlock.Text = entry.Key.MovieName+" - Rate "+entry.Value;
                 listMovies.Children.Add(textBlock);
             }
+           
         }
+     
     }
 }

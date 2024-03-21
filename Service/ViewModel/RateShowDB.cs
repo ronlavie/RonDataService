@@ -68,7 +68,7 @@ namespace ViewModel
         }
         public int Insert(RateShow Show)
         {
-            command.CommandText = "INSERT INTO TblRateShow (Show, User, Stars) VALUES (@Show,@User, @Stars)";
+            command.CommandText = "INSERT INTO TblRateShow (Show, [User], Stars) VALUES (@Show,@User, @Stars)";
             LoadParameters(Show);
             return ExecuteCRUD();
         }
@@ -80,13 +80,13 @@ namespace ViewModel
         }
         public int Update(RateShow shid)
         {
-            command.CommandText = "UPDATE TblRateShow SET Show = @Show,User = @User, Stars = @Stars WHERE Id = @Id, ";
+            command.CommandText = "UPDATE TblRateShow SET Show = @Show,[User] = @User, Stars = @Stars WHERE Id = @Id ";
             LoadParameters(shid);
             return ExecuteCRUD();
         }
         public RateShow IsExist(RateShow RateShow)
         {
-            command.CommandText = $"SELECT * FROM TblRateShow WHERE [User]={RateShow.User.Id} AND movie={RateShow.Show.Id}";
+            command.CommandText = $"SELECT * FROM TblRateShow WHERE [User]={RateShow.User.Id} AND Show={RateShow.Show.Id}";
             RateShowList list = new RateShowList(ExecuteCommand());
             if (list.Count == 0)
             {
