@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for MovieTopUc.xaml
+    /// Interaction logic for TopShow.xaml
     /// </summary>
-    public partial class MovieTopUc : UserControl
+    public partial class TopShow : UserControl
     {
-        public MovieTopUc()
+        public TopShow()
         {
-          
-
+            InitializeComponent();
         }
     }
 }

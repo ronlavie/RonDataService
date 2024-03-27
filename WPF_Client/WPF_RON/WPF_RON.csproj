@@ -82,6 +82,9 @@
     <Compile Include="MovieTopUc.xaml.cs">
       <DependentUpon>MovieTopUc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TopShow.xaml.cs">
+      <DependentUpon>TopShow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowRateShow.xaml.cs">
       <DependentUpon>WindowRateShow.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MovieTopUc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TopShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
