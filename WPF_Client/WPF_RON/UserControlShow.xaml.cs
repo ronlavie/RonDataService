@@ -21,10 +21,6 @@ namespace WPF_RON
     /// </summary>
     public partial class UserControlShow : UserControl
     {
-        public UserControlShow()
-        {
-            InitializeComponent();
-        }
         public UserControlShow(Show show)
         {
             InitializeComponent();

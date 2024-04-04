@@ -1,5 +1,4 @@
-﻿using MaterialDesignThemes.Wpf;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,29 +17,24 @@ using WPF_RON.ServiceReferenceMovieAndShow;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for UserControlMovie.xaml
+    /// Interaction logic for UserControlTopShow.xaml
     /// </summary>
-    public partial class UserControlMovie : UserControl
+    public partial class UserControlTopShow : UserControl
     {
-        public UserControlMovie(Movie movie)
+        public UserControlTopShow(Show show)
         {
             InitializeComponent();
-            this.DataContext = movie;
+
+            this.DataContext = show;
             ServiceMovieAndShowClient client = new ServiceMovieAndShowClient();
-            RateMovieList rates = client.GetMovieRatingByMovie(movie);
+            RateShowList rates = client.GetShowRatingByShow(show);
             if (rates != null && rates.Count > 0)
-            {
-                RatingBar.Value = rates.Average(m => m.Stars);
-                tbNumRates.Text = $"({rates.Count})";
-            }
+                RatingBar.Value = rates.Average(s => s.Stars);
             else
-            {
                 RatingBar.Value = 2.5;
-                tbNumRates.Text = string.Empty;
-            }
             try
             {
-                img.Source = new BitmapImage(new Uri(movie.PosterUrl));
+                img.Source = new BitmapImage(new Uri(show.PosterUrl));
             }
             catch (Exception ex)
             {

@@ -62,13 +62,10 @@ namespace WPF_RON
             grMain.Children.Clear();
             grMain.Children.Add(editUser);
         }
+
         private void GoTo_Home(object sender, RoutedEventArgs e)
         {
-            WindowUserProfile profileWindow = new WindowUserProfile(user);
-            profileWindow.WindowStartupLocation = WindowStartupLocation.Manual;
-            profileWindow.ShowDialog();
-            Close();
-            
+            this.Close();
         }
     }
 }

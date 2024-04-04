@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -18,26 +19,23 @@ using WPF_RON.ServiceReferenceMovieAndShow;
 namespace WPF_RON
 {
     /// <summary>
-    /// Interaction logic for UserControlMovie.xaml
+    /// Interaction logic for UserControlTopMovie.xaml
     /// </summary>
-    public partial class UserControlMovie : UserControl
+    public partial class UserControlTopMovie : UserControl
     {
-        public UserControlMovie(Movie movie)
+        private double value;
+
+        public UserControlTopMovie(Movie movie, double value, int rank)
         {
             InitializeComponent();
-            this.DataContext = movie;
-            ServiceMovieAndShowClient client = new ServiceMovieAndShowClient();
-            RateMovieList rates = client.GetMovieRatingByMovie(movie);
-            if (rates != null && rates.Count > 0)
-            {
-                RatingBar.Value = rates.Average(m => m.Stars);
-                tbNumRates.Text = $"({rates.Count})";
-            }
+            DataContext=movie;
+            RatingBar.Value=value;
+            if (rank == 1)
+                tbRank.Text = "First Rank!";
+            else if(rank == 2)
+                tbRank.Text = "Second Rank!";
             else
-            {
-                RatingBar.Value = 2.5;
-                tbNumRates.Text = string.Empty;
-            }
+                tbRank.Text = rank+"th!";
             try
             {
                 img.Source = new BitmapImage(new Uri(movie.PosterUrl));

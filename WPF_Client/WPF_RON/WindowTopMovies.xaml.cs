@@ -33,6 +33,7 @@ namespace WPF_RON
         {
             InitializeComponent();
             double avg;
+            //Get voting data
             myMovies =new Dictionary<Movie, double>();
             foreach (Movie movie in movies)
             {
@@ -44,24 +45,21 @@ namespace WPF_RON
                     avg = 2.5;
                 myMovies.Add(movie, avg);
             }
+            //Sort by average
             List<KeyValuePair<Movie, double>> list = myMovies.ToList();
             list.Sort((first, next) => {
                 return next.Value.CompareTo(first.Value);
             });
             listMovies.Children.Clear();
+
             foreach (KeyValuePair<Movie, double> entry in list)
             {
                 rows--;
                 if (rows == 0) break;
-                TextBlock textBlock = new TextBlock();
-                textBlock.FontSize = 15;
-                textBlock.HorizontalAlignment = HorizontalAlignment.Left;
-                textBlock.VerticalAlignment = VerticalAlignment.Center;
-                textBlock.Margin=new Thickness(0,3,0,0);
-                textBlock.Text = entry.Key.MovieName+" - Rate "+entry.Value;
-                listMovies.Children.Add(textBlock);
+                UserControlTopMovie topMovie = new UserControlTopMovie(entry.Key, entry.Value,10-rows);
+                listMovies.Children.Add(topMovie);
             }
-           
+
         }
      
     }

@@ -34,6 +34,10 @@
                         FontSize="20"
                         Foreground="Black"
                         Click="Categories_Click" />
+              <MenuItem Header="ADMIN" x:Name="mAdmin"
+                        FontSize="20"
+                        Foreground="Black"
+                        Click="Admin_Click" />
            
 
               

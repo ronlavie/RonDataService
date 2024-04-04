@@ -6,24 +6,39 @@
         xmlns:local="clr-namespace:WPF_RON"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="TopMoviesWindow" Height="450" Width="800">
+        Title="TopMoviesWindow"
+        Height="450"
+        Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.05*"/>
+            <ColumnDefinition Width="1.05*" />
             <ColumnDefinition />
-            <ColumnDefinition Width="1.05*"/>
+            <ColumnDefinition Width="1.05*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1"
                     Background="#FF9C9C9C">
-            <TextBlock Text="TOP MOVIES" HorizontalAlignment="Center" FontSize="25"
+            <TextBlock Text="TOP MOVIES"
+                       HorizontalAlignment="Center"
+                       FontSize="25"
+                       FontStyle="Oblique"
                        Foreground="#FF2A2A2A" />
-            <StackPanel x:Name="listMovies"  Orientation="Vertical"/>
+            <ScrollViewer Height="800"
+                          x:Name="ScrollViewerMain"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Visible"
+                          CanContentScroll="True"
+                          Margin="10">
+                <StackPanel>
+                    <StackPanel x:Name="listMovies"
+                                Orientation="Vertical" />
+                </StackPanel>
+            </ScrollViewer>
         </StackPanel>
-        <StackPanel Grid.Column="0">          
-           <Image Source="/Images/2022_cillianmurphy_oppenheimer_universalpictures_2000x1270-696x442 (2) (1).jpg" />
-        </StackPanel>
-        <StackPanel Grid.Column="2">
-            <Image Source="/Images/צילום מסך 2024-02-22 092353.png"/>
-        </StackPanel>
+            <StackPanel Grid.Column="0">
+                <Image Source="/Images/2022_cillianmurphy_oppenheimer_universalpictures_2000x1270-696x442 (2) (1).jpg" />
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <Image Source="/Images/צילום מסך 2024-02-22 092353.png" />
+            </StackPanel>
     </Grid>
 </Window>

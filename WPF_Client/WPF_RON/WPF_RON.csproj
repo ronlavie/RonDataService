@@ -79,11 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="MovieTopUc.xaml.cs">
-      <DependentUpon>MovieTopUc.xaml</DependentUpon>
+    <Compile Include="UserControlTopMovie.xaml.cs">
+      <DependentUpon>UserControlTopMovie.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TopShow.xaml.cs">
-      <DependentUpon>TopShow.xaml</DependentUpon>
+    <Compile Include="UserControlTopShow.xaml.cs">
+      <DependentUpon>UserControlTopShow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowRateShow.xaml.cs">
       <DependentUpon>WindowRateShow.xaml</DependentUpon>
@@ -151,11 +151,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MovieTopUc.xaml">
+    <Page Include="UserControlTopMovie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TopShow.xaml">
+    <Page Include="UserControlTopShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -280,7 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\back.png" />
-    <Resource Include="Images\Logo.png" />
+    <SplashScreen Include="Images\Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\smallLogo.png" />

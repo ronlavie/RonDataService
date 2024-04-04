@@ -57,7 +57,7 @@
                 <Button  Width="200"
                          HorizontalAlignment="right"
                          Click="GoTo_Home">
-                    <materialDesign:PackIcon Kind="Home"
+                    <materialDesign:PackIcon Kind="ExitToApp"
                                              Height="50"
                                              Width="50"
                                              Margin="-30" />

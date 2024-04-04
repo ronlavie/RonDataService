@@ -33,6 +33,7 @@ namespace WPF_RON
 
             myService = new ServiceMovieAndShowClient();
             myUser = user;
+            mAdmin.Visibility = user.PermissionLevel? Visibility.Visible: Visibility.Collapsed;
             //האם הסיסמה היא ברירת מחדל
             //מסך שינוי סיסמה
             if (myUser.Password == "CiniMeter1$")
@@ -119,15 +120,15 @@ namespace WPF_RON
             WindowTopShows showsWindow = new WindowTopShows();
             showsWindow.ShowDialog();
         }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Categories_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void Admin_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAdmin adminWindow = new WindowAdmin();
+            adminWindow.WindowStartupLocation= WindowStartupLocation.CenterScreen;
+            adminWindow.ShowDialog();
         }
     }
 }
