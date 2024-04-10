@@ -1,70 +1,66 @@
 ﻿<UserControl x:Class="WPF_RON.UserControlTopShow"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WPF_RON"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d"
              Height="300"
              Width="200">
-    <Grid Margin="0"
-          Background="Snow">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <!-- Image Row -->
-            <RowDefinition Height="Auto" />
-            <!-- Movie Name -->
-            <RowDefinition Height="Auto" />
-            <!-- Movie Category -->
-            <RowDefinition Height="Auto" />
+    <Border Background="LightGray"
+            CornerRadius="10">
+        <Grid Margin="10"
+              Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <!-- Image -->
+            <Image x:Name="img"
+                   Source="Images/Breaking-Bad-Logo-PNG-Image.png"
+                   Stretch="UniformToFill"
+                   Grid.Row="0"
+                   Height="150" />
+            <!-- Title -->
+            <TextBlock Grid.Row="1"
+                       Margin="5"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap"
+                       Text="{Binding Path=ShowName}" />
+            <!-- Category -->
+            <TextBlock Grid.Row="2"
+                       Margin="5"
+                       FontSize="14"
+                       TextAlignment="Center"
+                       Text="{Binding Path=ShowCategory.CategoryName}" />
             <!-- Rating and Reviews -->
-            <RowDefinition Height="Auto" />
-            <!-- Rank -->
-        </Grid.RowDefinitions>
-        <!-- Image on top, stretched -->
-        <Image x:Name="img"
-               Source="Images/Breaking-Bad-Logo-PNG-Image.png"
-               Stretch="UniformToFill"
-               Grid.Row="0" />
-        <!-- Movie Name -->
-        <TextBlock Grid.Row="1"
-                   FontSize="20"
-                   VerticalAlignment="Center"
-                   Text="{Binding Path=ShowName}"
-                   TextAlignment="Center"
-                   TextWrapping="WrapWithOverflow" />
-        <!-- Movie Category -->
-        <TextBlock Grid.Row="2"
-                   FontSize="15"
-                   Text="{Binding Path=ShowCategory.CategoryName}"
-                   TextAlignment="Center"
-                   VerticalAlignment="Center" />
-        <!-- Rating and Reviews -->
-        <StackPanel Grid.Row="3"
-                    Orientation="Vertical"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal"
+            <StackPanel Grid.Row="3"
+                        Orientation="Horizontal"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Center">
+                        Margin="5">
+                <TextBlock FontSize="14"
+                           Text="{Binding Path=ImdbRating}"
+                           TextAlignment="Center"
+                           Margin="0,0,5,0" />
                 <materialDesign:RatingBar Value="4"
                                           IsReadOnly="True"
-                                          x:Name="RatingBar" />
-                <TextBlock x:Name="tbNumRates"
-                           FontSize="15" />
+                                          x:Name="RatingBar"
+                                          Margin="0,0,5,0" />
+                <TextBlock FontSize="12"
+                           Text="IMDB"
+                           VerticalAlignment="Center" />
             </StackPanel>
-            <TextBlock FontSize="10"
-                       ToolTip="Avg.... from IMDB"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center">
-                <Run Text="{Binding Path=ImdbRating}" />
-                <Run Text="(Imdb)" /></TextBlock>
-       
-        </StackPanel>
-        <!-- Rank -->
-        <TextBlock Grid.Row="4"
-                   TextWrapping="WrapWithOverflow"
-                   Text="RANK :" />
-    </Grid>
+            <!-- Rank -->
+            <TextBlock Grid.Row="4"
+                       Margin="5"
+                       FontSize="14"
+                       x:Name="tbRank"
+                       TextWrapping="Wrap"
+                       Text="Rank: "
+                       TextAlignment="Center" />
+        </Grid>
+    </Border>
 </UserControl>

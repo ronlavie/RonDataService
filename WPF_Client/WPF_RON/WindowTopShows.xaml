@@ -31,6 +31,19 @@
                        HorizontalAlignment="Center"
                        FontSize="25"
                        Foreground="Black" />
+            <ScrollViewer Height="800"
+                          x:Name="ScrollViewerMain"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Visible"
+                          CanContentScroll="True"
+                          Margin="10">
+                <StackPanel>
+                    <StackPanel x:Name="listShows"
+                                Orientation="Vertical" />
+                </StackPanel>
+            </ScrollViewer>
         </StackPanel>
+    
+     
     </Grid>
 </Window>

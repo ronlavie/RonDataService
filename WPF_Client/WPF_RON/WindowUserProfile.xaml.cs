@@ -117,7 +117,8 @@ namespace WPF_RON
 
         private void Top_Shows_Click_(object sender, RoutedEventArgs e)
         {
-            WindowTopShows showsWindow = new WindowTopShows();
+            WindowTopShows showsWindow = new WindowTopShows(shows
+          );
             showsWindow.ShowDialog();
         }
         private void Categories_Click(object sender, RoutedEventArgs e)

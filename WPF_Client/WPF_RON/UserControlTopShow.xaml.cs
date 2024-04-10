@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -21,17 +22,17 @@ namespace WPF_RON
     /// </summary>
     public partial class UserControlTopShow : UserControl
     {
-        public UserControlTopShow(Show show)
+        public UserControlTopShow(Show show , double value , int rank)
         {
             InitializeComponent();
-
-            this.DataContext = show;
-            ServiceMovieAndShowClient client = new ServiceMovieAndShowClient();
-            RateShowList rates = client.GetShowRatingByShow(show);
-            if (rates != null && rates.Count > 0)
-                RatingBar.Value = rates.Average(s => s.Stars);
+            DataContext = show;
+            RatingBar.Value = value;
+            if (rank == 1)
+                tbRank.Text = "First Rank!";
+            else if (rank == 2)
+                tbRank.Text = "Second Rank!";
             else
-                RatingBar.Value = 2.5;
+                tbRank.Text = rank + "th!";
             try
             {
                 img.Source = new BitmapImage(new Uri(show.PosterUrl));
