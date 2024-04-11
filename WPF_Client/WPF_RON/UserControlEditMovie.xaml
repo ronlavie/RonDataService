@@ -112,6 +112,14 @@
                                              Height="25" /></Button>
                 <Button Width="60" ToolTip="Clear data"
                         Click="Clear_Click">
+                    <materialDesign:PackIcon Kind="broom"
+                                             Width="25"
+                                             Height="25" />
+
+                </Button>
+                <Button Width="60"
+                        ToolTip="Delete Movie"
+                        Click="Delete_Click">
                     <materialDesign:PackIcon Kind="Delete"
                                              Width="25"
                                              Height="25" />
@@ -128,8 +136,8 @@
                         Foreground="#FF065F34"
                         Click="Copy_Click">✨Copy</Button>
             </StackPanel>
-            <TextBlock x:Name="tbInfo" Margin="5 0"
-                       FontSize="15"
+            <TextBlock x:Name="tbInfo" Margin="5 0"                                  
+                       FontSize="15" TextWrapping="WrapWithOverflow"
                        Foreground="Snow" />
         </StackPanel>
     </Grid>

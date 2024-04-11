@@ -67,23 +67,22 @@ namespace ViewModel
             RateMovieList list = new RateMovieList(ExecuteCommand());
             return list;
         }
-        public int Insert(RateMovie movie)
+        public int Insert(RateMovie rateMovie)
         {
             command.CommandText = "INSERT INTO TblRatemovie (Movie, [User], Stars,[TimeStamp]) VALUES (@movie,@User, @Stars, @TimeStamp)";
-            LoadParameters(movie);
+            LoadParameters(rateMovie);
             return ExecuteCRUD();
         }
 
-        public int Delete(RateMovie shID)
+        public int Delete(RateMovie rateMovie)
         {
-            command.CommandText = "DELETE FROM TblRatemovie WHERE ID =@ID";
-            LoadParameters(shID);
+            command.CommandText = $"DELETE FROM TblRatemovie WHERE ID ={rateMovie.Id}";
             return ExecuteCRUD();
         }
-        public int Update(RateMovie shid)
+        public int Update(RateMovie rateMovie)
         {
             command.CommandText = "UPDATE TblRatemovie SET movie = @movie,[User] = @User, Stars = @Stars, [TimeStamp]=@TimeStamp WHERE Id = @Id ";
-            LoadParameters(shid);
+            LoadParameters(rateMovie);
             return ExecuteCRUD();
         }
 

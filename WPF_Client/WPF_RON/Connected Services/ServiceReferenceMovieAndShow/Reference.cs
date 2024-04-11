@@ -728,6 +728,12 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/RateShows", ReplyAction="http://tempuri.org/IServiceMovieAndShow/RateShowsResponse")]
         System.Threading.Tasks.Task<int> RateShowsAsync(WPF_RON.ServiceReferenceMovieAndShow.RateShow rateShow);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetShowinfo", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetShowinfoResponse")]
+        string GetShowinfo(string ShowName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetShowinfo", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetShowinfoResponse")]
+        System.Threading.Tasks.Task<string> GetShowinfoAsync(string ShowName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceMovieAndShow/GetAllCategories", ReplyAction="http://tempuri.org/IServiceMovieAndShow/GetAllCategoriesResponse")]
         WPF_RON.ServiceReferenceMovieAndShow.CategoryList GetAllCategories();
         
@@ -970,6 +976,14 @@ namespace WPF_RON.ServiceReferenceMovieAndShow {
         
         public System.Threading.Tasks.Task<int> RateShowsAsync(WPF_RON.ServiceReferenceMovieAndShow.RateShow rateShow) {
             return base.Channel.RateShowsAsync(rateShow);
+        }
+        
+        public string GetShowinfo(string ShowName) {
+            return base.Channel.GetShowinfo(ShowName);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetShowinfoAsync(string ShowName) {
+            return base.Channel.GetShowinfoAsync(ShowName);
         }
         
         public WPF_RON.ServiceReferenceMovieAndShow.CategoryList GetAllCategories() {

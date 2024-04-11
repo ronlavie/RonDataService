@@ -151,6 +151,12 @@
   <wsdl:message name="IServiceMovieAndShow_RateShows_OutputMessage">
     <wsdl:part name="parameters" element="tns:RateShowsResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetShowinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShowinfo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMovieAndShow_GetShowinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShowinfoResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceMovieAndShow_GetAllCategories_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCategories" />
   </wsdl:message>
@@ -271,6 +277,10 @@
     <wsdl:operation name="RateShows">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/RateShows" message="tns:IServiceMovieAndShow_RateShows_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/RateShowsResponse" message="tns:IServiceMovieAndShow_RateShows_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShowinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetShowinfo" message="tns:IServiceMovieAndShow_GetShowinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetShowinfoResponse" message="tns:IServiceMovieAndShow_GetShowinfo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceMovieAndShow/GetAllCategories" message="tns:IServiceMovieAndShow_GetAllCategories_InputMessage" />
@@ -500,6 +510,15 @@
     </wsdl:operation>
     <wsdl:operation name="RateShows">
       <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/RateShows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShowinfo">
+      <soap:operation soapAction="http://tempuri.org/IServiceMovieAndShow/GetShowinfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

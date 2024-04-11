@@ -59,7 +59,7 @@ namespace ViewModel
         }
         public int Delete(Movie movie)
         {
-            command.CommandText = "DELETE FROM TblMovies WHERE ID =@ID";
+            command.CommandText = $"DELETE FROM TblMovies WHERE ID ={movie.Id}";
             LoadParameters(movie);
             return ExecuteCRUD();
         }

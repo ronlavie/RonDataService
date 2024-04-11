@@ -87,5 +87,12 @@ namespace WPF_RON
         {
             movie.About = tbInfo.Text;
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if(MessageBox.Show($"Delete {movie.MovieName}?","Delete",MessageBoxButton.YesNo) == MessageBoxResult.Yes) {
+                service.DeleteMovies(movie);
+            }
+        }
     }
 }

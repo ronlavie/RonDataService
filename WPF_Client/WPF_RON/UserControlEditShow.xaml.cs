@@ -75,7 +75,15 @@ namespace WPF_RON
             spEdit.DataContext = show = new Show();
         }
 
+        private void Copy_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void GetApi_Click(object sender, RoutedEventArgs e)
+        {
+            tbInfo.Text = service.GetShowinfo(tbName.Text);
+        }
     }
 }
     

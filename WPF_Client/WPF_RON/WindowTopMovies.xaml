@@ -22,16 +22,10 @@
                        FontSize="25"
                        FontStyle="Oblique"
                        Foreground="#FF2A2A2A" />
-            <ScrollViewer Height="800"
-                          x:Name="ScrollViewerMain"
-                          HorizontalScrollBarVisibility="Hidden"
-                          VerticalScrollBarVisibility="Visible"
-                          CanContentScroll="True"
-                          Margin="10">
-                <StackPanel>
+            <ScrollViewer x:Name="ScrollViewerMain"
+                          Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}, Path=ActualHeight}">
                     <StackPanel x:Name="listMovies"
                                 Orientation="Vertical" />
-                </StackPanel>
             </ScrollViewer>
         </StackPanel>
             <StackPanel Grid.Column="0">

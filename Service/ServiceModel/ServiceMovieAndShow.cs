@@ -118,6 +118,10 @@ namespace ServiceModel
             return ShowDB.Insert(show);
 
         }
+        public string GetShowinfo(string ShowName)
+        {
+            return ApiData.GetMovieData(ShowName);
+        }
         public int DeleteShows(Show show)
             {
                 ShowDB ShowDB = new ShowDB();
@@ -125,10 +129,16 @@ namespace ServiceModel
             }
 
         public int DeleteMovies(Movie movie)
+        {
+
+            RateMovieList rateMovies = GetMovieRatingByMovie(movie);
+            foreach (RateMovie rate in rateMovies)
             {
-                MovieDB movieDb = new MovieDB();
-                return movieDb.Delete(movie);
+                DeleteRateMovies(rate);
             }
+            MovieDB movieDb = new MovieDB();
+            return movieDb.Delete(movie);
+        }
         public int DeleteRateMovies(RateMovie rateMovie)
             {
                 RateMovieDB movieDb = new RateMovieDB();

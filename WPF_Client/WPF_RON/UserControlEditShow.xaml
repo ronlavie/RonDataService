@@ -39,7 +39,7 @@
                          ValidatesOnDataErrors="True"
                          UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
-                        <local:ValidationMovieShowName />
+                        <local:ValidationMovieShowName Max="25" />
                     </Binding.ValidationRules>
                 </Binding>
             </TextBox>
@@ -72,7 +72,7 @@
                       materialDesign:HintAssist.Hint="Category"
                       materialDesign:HintAssist.HelperText="select category"
                       materialDesign:HintAssist.HintOpacity=".56"
-                      DisplayMemberPath="CategoryName"/>
+                      DisplayMemberPath="CategoryName" />
             <StackPanel Orientation="Horizontal"
                         Margin="10 20"
                         HorizontalAlignment="Center">
@@ -88,6 +88,22 @@
                                              Width="25"
                                              Height="25" />
                 </Button>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left">
+                    <Button Width="120"
+                            ToolTip="Get data from Api"
+                            Foreground="#FF065F34"
+                            Margin="5 0"
+                            Click="GetApi_Click">🎬 info</Button>
+                    <Button Width="120"
+                            Foreground="#FF065F34"
+                            Click="Copy_Click">✨Copy</Button>
+                </StackPanel>
+                <TextBlock x:Name="tbInfo"
+                           Margin="5 0"
+                           FontSize="15"
+                           TextWrapping="WrapWithOverflow"
+                           Foreground="Snow" />
             </StackPanel>
         </StackPanel>
     </Grid>

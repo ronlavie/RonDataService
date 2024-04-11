@@ -66,22 +66,21 @@ namespace ViewModel
             RateShowList list = new RateShowList(ExecuteCommand());
             return list;
         }
-        public int Insert(RateShow Show)
+        public int Insert(RateShow RateShow)
         {
             command.CommandText = "INSERT INTO TblRateShow (Show, [User], Stars) VALUES (@Show,@User, @Stars)";
-            LoadParameters(Show);
+
             return ExecuteCRUD();
         }
-        public int Delete(Show shID)
+        public int Delete(Show RateShow)
         {
-            command.CommandText = "DELETE FROM TblRateShow WHERE ID =@ID";
-            LoadParameters(shID);
+            command.CommandText = $"DELETE FROM TblRateShow WHERE ID={RateShow.Id}";
             return ExecuteCRUD();
         }
-        public int Update(RateShow shid)
+        public int Update(RateShow RateShow)
         {
             command.CommandText = "UPDATE TblRateShow SET Show = @Show,[User] = @User, Stars = @Stars WHERE Id = @Id ";
-            LoadParameters(shid);
+            LoadParameters(RateShow);
             return ExecuteCRUD();
         }
         public RateShow IsExist(RateShow RateShow)
