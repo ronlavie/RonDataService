@@ -22,7 +22,7 @@ namespace WPF_RON
                 {
                     return new ValidationResult(false, "too long");
                 }
-                if (text.Length==0)
+                if (text.Length == 0)
                 {
                     return new ValidationResult(false, "too short");
                 }
@@ -47,7 +47,7 @@ namespace WPF_RON
                 {
                     return new ValidationResult(false, "too long");
                 }
-                for(int i = 0;i< len.Length; i++)
+                for (int i = 0; i < len.Length; i++)
                 {
                     if (!Char.IsDigit(len[i]))
                         return new ValidationResult(false, "must contain only digits");
@@ -103,7 +103,7 @@ namespace WPF_RON
                 {
                     return new ValidationResult(false, "password must be at least 6 chars long"); // check if the password lenght is 8
                 }
-                if (passwsord.Length >15)
+                if (passwsord.Length > 15)
                 {
                     return new ValidationResult(false, "password must cann't be more then 15 chars"); // check if the password lenght is 8
                 }
@@ -132,107 +132,6 @@ namespace WPF_RON
             return ValidationResult.ValidResult;
         }
     }
-
-    public class ValidationEmail : ValidationRule
-    {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            try
-            {
-                string email = value as string;
-                Regex emailRegex = new Regex("([A-Za-z0-9]+[._-])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\\.[A-Z|a-z]{2,})+");
-                Match match = emailRegex.Match(email);
-
-                if (!match.Success)
-                {
-                    return new ValidationResult(false, "not in the right format");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return new ValidationResult(false, ex.Message);
-            }
-
-            return ValidationResult.ValidResult;
-        }
-    }
-
-    public class ValidationAddress : ValidationRule
-    {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            try
-            {
-                string address = value as string;
-                Regex addressRegex = new Regex("([A-Za-z])*[, ]+([0-9])*[, ]+([A-Za-z]+)");
-                Match match = addressRegex.Match(address);
-
-                if (!match.Success)
-                {
-                    return new ValidationResult(false, "not in the right format");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return new ValidationResult(false, ex.Message);
-            }
-
-            return ValidationResult.ValidResult;
-        }
-    }
-
-    public class ValidationPhoneNumber : ValidationRule
-    {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            try
-            {
-                string phone = value as string;
-                Regex phoneRegex1 = new Regex("0+([0-9]){8}");
-                Regex phoneRegex2 = new Regex("05+([0-9]){8}");
-                Match match1 = phoneRegex1.Match(phone);
-                Match match2 = phoneRegex2.Match(phone);
-
-                if (!match1.Success || !match2.Success)
-                {
-                    return new ValidationResult(false, "not in the right format");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return new ValidationResult(false, ex.Message);
-            }
-
-            return ValidationResult.ValidResult;
-        }
-    }
-
-    public class ValidationBirthdate : ValidationRule
-    {
-        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
-        {
-            try
-            {
-                string birthdate = value as string;
-                Regex birthdateRegex = new Regex("^(3[01]|[12][0-9]|0[1-9]).(1[0-2]|0[1-9]).(19\\d\\d|20[01]\\d)$");
-                Match match = birthdateRegex.Match(birthdate);
-
-                if (!match.Success)
-                {
-                    return new ValidationResult(false, "not in the right format - dd.mm.yyyy");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return new ValidationResult(false, ex.Message);
-            }
-
-            return ValidationResult.ValidResult;
-        }
-    }
-
 }
+
+

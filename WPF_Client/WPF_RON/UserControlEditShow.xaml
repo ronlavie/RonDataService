@@ -97,7 +97,8 @@
                             Click="GetApi_Click">🎬 info</Button>
                     <Button Width="120"
                             Foreground="#FF065F34"
-                            Click="Copy_Click">✨Copy</Button>
+                            Click="Copy_Click"
+                            Content="✨Copy" />
                 </StackPanel>
                 <TextBlock x:Name="tbInfo"
                            Margin="5 0"

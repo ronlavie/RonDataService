@@ -29,20 +29,15 @@
                     Background="#FFA7A132">
             <TextBlock Text="TOP SHOWS"
                        HorizontalAlignment="Center"
-                       FontSize="25"
+                       FontSize="50"
                        Foreground="Black" />
-            <ScrollViewer Height="800"
-                          x:Name="ScrollViewerMain"
-                          HorizontalScrollBarVisibility="Hidden"
-                          VerticalScrollBarVisibility="Visible"
-                          CanContentScroll="True"
-                          Margin="10">
-                <StackPanel>
-                    <StackPanel x:Name="listShows"
-                                Orientation="Vertical" />
-                </StackPanel>
+            <ScrollViewer x:Name="ScrollViewerMain"
+                          Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}, Path=ActualHeight}">
+                <StackPanel x:Name="listShows"
+                            Orientation="Vertical" />
             </ScrollViewer>
         </StackPanel>
+  
     
      
     </Grid>

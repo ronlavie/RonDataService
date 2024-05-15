@@ -28,17 +28,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Model.Movie">
-    <Position X="10" Y="2.5" Width="1.5" />
+    <Position X="10" Y="2" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAQAAAAEAAAAAAEgAAABIAAAAAAAAABAAAAAQAAAAAA=</HashCode>
+      <HashCode>AgQgAAAEABAAAAEwIAABICAAAAAAAABAAAAAQAIAIAA=</HashCode>
       <FileName>Movie.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Model.MovieList">
-    <Position X="10" Y="4.75" Width="1.5" />
+    <Position X="10" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Movie.cs</FileName>
@@ -50,7 +50,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AEABAAFAAAABEAAAABAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AEABAABAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>RateMovie.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -67,7 +67,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AEABAAFAAAABAAAAAAAAAAAAAAAEAAAABAAAAAAAAQA=</HashCode>
+      <HashCode>AEABAABAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAQA=</HashCode>
       <FileName>RateShow.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -79,17 +79,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Model.Show">
-    <Position X="8.25" Y="2.5" Width="1.5" />
+    <Position X="8.25" Y="2" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAGAAgABgAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAgAAAGABgABgAYIAAAACAAAAAAAAAAAAAAAAIAIAA=</HashCode>
       <FileName>Show.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Model.ShowList">
-    <Position X="8.25" Y="4.5" Width="1.5" />
+    <Position X="8.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Show.cs</FileName>
@@ -101,7 +101,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAEEAAABBAAAIAAAAAAAAAAAAAAACAQAACgEAAAA=</HashCode>
+      <HashCode>AAAAAEEAAABBAAAAAAAAAAAAAAAAAAACAQAACgEAAAg=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>

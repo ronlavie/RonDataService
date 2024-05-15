@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:WPF_RON"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              Height="300"
-             Width="200">
+             Width="250">
     <Border Background="LightGray"
             CornerRadius="10">
         <Grid Margin="10"
@@ -18,8 +18,8 @@
             </Grid.RowDefinitions>
             <!-- Image -->
             <Image x:Name="img"
-                   Source="Images/Breaking-Bad-Logo-PNG-Image.png"
-                   Stretch="UniformToFill"
+                   Source="Images/Breaking-Bad-Logo-PNG-Image.png" 
+                    Stretch="Uniform"
                    Grid.Row="0"
                    Height="150" />
             <!-- Title -->
