@@ -3,10 +3,70 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WPF_RON"
         mc:Ignorable="d"
-        Title="WindowCategory" Height="450" Width="800">
+        WindowState="Maximized"
+        Title="WindowSignin"
+        Height="450"
+        Width="600">
+  
+    <Window.Resources>
+        <Style TargetType="Button"
+               BasedOn="{StaticResource MaterialDesignFlatButton}">
+            <Setter Property="FontSize"
+                    Value="20" />
+            <Setter Property="Height"
+                    Value="50" />
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/back.png" />
+        </Grid.Background>
+        <Grid Margin="15 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.65*" />
+                <RowDefinition Height="0.8*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0"
+                   Source="/Images/smallLogoNoBack.png"
+                   HorizontalAlignment="Left"
+                   Width="150"
+                   Margin="-10,20" />
+            <TextBlock Grid.Row="0"
+                       Text="CHOOSE A CATEGORY"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="30" />
+            <ComboBox x:Name="cbCategory"
+                      FontSize="30"
+                      Margin="10"
+                      IsEditable="True"
+                      Foreground="Snow"
+                      materialDesign:TextFieldAssist.HasClearButton="True"
+                      materialDesign:HintAssist.Hint="Category"
+                      materialDesign:HintAssist.HelperText="select category"
+                      materialDesign:HintAssist.HintOpacity=".56"
+                      DisplayMemberPath="CategoryName"
+                      Grid.Row="1"
+                      HorizontalAlignment="Center" />
+        </Grid>
+        <StackPanel />
+        <ScrollViewer Height="350" Grid.Row="2"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Hidden"
+                      CanContentScroll="True"
+                      Margin="5">
+            <StackPanel>
+                <StackPanel x:Name="pnlViewShows"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"></StackPanel>
+                <TextBlock Text="HEllo"
+                           FontSize="20" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

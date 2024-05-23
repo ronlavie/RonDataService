@@ -24,6 +24,7 @@ namespace WPF_RON
         private User myUser;
         private MovieList movies;
         private ShowList shows;
+        private CategoryList categories;
         bool update;
         Show show;
 
@@ -123,7 +124,8 @@ namespace WPF_RON
         }
         private void Categories_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowCategory category = new WindowCategory(categories);
+            category.ShowDialog();
         }
         private void Admin_Click(object sender, RoutedEventArgs e)
         {
