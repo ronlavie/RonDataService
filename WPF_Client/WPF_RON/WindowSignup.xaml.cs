@@ -64,7 +64,11 @@ namespace WPF_RON
                 MessageBox.Show("Oh oh...something is wrong", "Error", MessageBoxButton.OK);
                 return;
             }
-            this.Close();
+            MessageBox.Show("You are in!", "OK", MessageBoxButton.OK);
+            user = myService.Login(user);
+            Close();
+            WindowUserProfile windowUserProfile = new WindowUserProfile(user);
+            windowUserProfile.ShowDialog();
         }
 
         private bool CheckData()
@@ -84,7 +88,9 @@ namespace WPF_RON
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+           WindowSignin windowSignin = new WindowSignin();
+            windowSignin.ShowDialog();
         }
 
         private void pbRePassword_PasswordChanged(object sender, RoutedEventArgs e)

@@ -15,8 +15,8 @@
   <Run Text="{Binding Path=Firstname}" />
   <Run Text=" " />
   <Run Text="{Binding Path=Lastname}" />
-            <Button Width="45"
-                    Height="45"
+            <Button Width="55"
+                    Height="55"
                     VerticalAlignment="Top"
                     Content="⚙️" Background="Transparent" Foreground="Black"
                     Style="{StaticResource MaterialDesignRaisedButton}" />
@@ -52,9 +52,6 @@
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
                      VerticalAlignment="Center"
                      TextChanged="tbSearch_TextChanged" />
-            <ListBox x:Name="lbShows"
-                     DisplayMemberPath="ShowName"
-                     SelectionChanged="lbShows_SelectionChanged" />
         </StackPanel>
         <StackPanel>
             <TextBlock Text="Shows"

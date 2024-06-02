@@ -21,44 +21,51 @@ namespace WPF_RON
     public partial class WindowCategory : Window
     {
         ShowList shows;
-        Show show;
-        bool update;
+        MovieList movies;
         ServiceMovieAndShowClient service;
         public WindowCategory(CategoryList categories)
         {
             InitializeComponent();
             service = new ServiceMovieAndShowClient();
+            shows = service.GetAllShowsFullData();
+            movies = service.GetAllMoviesFullData();
+
             cbCategory.ItemsSource = service.GetAllCategories();
             cbCategory.DisplayMemberPath = "CategoryName";
-            cbCategory.SelectedValuePath = "Id";
-            InitializeComponent();
-            
-            LoadShows();
-        }
-        private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-            cbCategory.SelectedValue = show.ShowCategory.Id;
-           
-     
+            cbCategory.SelectedIndex = 0;
         }
 
-        public void LoadShows()
+        public void LoadShows(Category category)
         {
-            shows = service.GetAllShowsFullData();
             pnlViewShows.Children.Clear();
             foreach (Show show in shows)
-                if (show.ShowCategory == cbCategory.SelectedValue) 
+                if (show.ShowCategory.Id == category.Id)
                 {
-                    {
-
-                        UserControlShow controlShow = new UserControlShow(show);
-                        controlShow.Margin = new Thickness(5);
-                        controlShow.Tag = show;
-                        pnlViewShows.Children.Add(controlShow);
-                    }
+                    UserControlShow controlShow = new UserControlShow(show);
+                    controlShow.Margin = new Thickness(5);
+                    controlShow.Tag = show;
+                    pnlViewShows.Children.Add(controlShow);
                 }
-     
+        }
+        public void LoadMovies(Category category)
+        {
+            pnlViewMovies.Children.Clear();
+            foreach (Movie movie in movies)
+                if(movie.MovieCategory.Id == category.Id)
+            {
+                UserControlMovie controlMovie = new UserControlMovie(movie);
+                controlMovie.Margin = new Thickness(5);
+                controlMovie.Tag = movie;
+                pnlViewMovies.Children.Add(controlMovie);
+            }
+        }
+        private void cbCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Category category = cbCategory.SelectedItem as Category;
+            if (category != null) 
+                LoadShows(category);
+                LoadMovies(category);
+
         }
     }
 }

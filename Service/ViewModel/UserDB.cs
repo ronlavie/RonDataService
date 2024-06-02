@@ -80,20 +80,20 @@ namespace ViewModel
         }
         public int Insert(User user)
         {
-            command.CommandText = "INSERT INTO TblUser (FirstName,LastName,UserName,Password,PermissionLevel) VALUES (@FirstName,@LastName,@UserName,@Password,@PermissionLevel)";
+            command.CommandText = "INSERT INTO TblUsers (FirstName,LastName,UserName,[Password],PermissionLevel) VALUES (@FirstName,@LastName,@UserName,@Password,@PermissionLevel)";
             LoadParameters(user);
             return ExecuteCRUD();
         }
         public int Update(User user)
         {
-            command.CommandText = "UPDATE TblUser SET FirstName = @FirstName, LastName = @LastName,  PermissionLevel = @PermissionLevel, Password = @Password" +
+            command.CommandText = "UPDATE TblUsers SET FirstName = @FirstName, LastName = @LastName,  PermissionLevel = @PermissionLevel, [Password] = @Password " +
                 "WHERE ID = @ID";
             LoadParameters(user);
             return ExecuteCRUD();
         }
         public int Delete(User PersonID)
         {
-            command.CommandText = "DELETE FROM TblUser WHERE ID =@ID";
+            command.CommandText = "DELETE FROM TblUsers WHERE ID =@ID";
             LoadParameters(PersonID);
             return ExecuteCRUD();
         }

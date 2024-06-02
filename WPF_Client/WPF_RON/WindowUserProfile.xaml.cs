@@ -25,14 +25,14 @@ namespace WPF_RON
         private MovieList movies;
         private ShowList shows;
         private CategoryList categories;
-        bool update;
-        Show show;
 
         public WindowUserProfile(User user)
         {
             InitializeComponent();
 
             myService = new ServiceMovieAndShowClient();
+            shows = myService.GetAllShowsFullData();
+            movies = myService.GetAllMoviesFullData();
             myUser = user;
             mAdmin.Visibility = user.PermissionLevel? Visibility.Visible: Visibility.Collapsed;
             //האם הסיסמה היא ברירת מחדל
@@ -43,36 +43,27 @@ namespace WPF_RON
                 changePassWindow.ShowDialog();
             }
             this.DataContext = myUser;
-            LoadShows();
-            LoadMovies();
-        }
-        public WindowUserProfile()
-        {
-            InitializeComponent();
-            myService = new ServiceMovieAndShowClient();
-            myUser = new User { FirstName = "Ron", LastName = "X", PermissionLevel = false };
-            this.DataContext = myUser;
-            LoadShows(); LoadMovies();
+            LoadShows("");
+            LoadMovies("");
         }
 
-
-        public void LoadShows()
+        public void LoadShows(string text)
         {
-            shows = myService.GetAllShowsFullData();
             pnlViewShows.Children.Clear();
             foreach (Show show in shows)
             {
-
-                UserControlShow controlShow = new UserControlShow(show);
-                controlShow.Margin = new Thickness(5);
-                controlShow.Tag = show;
-                controlShow.MouseDoubleClick += ControlShow_MouseDoubleClick;
-                pnlViewShows.Children.Add(controlShow);
+                if (show.ShowName.StartsWith(text))
+                {
+                    UserControlShow controlShow = new UserControlShow(show);
+                    controlShow.Margin = new Thickness(5);
+                    controlShow.Tag = show;
+                    controlShow.MouseDoubleClick += ControlShow_MouseDoubleClick;
+                    pnlViewShows.Children.Add(controlShow);
+                }
             }
         }
-        public void LoadMovies()
+        public void LoadMovies(string text)
         {
-            movies = myService.GetAllMoviesFullData();
             pnlViewMovies.Children.Clear();
             foreach (Movie movie in movies)
             {
@@ -99,15 +90,9 @@ namespace WPF_RON
             sender=new UserControlShow(show);
         }
 
-        private void lbShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            show = lbShows.SelectedValue as Show;
-            update = true;
-        }
-
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            LoadShows(tbSearch.Text);
         }
 
         private void Top_Movies_Click(object sender, RoutedEventArgs e)

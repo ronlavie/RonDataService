@@ -104,10 +104,10 @@ namespace WPF_RON
         }
         private void GoTo_Signup(object sender, RoutedEventArgs e) 
         {
+            Close();
             WindowSignup windowSignup = new WindowSignup();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             windowSignup.ShowDialog();
-            Close();
         }
     }
 }

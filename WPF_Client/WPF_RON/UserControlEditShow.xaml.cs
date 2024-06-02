@@ -74,16 +74,17 @@ namespace WPF_RON
             cbCategory.Text = string.Empty;
             spEdit.DataContext = show = new Show();
         }
-
-        private void Copy_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void GetApi_Click(object sender, RoutedEventArgs e)
         {
             tbInfo.Text = service.GetShowinfo(tbName.Text);
         }
+
+        private void Copy_Click(object sender, RoutedEventArgs e)
+        {
+            show.ShowDescription = tbInfo.Text;
+        }
+
+    
     }
 }
     

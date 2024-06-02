@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         Title="WindowSignin"
-        Height="450"
+        Height="550"
         Width="600">
   
     <Window.Resources>
@@ -26,9 +26,9 @@
         </Grid.Background>
         <Grid Margin="15 0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.65*" />
-                <RowDefinition Height="0.8*" />
-                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition  />
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Image Grid.Row="0"
@@ -42,10 +42,10 @@
                        Foreground="White"
                        FontSize="30" />
             <ComboBox x:Name="cbCategory"
-                      FontSize="30"
-                      Margin="10"
+                      FontSize="25"
                       IsEditable="True"
                       Foreground="Snow"
+                      SelectionChanged="cbCategory_SelectionChanged"
                       materialDesign:TextFieldAssist.HasClearButton="True"
                       materialDesign:HintAssist.Hint="Category"
                       materialDesign:HintAssist.HelperText="select category"
@@ -53,8 +53,6 @@
                       DisplayMemberPath="CategoryName"
                       Grid.Row="1"
                       HorizontalAlignment="Center" />
-        </Grid>
-        <StackPanel />
         <ScrollViewer Height="350" Grid.Row="2"
                       HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Hidden"
@@ -68,5 +66,18 @@
                            FontSize="20" />
             </StackPanel>
         </ScrollViewer>
+        <ScrollViewer Height="350" Grid.Row="3"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Hidden"
+                      CanContentScroll="True">
+            <StackPanel>
+                <StackPanel x:Name="pnlViewMovies"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"></StackPanel>
+                <TextBlock Text="HEllo"
+                           FontSize="20" />
+            </StackPanel>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>

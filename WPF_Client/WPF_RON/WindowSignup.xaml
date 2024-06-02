@@ -8,6 +8,7 @@
     xmlns:local="clr-namespace:WPF_RON"
     mc:Ignorable="d"
     Title="WindowSignup"
+    WindowStartupLocation="CenterScreen"
     Height="600"
     Width="600">
     <Window.Resources>

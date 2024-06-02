@@ -6,14 +6,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WPF_RON"
              mc:Ignorable="d"
-             d:DesignHeight="400"
-             d:DesignWidth="700">
+             d:DesignHeight="600"
+             d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition Width="0.4*"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0"
+        <StackPanel Grid.Column="0" 
                     Margin="10 0">
             <TextBox x:Name="tbSearch"
                      materialDesign:HintAssist.Hint="Search"
@@ -56,7 +56,6 @@
                      materialDesign:HintAssist.Hint="Show description"
                      materialDesign:HintAssist.HelperText="Insert Show description here">
                 <Binding Path="ShowDescription"
-                         ValidatesOnDataErrors="True"
                          UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
                         <local:ValidationMovieShowName />
@@ -88,24 +87,24 @@
                                              Width="25"
                                              Height="25" />
                 </Button>
-                <StackPanel Orientation="Horizontal"
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Left">
-                    <Button Width="120"
+                <Button Width="120"
                             ToolTip="Get data from Api"
                             Foreground="#FF065F34"
                             Margin="5 0"
                             Click="GetApi_Click">🎬 info</Button>
-                    <Button Width="120"
+                <Button Width="120"
                             Foreground="#FF065F34"
                             Click="Copy_Click"
                             Content="✨Copy" />
-                </StackPanel>
-                <TextBlock x:Name="tbInfo"
+            </StackPanel>
+            <TextBlock x:Name="tbInfo"
                            Margin="5 0"
                            FontSize="15"
                            TextWrapping="WrapWithOverflow"
                            Foreground="Snow" />
-            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>

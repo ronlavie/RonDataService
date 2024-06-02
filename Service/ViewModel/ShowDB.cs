@@ -27,7 +27,7 @@ namespace ViewModel
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@ShowName", Show.ShowName);
             command.Parameters.AddWithValue("@ShowCategory", Show.ShowCategory.Id);
-            command.Parameters.AddWithValue("@Desctripion", Show.ShowDescription);
+            command.Parameters.AddWithValue("@ShowDescription", Show.ShowDescription);
             command.Parameters.AddWithValue("@ID", Show.Id);
 
         }
@@ -55,7 +55,7 @@ namespace ViewModel
         }
         public int Insert(Show Show)
         {
-            command.CommandText = "INSERT INTO TblShows (ShowName, ShowCategor, Desctripiony) VALUES (@ShowName,@ShowCategory, @Desctripion)";
+            command.CommandText = "INSERT INTO TblShows (ShowName, ShowCategory, ShowDescription) VALUES (@ShowName,@ShowCategory, @ShowDescription)";
             LoadParameters(Show);
             return ExecuteCRUD();
         }
@@ -67,7 +67,7 @@ namespace ViewModel
         }
         public int Update(Show shid)
         {
-            command.CommandText = "UPDATE TblShows SET showname = @ShowName,ShowCategory = @ShowCategory, ShowDescription = @Description WHERE Id = @Id, ";
+            command.CommandText = "UPDATE TblShows SET showname = @ShowName,ShowCategory = @ShowCategory, ShowDescription = @ShowDescription WHERE Id = @Id, ";
             LoadParameters(shid);
             return ExecuteCRUD();
         }
