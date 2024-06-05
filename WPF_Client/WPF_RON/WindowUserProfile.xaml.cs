@@ -66,13 +66,17 @@ namespace WPF_RON
         {
             pnlViewMovies.Children.Clear();
             foreach (Movie movie in movies)
-            {
-                UserControlMovie controlMovie = new UserControlMovie(movie);
-                controlMovie.Margin = new Thickness(5);
-                controlMovie.Tag = movie;
-                controlMovie.MouseDoubleClick += ControlMovie_MouseDoubleClick;
-                pnlViewMovies.Children.Add(controlMovie);
-            }
+                if(movie.MovieName.StartsWith(text)) 
+                {
+                    {
+                        UserControlMovie controlMovie = new UserControlMovie(movie);
+                        controlMovie.Margin = new Thickness(5);
+                        controlMovie.Tag = movie;
+                        controlMovie.MouseDoubleClick += ControlMovie_MouseDoubleClick;
+                        pnlViewMovies.Children.Add(controlMovie);
+                    }
+                }
+        
         }
 
         private void ControlMovie_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -93,6 +97,7 @@ namespace WPF_RON
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             LoadShows(tbSearch.Text);
+            LoadMovies(tbSearch.Text);
         }
 
         private void Top_Movies_Click(object sender, RoutedEventArgs e)
